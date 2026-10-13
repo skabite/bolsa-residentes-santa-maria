@@ -2,6 +2,7 @@
 """Busca o detalhe de empenhos no Portal da Transparencia de Santa Maria/RS."""
 import html
 import json
+import os
 import re
 import sys
 
@@ -55,7 +56,7 @@ def main():
         for it in itens[:3]:
             print("   ITEM:", {k: it[k] for k in list(it)[:12]})
         out.append({"nr": nr, "ano": ano, "dados": dados, "itens": itens})
-    json.dump(out, open("/tmp/bolsa-work/detalhes.json", "w"), ensure_ascii=False, indent=1)
+    json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "detalhes.json"), "w"), ensure_ascii=False, indent=1)
 
 
 if __name__ == "__main__":

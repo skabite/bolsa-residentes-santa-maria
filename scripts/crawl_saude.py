@@ -5,6 +5,7 @@ Uso: python3 crawl_saude.py 2021 2022 2023 ...
 Gera /tmp/bolsa-work/empenhos_saude_<ano>.csv
 """
 import csv
+import os
 import re
 import sys
 import time
@@ -29,7 +30,7 @@ def crawl(ano):
     total = maxpage(h)
     rows = c.rows_from(h)
     print(f"[{ano}] total paginas: {total} | pagina 1: {len(rows)} linhas", flush=True)
-    out = f"/tmp/bolsa-work/empenhos_saude_{ano}.csv"
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"empenhos_saude_{ano}.csv")
     with open(out, "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["nrEmpenho", "fornecedor", "valor", "data", "link"])
