@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dossiê — bolsa dos residentes de Santa Maria/RS</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:      #f9f9f7;
+    --surface-1: #fcfcfb;
+    --surface-2: #f3f2ee;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --muted:     #898781;
+    --grid:      #e1e0d9;
+    --axis:      #c3c2b7;
+    --border:    rgba(11,11,11,0.10);
+    --series-1:  #2a78d6;
+    --series-2:  #eb6834;
+    --good:      #0ca30c;
+    --warning:   #fab219;
+    --shadow:    0 1px 2px rgba(11,11,11,.04), 0 8px 24px rgba(11,11,11,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7;
+      --muted: #898781; --grid: #2c2c2a; --axis: #383835;
+      --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5; --series-2: #d95926; --good: #0ca30c; --warning: #fab219;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7;
+    --muted: #898781; --grid: #2c2c2a; --axis: #383835;
+    --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926; --good: #0ca30c; --warning: #fab219;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--page); color: var(--text-primary);
+    font: 15.5px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: var(--series-1); }
+  .prog { position: fixed; inset: 0 auto auto 0; height: 3px; background: var(--series-1); width: 0; z-index: 60; }
+  header.top {
+    background: var(--surface-1); border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .top-in { max-width: 1080px; margin: 0 auto; padding: 14px 20px 0; }
+  .brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .brand h1 { font-size: 19px; margin: 0; letter-spacing: -0.01em; }
+  .brand .tag {
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 2px 9px;
+  }
+  nav { display: flex; gap: 4px; overflow-x: auto; padding: 10px 0 9px; scrollbar-width: thin; }
+  nav a {
+    white-space: nowrap; text-decoration: none; color: var(--text-secondary);
+    font-size: 13.5px; padding: 6px 11px; border-radius: 999px; border: 1px solid transparent;
+  }
+  nav a:hover { background: var(--surface-2); color: var(--text-primary); }
+  nav a[aria-current="true"] { background: var(--text-primary); color: var(--page); border-color: var(--text-primary); }
+  main { max-width: 1080px; margin: 0 auto; padding: 26px 20px 90px; }
+  section { scroll-margin-top: 96px; margin-bottom: 34px; }
+  h2.sec { font-size: 21px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  p.lead { color: var(--text-secondary); margin: 0 0 18px; max-width: 78ch; }
+  .grid { display: grid; gap: 14px; }
+  .stats { grid-template-columns: repeat(auto-fit, minmax(196px, 1fr)); }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+  .tile .v { font-size: 28px; line-height: 1.1; margin: 0 0 3px; letter-spacing: -0.015em; }
+  .tile .k { color: var(--text-secondary); font-size: 13.5px; margin: 0; }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 22px 16px; margin-bottom: 18px; box-shadow: var(--shadow);
+  }
+  .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  .card h3 { font-size: 16.5px; margin: 0 0 6px; }
+  .card p { margin: 6px 0; }
+  .card p.note { color: var(--text-secondary); font-size: 13.5px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600;
+    padding: 3px 10px 3px 8px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--text-secondary); white-space: nowrap;
+  }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .badge.fato .dot { background: var(--good); }
+  .badge.est .dot { background: var(--warning); }
+  .badge.aberto .dot { background: var(--muted); }
+  .src {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 13px; margin-top: 8px;
+    border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; text-decoration: none;
+    color: var(--text-secondary); background: var(--surface-2);
+  }
+  .src:hover { color: var(--text-primary); border-color: var(--axis); }
+  .chart { width: 100%; height: auto; display: block; overflow: visible; }
+  .gridline, .grid { stroke: var(--grid); stroke-width: 1; }
+  .axis { stroke: var(--axis); stroke-width: 1; }
+  .tick { fill: var(--muted); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+  .xlab { font-size: 12px; }
+  .bar { fill: var(--series-1); cursor: pointer; }
+  .bar:hover, .bar:focus { opacity: .8; outline: none; }
+  .bar.sel { fill: var(--series-2); }
+  .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .line.s1 { stroke: var(--series-1); }
+  .line.s2 { stroke: var(--series-2); }
+  .dot { stroke: var(--surface-1); stroke-width: 2; }
+  .dot.s1, .circle.s1 { fill: var(--series-1); }
+  .dot.s2, .circle.s2 { fill: var(--series-2); }
+  .dlab { fill: var(--text-secondary); font-size: 12px; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--text-secondary); margin: 6px 0 8px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .swatch { width: 11px; height: 11px; border-radius: 3px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  th { color: var(--text-secondary); font-weight: 600; font-size: 12.5px; position: sticky; top: 84px; background: var(--surface-1); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .scroll { max-height: 420px; overflow: auto; border: 1px solid var(--border); border-radius: 10px; }
+  #painel-mes { margin-top: 14px; }
+  #painel-mes .ph { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .tip {
+    position: fixed; pointer-events: none; z-index: 70; opacity: 0;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 7px 10px; font-size: 12.5px; box-shadow: var(--shadow); white-space: nowrap;
+  }
+  ul.tight { margin: 8px 0 0; padding-left: 20px; color: var(--text-secondary); }
+  ul.tight li { margin-bottom: 7px; }
+  .kv { display: grid; grid-template-columns: minmax(150px, 240px) 1fr; gap: 6px 16px; font-size: 14px; margin-top: 10px; }
+  .kv dt { color: var(--text-secondary); }
+  .kv dd { margin: 0; }
+  .btn {
+    font: inherit; font-size: 13.5px; cursor: pointer; border-radius: 10px; padding: 7px 13px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text-primary);
+  }
+  .btn:hover { border-color: var(--axis); }
+  .theme { position: fixed; right: 16px; bottom: 16px; z-index: 55; }
+  .toc-alert {
+    display: flex; gap: 12px; align-items: flex-start; border-left: 3px solid var(--warning);
+    background: var(--surface-2); border-radius: 10px; padding: 12px 14px; margin: 12px 0 0; font-size: 13.5px;
+  }
+  footer { color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--border); padding-top: 16px; }
+  /* ---- hero ---- */
+  .hero { padding: 10px 0 4px; }
+  .hero h2 { font-size: clamp(25px, 3.6vw, 38px); line-height: 1.12; letter-spacing: -0.022em;
+             margin: 0 0 12px; max-width: 22ch; font-weight: 650; }
+  .hero .big { color: var(--series-1); }
+  .hero .kpis { display: flex; gap: 30px; flex-wrap: wrap; margin: 18px 0 4px; }
+  .hero .kpi b { display: block; font-size: 25px; line-height: 1.15; letter-spacing: -0.015em; }
+  .hero .kpi span { color: var(--text-secondary); font-size: 13px; display: block; max-width: 24ch; }
+  /* ---- linha do tempo ---- */
+  .timeline { position: relative; margin: 6px 0 0; padding-left: 26px; }
+  .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--grid); }
+  .tl { position: relative; margin-bottom: 20px; }
+  .tl:last-child { margin-bottom: 0; }
+  .tl::before { content: ""; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px;
+                border-radius: 50%; background: var(--series-1); border: 3px solid var(--surface-1);
+                box-shadow: 0 0 0 1px var(--grid); }
+  .tl.warn::before { background: var(--warning); }
+  .tl.ok::before { background: var(--good); }
+  .tl .d { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+  .tl h4 { margin: 3px 0 3px; font-size: 15px; }
+  .tl p { margin: 0; color: var(--text-secondary); font-size: 13.5px; max-width: 74ch; }
+  /* ---- ações ---- */
+  .actions { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); }
+  .action { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px;
+            padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  .action h4 { margin: 0 0 6px; font-size: 15.5px; }
+  .action p { margin: 0 0 14px; color: var(--text-secondary); font-size: 13.5px; flex: 1; }
+  .action .go { align-self: flex-start; font-size: 13.5px; text-decoration: none; padding: 7px 14px;
+                border-radius: 999px; border: 1px solid var(--border); background: var(--surface-2);
+                color: var(--text-primary); }
+  .action .go:hover { border-color: var(--axis); }
+  @media print {
+    .top, .theme, .prog { display: none; } .card { break-inside: avoid; box-shadow: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <h1>Bolsa dos residentes de Medicina de Família e Comunidade — Santa Maria/RS</h1>
+      <span class="tag">dossiê de conferência</span>
+    </div>
+    <nav id="nav" aria-label="Seções">
+      <a href="#timeline">Linha do tempo</a>
+      <a href="#visao">Visão geral</a>
+      <a href="#tempo">Linha do tempo</a>
+      <a href="#conferir">Conferir empenho por empenho</a>
+      <a href="#residentes">Residentes e equipes</a>
+      <a href="#federal">Dinheiro federal recebido</a>
+      <a href="#dinheiro">De onde vem o dinheiro</a>
+      <a href="#avaliar">Como avaliar</a>
+      <a href="#fazer">O que fazer</a>
+      <a href="#fontes">Fontes</a>
+      <a href="#aberto">Em aberto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h2>O governo federal paga <span class="big">R$ 8.000</span> por residente.<br>
+    A bolsa que chega é <span class="big">R$ 4.500</span>.</h2>
+    <p class="lead">Dossiê público sobre a bolsa auxílio dos médicos residentes de Medicina de Família e
+    Comunidade de Santa Maria/RS — montado só com documentos oficiais: empenhos da prefeitura, planilhas de
+    pagamento do Ministério da Saúde e o texto das normas. Cada afirmação tem link para a fonte.</p>
+    <div class="kpis">
+      <div class="kpi"><b>R$ 4.500</b><span>por residente/mês, pago pela prefeitura — sem reajuste desde 2021</span></div>
+      <div class="kpi"><b>22</b><span>residentes em 2026 (15 UFSM + 7 UFN)</span></div>
+      <div class="kpi"><b>12 de 22</b><span>geram o incentivo federal por residente</span></div>
+      <div class="kpi"><b>R$ 0</b><span>de incentivo federal na competência jul/2026</span></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2 class="sec">Linha do tempo</h2>
+    <p class="lead">Os fatos que construíram a situação atual, em ordem — com a data e o documento de cada um.</p>
+    <div class="card">
+      <div class="timeline">
+        <div class="tl"><div class="d">29/12/2020</div><h4>A lei municipal cria a bolsa</h4>
+          <p>A Lei 6.516/2020 institui a bolsa auxílio de R$ 4.500 para R1 e R2 do MFC (UFSM e UFN), paga
+          pelo município diretamente ao profissional e <strong>condicionada à existência do repasse federal</strong>
+          (art. 3º, §2º), com correção anual prevista no §1º.</p></div>
+        <div class="tl ok"><div class="d">ABR/2021</div><h4>Primeiros pagamentos</h4>
+          <p>Cinco residentes começam a receber, ainda em empenhos individuais (um por residente). O
+          pagamento não foi interrompido nenhum mês desde então.</p></div>
+        <div class="tl"><div class="d">2022</div><h4>O incentivo federal ganha regra própria</h4>
+          <p>A Portaria GM/MS 4.411/2022 consolida o incentivo de custeio de <strong>R$ 4.500 por residente
+          de medicina</strong> pago ao município (fundo a fundo) — o mesmo valor da bolsa municipal.</p></div>
+        <div class="tl"><div class="d">2023</div><h4>Vira folha de pagamento coletiva</h4>
+          <p>Os pagamentos passam a sair como "folha de pagamento coletiva - médicos residentes" e o INSS
+          patronal de 20% aparece em empenho separado, pago pela prefeitura.</p></div>
+        <div class="tl"><div class="d">OUT/2025</div><h4>Sai uma residente da UFSM</h4>
+          <p>A folha cai de 20 para 19 residentes — e segue em 19 até fevereiro de 2026.</p></div>
+        <div class="tl"><div class="d">02/02/2026</div><h4>O incentivo federal dobra</h4>
+          <p>A Portaria GM/MS 10.193/2026 eleva o incentivo para <strong>R$ 8.000 por residente de
+          medicina</strong>, com efeitos a partir de fev/2026. A bolsa municipal continua R$ 4.500.</p></div>
+        <div class="tl ok"><div class="d">FEV/2026</div><h4>O município recebe R$ 136.000</h4>
+          <p>Transferência federal de R$ 136.000 = 17 residentes × R$ 8.000. É o mês com maior entrada
+          federal do período.</p></div>
+        <div class="tl"><div class="d">MAR–ABR/2026</div><h4>Troca de turma</h4>
+          <p>Novos R1 entram (a residência começa em 1º de março; a lei prevê o primeiro pagamento 30 dias
+          depois). Março fica em 13 pagos e abril salta para 23, com retroativo.</p></div>
+        <div class="tl warn"><div class="d">JUL/2026</div><h4>Incentivo federal zerado</h4>
+          <p>O plano orçamentário que carrega o incentivo de residência foi transferido com R$ 0,00,
+          enquanto todos os outros repasses da APS na mesma competência vieram normais. O município pagou
+          os R$ 99.000 de bolsa mesmo assim.</p></div>
+        <div class="tl"><div class="d">AGO/2026</div><h4>22 residentes pagos — e a conta fecha</h4>
+          <p>Dois empenhos de R$ 49.500 (11 + 11), um com recurso federal e outro municipal, e INSS
+          patronal de R$ 19.800,01 = 20% de R$ 99.000. Bate com os 15 da UFSM + 7 da UFN.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visao">
+    <h2 class="sec">Visão geral</h2>
+    <p class="lead">Tudo o que está aqui saiu de fonte pública oficial e pode ser conferido por você —
+    cada bloco traz o selo do que é <strong>fato verificado</strong>, do que é <strong>estimativa</strong> e
+    do que está <strong>em aberto</strong>, com o link da fonte ao lado.</p>
+    <div class="grid stats">
+      <div class="tile"><p class="v">R$ 4.500</p><p class="k">por residente/mês — pago pela prefeitura, <strong>sem reajuste desde 2021</strong></p></div>
+      <div class="tile"><p class="v">R$ 8.000</p><p class="k">incentivo federal por residente de medicina em 2026 (era R$ 4.500)</p></div>
+      <div class="tile"><p class="v">R$ 4.225.500</p><p class="k">empenhado em bolsas de abr/2021 a ago/2026</p></div>
+      <div class="tile"><p class="v">22 a 23</p><p class="k">residentes pagos por mês em 2026 (dado dos empenhos)</p></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-head">
+        <h3>O que este dossiê mostra, em cinco linhas</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — fonte oficial</span>
+      </div>
+      <ul class="tight">
+        <li>A prefeitura paga a bolsa da Lei 6.516/2020 <strong>desde abril de 2021</strong>, sem interrupção, a 20–23 residentes por mês.</li>
+        <li>O valor <strong>nunca foi reajustado</strong>: R$ 4.500 por residente/mês do primeiro pagamento até agosto de 2026.</li>
+        <li>O dinheiro sai do projeto “Manutenção dos Serviços Básicos de Saúde” e é declarado com fonte <strong>federal (fundo a fundo, Bloco de Manutenção)</strong> para parte dos residentes e <strong>municipal</strong> para os demais.</li>
+        <li>Em fevereiro de 2026 o incentivo federal por residente de medicina <strong>subiu de R$ 4.500 para R$ 8.000</strong> (Portaria GM/MS 10.193/2026) — e a bolsa paga ao residente <strong>continuou R$ 4.500</strong>.</li>
+        <li>Residentes lotados em <strong>eAP</strong> não constam da lista de equipes elegíveis do incentivo federal — e o município tem 12 eAP credenciadas.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Como ler os selos</h3>
+      <dl class="kv">
+        <dt><span class="badge fato"><i class="dot"></i>Fato</span></dt>
+        <dd>Extraído de documento ou base oficial, com link direto para conferência.</dd>
+        <dt><span class="badge est"><i class="dot"></i>Estimativa</span></dt>
+        <dd>Calculado a partir de valores normativos (leis/portarias) e da estrutura dos pagamentos. Depende de uma premissa declarada — confira a premissa.</dd>
+        <dt><span class="badge aberto"><i class="dot"></i>Em aberto</span></dt>
+        <dd>Ainda não há fonte pública que responda — só LAI, painel oficial ou resposta da gestão.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="tempo">
+    <h2 class="sec">Linha do tempo do dinheiro</h2>
+    <p class="lead">Clique em qualquer barra para ver <strong>os empenhos daquele mês</strong>, com número,
+    valor e link para a página oficial de cada um.</p>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Quanto a prefeitura empenhou em bolsas, por mês</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — empenhos oficiais</span>
+      </div>
+      <p class="note">Meses sem barra (ago e out/2021, abr/2022) não tiveram empenho específico: o pagamento
+      saiu agrupado ou retroativo no mês seguinte — visível no pico de mai/2022 (R$ 175.500, ~39 bolsas).
+      <strong>Março é mês de troca de turma</strong> (a residência começa em 1º de março e a lei prevê o
+      primeiro pagamento 30 dias depois), então todo mês de março fica abaixo do platô e o de abril vem
+      inflado por retroativo — em 2026, mar = 13 e abr = 32,7 residentes equivalentes. Compare pelo platô,
+      não pelos meses de transição.</p>
+      <svg viewBox="0 0 900 260" class="chart" role="img" aria-label="Valor mensal empenhado em bolsas de residencia medica, abril de 2021 a agosto de 2026."><line class="grid" x1="66" y1="218.0" x2="886" y2="218.0"/><text class="tick" x="57" y="221.6" text-anchor="end">0</text><line class="grid" x1="66" y1="150.7" x2="886" y2="150.7"/><text class="tick" x="57" y="154.3" text-anchor="end">60 mil</text><line class="grid" x1="66" y1="83.3" x2="886" y2="83.3"/><text class="tick" x="57" y="86.9" text-anchor="end">120 mil</text><line class="grid" x1="66" y1="16.0" x2="886" y2="16.0"/><text class="tick" x="57" y="19.6" text-anchor="end">180 mil</text><line class="axis" x1="66" y1="218" x2="886" y2="218"/><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="4" data-tip="abr/2021 · R$ 31.500,00 · 7 residentes" x="67.3" y="182.7" width="10.0" height="35.3" rx="4.0" ry="4.0"><title>abr/2021 · R$ 31.500,00 · 7 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="5" data-tip="mai/2021 · R$ 4.500,00 · 1 residentes" x="79.9" y="212.9" width="10.0" height="5.1"><title>mai/2021 · R$ 4.500,00 · 1 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="6" data-tip="jun/2021 · R$ 4.500,00 · 1 residentes" x="92.5" y="212.9" width="10.0" height="5.1"><title>jun/2021 · R$ 4.500,00 · 1 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="7" data-tip="jul/2021 · R$ 4.500,00 · 1 residentes" x="105.1" y="212.9" width="10.0" height="5.1"><title>jul/2021 · R$ 4.500,00 · 1 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="9" data-tip="set/2021 · R$ 27.000,00 · 6 residentes" x="130.4" y="187.7" width="10.0" height="30.3" rx="4.0" ry="4.0"><title>set/2021 · R$ 27.000,00 · 6 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="11" data-tip="nov/2021 · R$ 45.000,00 · 10 residentes" x="155.6" y="167.5" width="10.0" height="50.5" rx="4.0" ry="4.0"><title>nov/2021 · R$ 45.000,00 · 10 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2021" data-mes="12" data-tip="dez/2021 · R$ 22.500,00 · 5 residentes" x="168.2" y="192.8" width="10.0" height="25.2" rx="4.0" ry="4.0"><title>dez/2021 · R$ 22.500,00 · 5 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="1" data-tip="jan/2022 · R$ 22.500,00 · 5 residentes" x="180.8" y="192.8" width="10.0" height="25.2" rx="4.0" ry="4.0"><title>jan/2022 · R$ 22.500,00 · 5 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="2" data-tip="fev/2022 · R$ 22.500,00 · 5 residentes" x="193.5" y="192.8" width="10.0" height="25.2" rx="4.0" ry="4.0"><title>fev/2022 · R$ 22.500,00 · 5 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="3" data-tip="mar/2022 · R$ 22.500,00 · 5 residentes" x="206.1" y="192.8" width="10.0" height="25.2" rx="4.0" ry="4.0"><title>mar/2022 · R$ 22.500,00 · 5 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="5" data-tip="mai/2022 · R$ 175.500,00 · 39 residentes" x="231.3" y="21.1" width="10.0" height="196.9" rx="4.0" ry="4.0"><title>mai/2022 · R$ 175.500,00 · 39 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="6" data-tip="jun/2022 · R$ 58.500,00 · 13 residentes" x="243.9" y="152.3" width="10.0" height="65.7" rx="4.0" ry="4.0"><title>jun/2022 · R$ 58.500,00 · 13 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="7" data-tip="jul/2022 · R$ 58.500,00 · 13 residentes" x="256.5" y="152.3" width="10.0" height="65.7" rx="4.0" ry="4.0"><title>jul/2022 · R$ 58.500,00 · 13 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="8" data-tip="ago/2022 · R$ 58.500,00 · 13 residentes" x="269.1" y="152.3" width="10.0" height="65.7" rx="4.0" ry="4.0"><title>ago/2022 · R$ 58.500,00 · 13 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="9" data-tip="set/2022 · R$ 49.500,00 · 11 residentes" x="281.8" y="162.4" width="10.0" height="55.6" rx="4.0" ry="4.0"><title>set/2022 · R$ 49.500,00 · 11 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="10" data-tip="out/2022 · R$ 49.500,00 · 11 residentes" x="294.4" y="162.4" width="10.0" height="55.6" rx="4.0" ry="4.0"><title>out/2022 · R$ 49.500,00 · 11 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="11" data-tip="nov/2022 · R$ 49.500,00 · 11 residentes" x="307.0" y="162.4" width="10.0" height="55.6" rx="4.0" ry="4.0"><title>nov/2022 · R$ 49.500,00 · 11 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2022" data-mes="12" data-tip="dez/2022 · R$ 49.500,00 · 11 residentes" x="319.6" y="162.4" width="10.0" height="55.6" rx="4.0" ry="4.0"><title>dez/2022 · R$ 49.500,00 · 11 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="1" data-tip="jan/2023 · R$ 49.500,00 · 11 residentes" x="332.2" y="162.4" width="10.0" height="55.6" rx="4.0" ry="4.0"><title>jan/2023 · R$ 49.500,00 · 11 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="2" data-tip="fev/2023 · R$ 49.500,00 · 11 residentes" x="344.8" y="162.4" width="10.0" height="55.6" rx="4.0" ry="4.0"><title>fev/2023 · R$ 49.500,00 · 11 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="3" data-tip="mar/2023 · R$ 67.500,00 · 15 residentes" x="357.5" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>mar/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="4" data-tip="abr/2023 · R$ 67.500,00 · 15 residentes" x="370.1" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>abr/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="5" data-tip="mai/2023 · R$ 67.500,00 · 15 residentes" x="382.7" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>mai/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="6" data-tip="jun/2023 · R$ 67.500,00 · 15 residentes" x="395.3" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>jun/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="7" data-tip="jul/2023 · R$ 67.500,00 · 15 residentes" x="407.9" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>jul/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="8" data-tip="ago/2023 · R$ 67.500,00 · 15 residentes" x="420.5" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>ago/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="9" data-tip="set/2023 · R$ 67.500,00 · 15 residentes" x="433.1" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>set/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="10" data-tip="out/2023 · R$ 67.500,00 · 15 residentes" x="445.8" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>out/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="11" data-tip="nov/2023 · R$ 67.500,00 · 15 residentes" x="458.4" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>nov/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2023" data-mes="12" data-tip="dez/2023 · R$ 67.500,00 · 15 residentes" x="471.0" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>dez/2023 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="1" data-tip="jan/2024 · R$ 67.500,00 · 15 residentes" x="483.6" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>jan/2024 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="2" data-tip="fev/2024 · R$ 67.500,00 · 15 residentes" x="496.2" y="142.2" width="10.0" height="75.8" rx="4.0" ry="4.0"><title>fev/2024 · R$ 67.500,00 · 15 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="3" data-tip="mar/2024 · R$ 76.500,00 · 17 residentes" x="508.8" y="132.2" width="10.0" height="85.8" rx="4.0" ry="4.0"><title>mar/2024 · R$ 76.500,00 · 17 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="4" data-tip="abr/2024 · R$ 85.500,00 · 19 residentes" x="521.5" y="122.1" width="10.0" height="95.9" rx="4.0" ry="4.0"><title>abr/2024 · R$ 85.500,00 · 19 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="5" data-tip="mai/2024 · R$ 81.000,00 · 18 residentes" x="534.1" y="127.1" width="10.0" height="90.9" rx="4.0" ry="4.0"><title>mai/2024 · R$ 81.000,00 · 18 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="6" data-tip="jun/2024 · R$ 81.000,00 · 18 residentes" x="546.7" y="127.1" width="10.0" height="90.9" rx="4.0" ry="4.0"><title>jun/2024 · R$ 81.000,00 · 18 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="7" data-tip="jul/2024 · R$ 78.450,00 · 17 residentes" x="559.3" y="130.0" width="10.0" height="88.0" rx="4.0" ry="4.0"><title>jul/2024 · R$ 78.450,00 · 17 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="8" data-tip="ago/2024 · R$ 72.000,00 · 16 residentes" x="571.9" y="137.2" width="10.0" height="80.8" rx="4.0" ry="4.0"><title>ago/2024 · R$ 72.000,00 · 16 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="9" data-tip="set/2024 · R$ 72.000,00 · 16 residentes" x="584.5" y="137.2" width="10.0" height="80.8" rx="4.0" ry="4.0"><title>set/2024 · R$ 72.000,00 · 16 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="10" data-tip="out/2024 · R$ 72.000,00 · 16 residentes" x="597.1" y="137.2" width="10.0" height="80.8" rx="4.0" ry="4.0"><title>out/2024 · R$ 72.000,00 · 16 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="11" data-tip="nov/2024 · R$ 72.000,00 · 16 residentes" x="609.8" y="137.2" width="10.0" height="80.8" rx="4.0" ry="4.0"><title>nov/2024 · R$ 72.000,00 · 16 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2024" data-mes="12" data-tip="dez/2024 · R$ 72.000,00 · 16 residentes" x="622.4" y="137.2" width="10.0" height="80.8" rx="4.0" ry="4.0"><title>dez/2024 · R$ 72.000,00 · 16 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="1" data-tip="jan/2025 · R$ 74.700,00 · 17 residentes" x="635.0" y="134.2" width="10.0" height="83.8" rx="4.0" ry="4.0"><title>jan/2025 · R$ 74.700,00 · 17 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="2" data-tip="fev/2025 · R$ 63.000,00 · 14 residentes" x="647.6" y="147.3" width="10.0" height="70.7" rx="4.0" ry="4.0"><title>fev/2025 · R$ 63.000,00 · 14 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="3" data-tip="mar/2025 · R$ 82.350,00 · 18 residentes" x="660.2" y="125.6" width="10.0" height="92.4" rx="4.0" ry="4.0"><title>mar/2025 · R$ 82.350,00 · 18 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="4" data-tip="abr/2025 · R$ 90.000,00 · 20 residentes" x="672.8" y="117.0" width="10.0" height="101.0" rx="4.0" ry="4.0"><title>abr/2025 · R$ 90.000,00 · 20 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="5" data-tip="mai/2025 · R$ 90.000,00 · 20 residentes" x="685.5" y="117.0" width="10.0" height="101.0" rx="4.0" ry="4.0"><title>mai/2025 · R$ 90.000,00 · 20 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="6" data-tip="jun/2025 · R$ 90.000,00 · 20 residentes" x="698.1" y="117.0" width="10.0" height="101.0" rx="4.0" ry="4.0"><title>jun/2025 · R$ 90.000,00 · 20 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="7" data-tip="jul/2025 · R$ 90.000,00 · 20 residentes" x="710.7" y="117.0" width="10.0" height="101.0" rx="4.0" ry="4.0"><title>jul/2025 · R$ 90.000,00 · 20 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="8" data-tip="ago/2025 · R$ 90.000,00 · 20 residentes" x="723.3" y="117.0" width="10.0" height="101.0" rx="4.0" ry="4.0"><title>ago/2025 · R$ 90.000,00 · 20 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="9" data-tip="set/2025 · R$ 90.000,00 · 20 residentes" x="735.9" y="117.0" width="10.0" height="101.0" rx="4.0" ry="4.0"><title>set/2025 · R$ 90.000,00 · 20 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="10" data-tip="out/2025 · R$ 85.500,00 · 19 residentes" x="748.5" y="122.1" width="10.0" height="95.9" rx="4.0" ry="4.0"><title>out/2025 · R$ 85.500,00 · 19 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="11" data-tip="nov/2025 · R$ 85.500,00 · 19 residentes" x="761.1" y="122.1" width="10.0" height="95.9" rx="4.0" ry="4.0"><title>nov/2025 · R$ 85.500,00 · 19 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2025" data-mes="12" data-tip="dez/2025 · R$ 85.500,00 · 19 residentes" x="773.8" y="122.1" width="10.0" height="95.9" rx="4.0" ry="4.0"><title>dez/2025 · R$ 85.500,00 · 19 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="1" data-tip="jan/2026 · R$ 85.500,00 · 19 residentes" x="786.4" y="122.1" width="10.0" height="95.9" rx="4.0" ry="4.0"><title>jan/2026 · R$ 85.500,00 · 19 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="2" data-tip="fev/2026 · R$ 85.500,00 · 19 residentes" x="799.0" y="122.1" width="10.0" height="95.9" rx="4.0" ry="4.0"><title>fev/2026 · R$ 85.500,00 · 19 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="3" data-tip="mar/2026 · R$ 58.500,00 · 13 residentes" x="811.6" y="152.3" width="10.0" height="65.7" rx="4.0" ry="4.0"><title>mar/2026 · R$ 58.500,00 · 13 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="4" data-tip="abr/2026 · R$ 147.000,00 · 33 residentes" x="824.2" y="53.0" width="10.0" height="165.0" rx="4.0" ry="4.0"><title>abr/2026 · R$ 147.000,00 · 33 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="5" data-tip="mai/2026 · R$ 103.500,00 · 23 residentes" x="836.8" y="101.9" width="10.0" height="116.1" rx="4.0" ry="4.0"><title>mai/2026 · R$ 103.500,00 · 23 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="6" data-tip="jun/2026 · R$ 103.500,00 · 23 residentes" x="849.5" y="101.9" width="10.0" height="116.1" rx="4.0" ry="4.0"><title>jun/2026 · R$ 103.500,00 · 23 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="7" data-tip="jul/2026 · R$ 99.000,00 · 22 residentes" x="862.1" y="106.9" width="10.0" height="111.1" rx="4.0" ry="4.0"><title>jul/2026 · R$ 99.000,00 · 22 residentes</title></rect><rect class="bar" tabindex="0" role="button" data-ano="2026" data-mes="8" data-tip="ago/2026 · R$ 99.000,00 · 22 residentes" x="874.7" y="106.9" width="10.0" height="111.1" rx="4.0" ry="4.0"><title>ago/2026 · R$ 99.000,00 · 22 residentes</title></rect><text class="tick xlab" x="122.8" y="238" text-anchor="middle">2021</text><text class="tick xlab" x="255.2" y="238" text-anchor="middle">2022</text><text class="tick xlab" x="406.6" y="238" text-anchor="middle">2023</text><text class="tick xlab" x="558.0" y="238" text-anchor="middle">2024</text><text class="tick xlab" x="709.4" y="238" text-anchor="middle">2025</text><text class="tick xlab" x="835.5" y="238" text-anchor="middle">2026</text></svg>
+      <a class="src" href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho" target="_blank" rel="noopener">
+        Fonte: Portal da Transparência → Despesa → Empenho ↗</a>
+      <div id="painel-mes"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Quantos residentes foram pagos, por mês</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — derivado dos empenhos</span>
+      </div>
+      <p class="note">Valor empenhado ÷ R$ 4.500. Em 2026 há dois grupos por mês: um pago com recurso federal
+      e outro com recurso municipal.</p>
+      <svg viewBox="0 0 900 200" class="chart" role="img" aria-label="Numero de residentes pagos por mes."><line class="grid" x1="66" y1="160.0" x2="886" y2="160.0"/><text class="tick" x="57" y="163.6" text-anchor="end">0</text><line class="grid" x1="66" y1="123.5" x2="886" y2="123.5"/><text class="tick" x="57" y="127.1" text-anchor="end">10</text><line class="grid" x1="66" y1="87.0" x2="886" y2="87.0"/><text class="tick" x="57" y="90.6" text-anchor="end">20</text><line class="grid" x1="66" y1="50.5" x2="886" y2="50.5"/><text class="tick" x="57" y="54.1" text-anchor="end">30</text><line class="grid" x1="66" y1="14.0" x2="886" y2="14.0"/><text class="tick" x="57" y="17.6" text-anchor="end">40</text><line class="axis" x1="66" y1="160" x2="886" y2="160"/><path class="line s1" d="M 72.3 134.4 L 84.9 156.3 L 97.5 156.3 L 110.2 156.3 L 122.8 160.0 L 135.4 138.1 L 148.0 160.0 L 160.6 123.5 L 173.2 141.8 L 185.8 141.8 L 198.5 141.8 L 211.1 141.8 L 223.7 160.0 L 236.3 17.7 L 248.9 112.5 L 261.5 112.5 L 274.2 112.5 L 286.8 119.8 L 299.4 119.8 L 312.0 119.8 L 324.6 119.8 L 337.2 119.8 L 349.8 119.8 L 362.5 105.2 L 375.1 105.2 L 387.7 105.2 L 400.3 105.2 L 412.9 105.2 L 425.5 105.2 L 438.2 105.2 L 450.8 105.2 L 463.4 105.2 L 476.0 105.2 L 488.6 105.2 L 501.2 105.2 L 513.8 98.0 L 526.5 90.7 L 539.1 94.3 L 551.7 94.3 L 564.3 98.0 L 576.9 101.6 L 589.5 101.6 L 602.2 101.6 L 614.8 101.6 L 627.4 101.6 L 640.0 98.0 L 652.6 108.9 L 665.2 94.3 L 677.8 87.0 L 690.5 87.0 L 703.1 87.0 L 715.7 87.0 L 728.3 87.0 L 740.9 87.0 L 753.5 90.7 L 766.2 90.7 L 778.8 90.7 L 791.4 90.7 L 804.0 90.7 L 816.6 112.5 L 829.2 39.6 L 841.8 76.1 L 854.5 76.1 L 867.1 79.7 L 879.7 79.7"/><text class="tick xlab" x="122.8" y="180" text-anchor="middle">2021</text><text class="tick xlab" x="255.2" y="180" text-anchor="middle">2022</text><text class="tick xlab" x="406.6" y="180" text-anchor="middle">2023</text><text class="tick xlab" x="558.0" y="180" text-anchor="middle">2024</text><text class="tick xlab" x="709.4" y="180" text-anchor="middle">2025</text><text class="tick xlab" x="835.5" y="180" text-anchor="middle">2026</text></svg>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Por residente: o que a União manda ao município × o que chega ao residente</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — texto das normas</span>
+      </div>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--series-1)"></i> Incentivo federal por residente de medicina (vai ao Fundo Municipal)</span>
+        <span><i class="swatch" style="background:var(--series-2)"></i> Bolsa auxílio paga ao residente (Lei 6.516/2020)</span>
+      </div>
+      <p class="note">A linha azul sobe para R$ 8.000 em fev/2026 (Portaria GM/MS 10.193/2026); a laranja
+      fica reta em R$ 4.500. Nenhuma das duas é dinheiro no seu bolso isoladamente: a azul é repasse ao
+      município, a laranja é o que a prefeitura paga a você.</p>
+      <svg viewBox="0 0 900 300" class="chart" role="img" aria-label="Comparacao por residente entre o incentivo federal e a bolsa paga."><line class="grid" x1="66" y1="258.0" x2="846" y2="258.0"/><text class="tick" x="57" y="261.6" text-anchor="end">0</text><line class="grid" x1="66" y1="177.3" x2="846" y2="177.3"/><text class="tick" x="57" y="180.9" text-anchor="end">3 mil</text><line class="grid" x1="66" y1="96.7" x2="846" y2="96.7"/><text class="tick" x="57" y="100.3" text-anchor="end">6 mil</text><line class="grid" x1="66" y1="16.0" x2="846" y2="16.0"/><text class="tick" x="57" y="19.6" text-anchor="end">9 mil</text><line class="axis" x1="66" y1="258" x2="846" y2="258"/><path class="line s2" d="M 71.0 137.0 L 81.1 137.0 L 91.2 137.0 L 101.3 137.0 L 111.4 137.0 L 121.5 137.0 L 131.6 137.0 L 141.7 137.0 L 151.8 137.0 L 161.9 137.0 L 172.0 137.0 L 182.1 137.0 L 192.2 137.0 L 202.2 137.0 L 212.3 137.0 L 222.4 137.0 L 232.5 137.0 L 242.6 137.0 L 252.7 137.0 L 262.8 137.0 L 272.9 137.0 L 283.0 137.0 L 293.1 137.0 L 303.2 137.0 L 313.3 137.0 L 323.4 137.0 L 333.4 137.0 L 343.5 137.0 L 353.6 137.0 L 363.7 137.0 L 373.8 137.0 L 383.9 137.0 L 394.0 137.0 L 404.1 137.0 L 414.2 137.0 L 424.3 137.0 L 434.4 137.0 L 444.5 137.0 L 454.6 137.0 L 464.6 137.0 L 474.7 137.0 L 484.8 137.0 L 494.9 137.0 L 505.0 137.0 L 515.1 137.0 L 525.2 137.0 L 535.3 137.0 L 545.4 137.0 L 555.5 137.0 L 565.6 137.0 L 575.7 137.0 L 585.8 137.0 L 595.8 137.0 L 605.9 137.0 L 616.0 137.0 L 626.1 137.0 L 636.2 137.0 L 646.3 137.0 L 656.4 137.0 L 666.5 137.0 L 676.6 137.0 L 686.7 137.0 L 696.8 137.0 L 706.9 137.0 L 717.0 137.0 "/><path class="line s1" d="M 71.0 137.0 L 81.1 137.0 L 91.2 137.0 L 101.3 137.0 L 111.4 137.0 L 121.5 137.0 L 131.6 137.0 L 141.7 137.0 L 151.8 137.0 L 161.9 137.0 L 172.0 137.0 L 182.1 137.0 L 192.2 137.0 L 202.2 137.0 L 212.3 137.0 L 222.4 137.0 L 232.5 137.0 L 242.6 137.0 L 252.7 137.0 L 262.8 137.0 L 272.9 137.0 L 283.0 137.0 L 293.1 137.0 L 303.2 137.0 L 313.3 137.0 L 323.4 137.0 L 333.4 137.0 L 343.5 137.0 L 353.6 137.0 L 363.7 137.0 L 373.8 137.0 L 383.9 137.0 L 394.0 137.0 L 404.1 137.0 L 414.2 137.0 L 424.3 137.0 L 434.4 137.0 L 444.5 137.0 L 454.6 137.0 L 464.6 137.0 L 474.7 137.0 L 484.8 137.0 L 494.9 137.0 L 505.0 137.0 L 515.1 137.0 L 525.2 137.0 L 535.3 137.0 L 545.4 137.0 L 555.5 137.0 L 565.6 137.0 L 575.7 137.0 L 585.8 137.0 L 595.8 137.0 L 605.9 137.0 L 616.0 137.0 L 626.1 137.0 L 636.2 137.0 L 646.3 137.0 L 656.4 137.0 L 656.4 42.9 L 666.5 42.9 L 676.6 42.9 L 686.7 42.9 L 696.8 42.9 L 706.9 42.9 L 717.0 42.9 "/><circle class="dot s1" cx="717.0" cy="42.9" r="4.5"/><circle class="dot s2" cx="717.0" cy="137.0" r="4.5"/><text class="dlab" x="727.0" y="41.9">Incentivo federal</text><text class="dlab" x="727.0" y="56.9">(ao município)</text><text class="dlab" x="727.0" y="136.0">Bolsa paga</text><text class="dlab" x="727.0" y="151.0">ao residente</text><text class="tick xlab" x="111.4" y="278" text-anchor="middle">2021</text><text class="tick xlab" x="217.4" y="278" text-anchor="middle">2022</text><text class="tick xlab" x="338.5" y="278" text-anchor="middle">2023</text><text class="tick xlab" x="459.6" y="278" text-anchor="middle">2024</text><text class="tick xlab" x="580.7" y="278" text-anchor="middle">2025</text><text class="tick xlab" x="681.6" y="278" text-anchor="middle">2026</text></svg>
+      <a class="src" href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt10193_02_02_2026.html" target="_blank" rel="noopener">
+        Fonte: Portaria GM/MS 10.193/2026 (texto oficial) ↗</a>
+      <a class="src" href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho" target="_blank" rel="noopener" style="margin-left:8px">
+        Fonte: Lei 6.516/2020 aplicada nos empenhos ↗</a>
+    </div>
+  </section>
+
+  <section id="conferir">
+    <h2 class="sec">Conferir empenho por empenho</h2>
+    <p class="lead">Esta é a prova documental. Cada linha abre a página oficial do empenho no Portal da
+    Transparência, com credor, natureza da despesa, fonte de recurso e valores.</p>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>2023 a 2026 — empenhos da “folha de pagamento coletiva”</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — link por empenho</span>
+      </div>
+      <p class="note">Credor: “FOLHA PGTO COLETIVA - MÉDICOS (RESIDENTES)”. A descrição do item traz o mês
+      de referência e o número de residentes pagos.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Comp.</th><th class="num">Empenho</th><th>Emissão</th><th class="num">Valor</th>
+          <th class="num">Residentes</th><th>Detalhe oficial</th></tr></thead>
+          <tbody>
+<tr><td>jan/2023</td><td class="num">1422</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1422/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1425</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1425/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1426</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1426/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1427</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1427/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1431</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1431/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1433</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1433/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1435</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1435/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1438</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1438/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1439</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1439/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1440</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1440/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2023</td><td class="num">1441</td><td>20/01/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1441/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3237</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3237/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3238</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3238/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3239</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3239/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3240</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3240/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3241</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3241/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3242</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3242/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3243</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3243/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3244</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3244/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3245</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3245/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3246</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3246/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2023</td><td class="num">3247</td><td>17/02/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3247/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5331</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5331/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5332</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5332/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5333</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5333/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5334</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5334/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5335</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5335/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5336</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5336/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5337</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5337/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5338</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5338/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5339</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5339/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5340</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5340/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5341</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5341/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5342</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5342/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5343</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5343/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5344</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5344/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2023</td><td class="num">5345</td><td>22/03/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5345/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6876</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6876/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6877</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6877/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6878</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6878/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6879</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6879/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6880</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6880/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6881</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6881/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6882</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6882/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6883</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6883/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6884</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6884/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6885</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6885/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6887</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6887/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6888</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6888/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6889</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6889/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6890</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6890/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2023</td><td class="num">6891</td><td>12/04/2023</td><td class="num">R$ 4.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6891/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mai/2023</td><td class="num">10170</td><td>29/05/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/10170/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jun/2023</td><td class="num">11508</td><td>27/06/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11508/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jul/2023</td><td class="num">13535</td><td>25/07/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13535/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>ago/2023</td><td class="num">16547</td><td>28/08/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/16547/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>set/2023</td><td class="num">18016</td><td>26/09/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18016/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>out/2023</td><td class="num">20718</td><td>24/10/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/20718/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>nov/2023</td><td class="num">23151</td><td>28/11/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/23151/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>dez/2023</td><td class="num">24287</td><td>22/12/2023</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24287/2023" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2024</td><td class="num">1894</td><td>26/01/2024</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1894/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2024</td><td class="num">3842</td><td>26/02/2024</td><td class="num">R$ 67.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3842/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2024</td><td class="num">6783</td><td>25/03/2024</td><td class="num">R$ 76.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6783/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2024</td><td class="num">8469</td><td>25/04/2024</td><td class="num">R$ 85.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8469/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mai/2024</td><td class="num">10636</td><td>23/05/2024</td><td class="num">R$ 81.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/10636/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jun/2024</td><td class="num">13146</td><td>25/06/2024</td><td class="num">R$ 81.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13146/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jul/2024</td><td class="num">14932</td><td>25/07/2024</td><td class="num">R$ 78.450,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/14932/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>ago/2024</td><td class="num">17274</td><td>27/08/2024</td><td class="num">R$ 72.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/17274/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>set/2024</td><td class="num">19665</td><td>25/09/2024</td><td class="num">R$ 72.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/19665/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>out/2024</td><td class="num">21323</td><td>24/10/2024</td><td class="num">R$ 72.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/21323/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>nov/2024</td><td class="num">23355</td><td>25/11/2024</td><td class="num">R$ 72.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/23355/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>dez/2024</td><td class="num">25813</td><td>23/12/2024</td><td class="num">R$ 72.000,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/25813/2024" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2025</td><td class="num">2682</td><td>28/01/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2682/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2025</td><td class="num">2685</td><td>28/01/2025</td><td class="num">R$ 25.200,00</td><td class="num">06</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2685/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2025</td><td class="num">4563</td><td>25/02/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4563/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2025</td><td class="num">4565</td><td>25/02/2025</td><td class="num">R$ 13.500,00</td><td class="num">03</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4565/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2025</td><td class="num">7010</td><td>27/03/2025</td><td class="num">R$ 49.500,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/7010/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2025</td><td class="num">7012</td><td>27/03/2025</td><td class="num">R$ 32.850,00</td><td class="num">—</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/7012/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2025</td><td class="num">8963</td><td>25/04/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8963/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2025</td><td class="num">8964</td><td>25/04/2025</td><td class="num">R$ 40.500,00</td><td class="num">09</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8964/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mai/2025</td><td class="num">11121</td><td>27/05/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11121/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mai/2025</td><td class="num">11122</td><td>27/05/2025</td><td class="num">R$ 40.500,00</td><td class="num">09</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11122/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jun/2025</td><td class="num">13255</td><td>25/06/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13255/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jun/2025</td><td class="num">13257</td><td>25/06/2025</td><td class="num">R$ 40.500,00</td><td class="num">09</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13257/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jul/2025</td><td class="num">15854</td><td>28/07/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15854/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jul/2025</td><td class="num">15855</td><td>28/07/2025</td><td class="num">R$ 40.500,00</td><td class="num">09</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15855/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>ago/2025</td><td class="num">18081</td><td>26/08/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18081/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>ago/2025</td><td class="num">18083</td><td>26/08/2025</td><td class="num">R$ 40.500,00</td><td class="num">09</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18083/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>set/2025</td><td class="num">20293</td><td>25/09/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/20293/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>set/2025</td><td class="num">20294</td><td>25/09/2025</td><td class="num">R$ 40.500,00</td><td class="num">09</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/20294/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>out/2025</td><td class="num">22531</td><td>23/10/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/22531/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>out/2025</td><td class="num">22532</td><td>23/10/2025</td><td class="num">R$ 36.000,00</td><td class="num">08</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/22532/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>nov/2025</td><td class="num">24824</td><td>25/11/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24824/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>nov/2025</td><td class="num">24825</td><td>25/11/2025</td><td class="num">R$ 36.000,00</td><td class="num">08</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24825/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>dez/2025</td><td class="num">25980</td><td>22/12/2025</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/25980/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>dez/2025</td><td class="num">25981</td><td>22/12/2025</td><td class="num">R$ 36.000,00</td><td class="num">08</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/25981/2025" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2026</td><td class="num">2198</td><td>28/01/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2198/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jan/2026</td><td class="num">2199</td><td>28/01/2026</td><td class="num">R$ 36.000,00</td><td class="num">08</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2199/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2026</td><td class="num">4229</td><td>24/02/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4229/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>fev/2026</td><td class="num">4231</td><td>24/02/2026</td><td class="num">R$ 36.000,00</td><td class="num">08</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4231/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2026</td><td class="num">6629</td><td>25/03/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6629/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mar/2026</td><td class="num">6631</td><td>25/03/2026</td><td class="num">R$ 9.000,00</td><td class="num">02</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6631/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2026</td><td class="num">8874</td><td>27/04/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8874/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>abr/2026</td><td class="num">8876</td><td>27/04/2026</td><td class="num">R$ 97.500,00</td><td class="num">12</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8876/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mai/2026</td><td class="num">11247</td><td>25/05/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11247/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>mai/2026</td><td class="num">11248</td><td>25/05/2026</td><td class="num">R$ 54.000,00</td><td class="num">12</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11248/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jun/2026</td><td class="num">13434</td><td>24/06/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13434/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jun/2026</td><td class="num">13435</td><td>24/06/2026</td><td class="num">R$ 54.000,00</td><td class="num">12</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13435/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jul/2026</td><td class="num">15049</td><td>27/07/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15049/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>jul/2026</td><td class="num">15051</td><td>27/07/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15051/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>ago/2026</td><td class="num">18085</td><td>26/08/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18085/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+<tr><td>ago/2026</td><td class="num">18088</td><td>26/08/2026</td><td class="num">R$ 49.500,00</td><td class="num">11</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18088/2026" target="_blank" rel="noopener">ver no portal ↗</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>2021 e 2022 — pagamentos individuais (agregados)</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — agregado</span>
+      </div>
+      <p class="note">Nesses anos cada residente recebeu seu próprio empenho, com o nome como credor.
+      Por respeito à privacidade dos colegas, esta página mostra apenas os totais por mês — a consulta
+      nominal está disponível no portal, filtrando por ano e unidade “Secretaria de Município da Saúde”.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Competência</th><th class="num">Empenhos</th><th class="num">Total</th>
+          <th class="num">Residentes (equiv.)</th></tr></thead>
+          <tbody>
+<tr><td>abr/2021</td><td class="num">5</td><td class="num">R$ 31.500,00</td><td class="num">7</td></tr>
+<tr><td>mai/2021</td><td class="num">1</td><td class="num">R$ 4.500,00</td><td class="num">1</td></tr>
+<tr><td>jun/2021</td><td class="num">1</td><td class="num">R$ 4.500,00</td><td class="num">1</td></tr>
+<tr><td>jul/2021</td><td class="num">1</td><td class="num">R$ 4.500,00</td><td class="num">1</td></tr>
+<tr><td>set/2021</td><td class="num">5</td><td class="num">R$ 27.000,00</td><td class="num">6</td></tr>
+<tr><td>nov/2021</td><td class="num">10</td><td class="num">R$ 45.000,00</td><td class="num">10</td></tr>
+<tr><td>dez/2021</td><td class="num">5</td><td class="num">R$ 22.500,00</td><td class="num">5</td></tr>
+<tr><td>jan/2022</td><td class="num">5</td><td class="num">R$ 22.500,00</td><td class="num">5</td></tr>
+<tr><td>fev/2022</td><td class="num">5</td><td class="num">R$ 22.500,00</td><td class="num">5</td></tr>
+<tr><td>mar/2022</td><td class="num">5</td><td class="num">R$ 22.500,00</td><td class="num">5</td></tr>
+<tr><td>mai/2022</td><td class="num">28</td><td class="num">R$ 175.500,00</td><td class="num">39</td></tr>
+<tr><td>jun/2022</td><td class="num">13</td><td class="num">R$ 58.500,00</td><td class="num">13</td></tr>
+<tr><td>jul/2022</td><td class="num">13</td><td class="num">R$ 58.500,00</td><td class="num">13</td></tr>
+<tr><td>ago/2022</td><td class="num">13</td><td class="num">R$ 58.500,00</td><td class="num">13</td></tr>
+<tr><td>set/2022</td><td class="num">11</td><td class="num">R$ 49.500,00</td><td class="num">11</td></tr>
+<tr><td>out/2022</td><td class="num">11</td><td class="num">R$ 49.500,00</td><td class="num">11</td></tr>
+<tr><td>nov/2022</td><td class="num">11</td><td class="num">R$ 49.500,00</td><td class="num">11</td></tr>
+<tr><td>dez/2022</td><td class="num">11</td><td class="num">R$ 49.500,00</td><td class="num">11</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <a class="src" href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho" target="_blank" rel="noopener">
+        Abrir o portal e filtrar por ano + Secretaria da Saúde ↗</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>INSS patronal de 20% — pago pela prefeitura além da bolsa</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — empenho localizado</span>
+      </div>
+      <p>Em dezembro de 2023 a prefeitura empenhou <strong>R$ 13.500,00</strong> ao INSS com a descrição
+      “VALOR REF. OBRIGAÇÃO PATRONAL (20%) SOBRE AS BOLSAS / AUXÍLIOS AOS MÉDICOS RESIDENTES, DO MÊS DE
+      DEZEMBRO/2023” — exatamente 20% dos R$ 67.500 pagos naquele mês.</p>
+      <p class="note">Consequência prática: além da bolsa, o município recolhe a contribuição patronal.
+      Se existe desconto de 11% no seu valor, ele aparece no seu contracheque e no CNIS — veja “Como avaliar”.</p>
+      <a class="src" href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24289/2023" target="_blank" rel="noopener">
+        Ver o empenho 24289/2023 no portal ↗</a>
+    </div>
+  </section>
+
+  <section id="residentes">
+    <h2 class="sec">Residentes e equipes</h2>
+    <p class="lead">Quem são, quantos são e por que a modalidade da equipe em que o residente é cadastrado
+    muda o dinheiro que entra.</p>
+
+    <div class="card">
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+        <div>
+          <div class="card-head"><h3>Quem são os residentes (confirmado)</h3></div>
+          <table>
+            <thead><tr><th>Programa</th><th class="num">Residentes</th></tr></thead>
+            <tbody>
+              <tr><td>UFSM — MFC (7 R1 + 7 R2) + ano adicional (R3)</td><td class="num">15</td></tr>
+              <tr><td>UFN — MFC</td><td class="num">7</td></tr>
+              <tr><td><strong>Total</strong></td><td class="num"><strong>22</strong></td></tr>
+            </tbody>
+          </table>
+          <p class="note">Composição confirmada com os próprios residentes. Bate com os dois empenhos do mês
+          (11 + 11) e com o INSS patronal: em ago/2026 o município recolheu <strong>R$ 19.800,01</strong> =
+          exatamente 20% de R$ 99.000 (22 × R$ 4.500). Em mai–jun/2026 os empenhos declaram 23 — um a mais,
+          consistente com a transição de turma de março.</p>
+          <a class="src" href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18203/2026" target="_blank" rel="noopener">Ver o empenho do INSS (19.800) ↗</a>
+        </div>
+        <div>
+          <div class="card-head"><h3>Onde isso aparece no detalhe do empenho</h3></div>
+          <dl class="kv">
+            <dt>Secretaria</dt><dd>Secretaria de Município da Saúde</dd>
+            <dt>Unidade orçamentária</dt><dd>Fundo Municipal de Saúde</dd>
+            <dt>Projeto/atividade</dt><dd>Manutenção dos Serviços Básicos de Saúde</dd>
+            <dt>Categoria</dt><dd>RESIDÊNCIA MÉDICA</dd>
+            <dt>Fonte</dt><dd>Transferências fundo a fundo – Bloco de Manutenção <em>ou</em> recursos próprios (ASPS)</dd>
+          </dl>
+          <p class="note">A lei municipal previa o elemento 3.3.90.48 (“Outros auxílios a pessoa física”); na
+          execução o gasto aparece como “Outros serviços de terceiros – pessoa física” (3.3.90.36). É por isso
+          que o elemento previsto na lei aparece zerado nos relatórios anuais.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Atenção: residentes em eAP ficam fora da lista do incentivo federal</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — texto e lista oficial</span>
+      </div>
+      <p>A Portaria GM/MS 10.193/2026 admite o cadastro de residentes para fins do incentivo apenas nas
+      equipes <strong>eSF, eSB, eMulti, eSFF da UBSF, eSFR, eCR e eAPP</strong>. A <strong>eAP não está na
+      lista</strong>. E o município tem muitas equipes dessa modalidade: o histórico de credenciamento do MS
+      registra <strong>16 equipes eAP aprovadas</strong> (12 em 2020, 3 em 2023 e 1 em 2024, além de 2 pedidos
+      pendentes), e a planilha de pagamentos de 2026 mostra <strong>21 a 24 equipes eAP credenciadas,
+      homologadas e pagas</strong> por competência.</p>
+      <p class="note"><strong>Atenção ao que esses números são e não são:</strong> são <em>equipes</em>, não
+      residentes. Nenhuma base pública diz quantos residentes estão lotados em cada equipe — essa informação
+      vem dos próprios residentes e da coordenação do programa. As duas fontes de contagem de equipes estão
+      detalhadas na seção Fontes.</p>
+      <p class="note">Ou seja: eAP credenciada recebe custeio normal da APS, mas não gera o incentivo de
+      residência. Para os 2 residentes nessa situação, o município não recebe os R$ 8.000 — e a lei municipal
+      condiciona a bolsa à existência do repasse federal. Vale conferir no CNES em qual INE cada um está
+      cadastrado e levar o caso à coordenação do programa e à Secretaria de Saúde.</p>
+      <a class="src" href="https://relatorioaps.saude.gov.br/gerenciaaps/pagamento" target="_blank" rel="noopener">Lista oficial de credenciamentos (painel APS) ↗</a>
+      <a class="src" href="https://cnes.datasus.gov.br" target="_blank" rel="noopener" style="margin-left:8px">Conferir seu cadastro no CNES ↗</a>
+    </div>
+  </section>
+
+  <section id="federal">
+    <h2 class="sec">Dinheiro federal recebido — dado oficial do Ministério da Saúde</h2>
+    <p class="lead">Extraído das planilhas do painel oficial de pagamentos da APS (aba “Residência”), baixadas
+    em 13/10/2026. É o valor que o Ministério da Saúde <strong>efetivamente transferiu</strong> ao município
+    por competência — e a comparação com o que a prefeitura pagou de bolsa no mesmo mês.</p>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Incentivo federal (barras) × bolsa paga aos residentes (linha) — mesma escala, em R$</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — planilha oficial do MS</span>
+      </div>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--series-1)"></i> Incentivo federal recebido pelo município</span>
+        <span><i class="swatch" style="background:var(--series-2)"></i> Bolsa auxílio paga aos residentes</span>
+      </div>
+      <p class="note">Duas mudanças visíveis: em <strong>fev/2026</strong> o valor por residente sobe de
+      R$ 4.500 para R$ 8.000 (Portaria GM/MS 10.193/2026) e a barra dispara; em <strong>jul/2026</strong>
+      a barra some — o incentivo daquela competência veio <strong>R$ 0,00</strong>.</p>
+      <svg viewBox="0 0 900 300" class="chart" role="img" aria-label="Incentivo federal recebido por competencia e bolsa paga aos residentes, mesma escala em reais."><line class="grid" x1="70" y1="254.0" x2="882" y2="254.0"/><text class="tick" x="61" y="257.6" text-anchor="end">0</text><line class="grid" x1="70" y1="174.7" x2="882" y2="174.7"/><text class="tick" x="61" y="178.3" text-anchor="end">50 mil</text><line class="grid" x1="70" y1="95.3" x2="882" y2="95.3"/><text class="tick" x="61" y="98.9" text-anchor="end">100 mil</text><line class="grid" x1="70" y1="16.0" x2="882" y2="16.0"/><text class="tick" x="61" y="19.6" text-anchor="end">150 mil</text><line class="axis" x1="70" y1="254" x2="882" y2="254"/><rect class="bar" data-tip="NOV/2024 · incentivo federal R$ 49.500,00 · 11 residentes pagos" x="81.3" y="175.5" width="16.0" height="78.5" rx="4.0" ry="4.0"><title>NOV/2024 · incentivo federal R$ 49.500,00 · 11 residentes pagos</title></rect><rect class="bar" data-tip="DEZ/2024 · incentivo federal R$ 45.000,00 · 10 residentes pagos" x="120.0" y="182.6" width="16.0" height="71.4" rx="4.0" ry="4.0"><title>DEZ/2024 · incentivo federal R$ 45.000,00 · 10 residentes pagos</title></rect><rect class="bar" data-tip="JAN/2025 · incentivo federal R$ 45.000,00 · 10 residentes pagos" x="158.7" y="182.6" width="16.0" height="71.4" rx="4.0" ry="4.0"><title>JAN/2025 · incentivo federal R$ 45.000,00 · 10 residentes pagos</title></rect><rect class="bar" data-tip="FEV/2025 · incentivo federal R$ 27.000,00 · 6 residentes pagos" x="197.3" y="211.2" width="16.0" height="42.8" rx="4.0" ry="4.0"><title>FEV/2025 · incentivo federal R$ 27.000,00 · 6 residentes pagos</title></rect><rect class="bar" data-tip="MAR/2025 · incentivo federal R$ 36.000,00 · 8 residentes pagos" x="236.0" y="196.9" width="16.0" height="57.1" rx="4.0" ry="4.0"><title>MAR/2025 · incentivo federal R$ 36.000,00 · 8 residentes pagos</title></rect><rect class="bar" data-tip="ABR/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos" x="274.7" y="154.0" width="16.0" height="100.0" rx="4.0" ry="4.0"><title>ABR/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos</title></rect><rect class="bar" data-tip="MAI/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos" x="313.3" y="154.0" width="16.0" height="100.0" rx="4.0" ry="4.0"><title>MAI/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos</title></rect><rect class="bar" data-tip="JUN/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos" x="352.0" y="154.0" width="16.0" height="100.0" rx="4.0" ry="4.0"><title>JUN/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos</title></rect><rect class="bar" data-tip="JUL/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos" x="390.7" y="154.0" width="16.0" height="100.0" rx="4.0" ry="4.0"><title>JUL/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos</title></rect><rect class="bar" data-tip="AGO/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos" x="429.3" y="154.0" width="16.0" height="100.0" rx="4.0" ry="4.0"><title>AGO/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos</title></rect><rect class="bar" data-tip="SET/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos" x="468.0" y="154.0" width="16.0" height="100.0" rx="4.0" ry="4.0"><title>SET/2025 · incentivo federal R$ 63.000,00 · 14 residentes pagos</title></rect><rect class="bar" data-tip="OUT/2025 · incentivo federal R$ 76.500,00 · 17 residentes pagos" x="506.7" y="132.6" width="16.0" height="121.4" rx="4.0" ry="4.0"><title>OUT/2025 · incentivo federal R$ 76.500,00 · 17 residentes pagos</title></rect><rect class="bar" data-tip="NOV/2025 · incentivo federal R$ 76.500,00 · 17 residentes pagos" x="545.3" y="132.6" width="16.0" height="121.4" rx="4.0" ry="4.0"><title>NOV/2025 · incentivo federal R$ 76.500,00 · 17 residentes pagos</title></rect><rect class="bar" data-tip="DEZ/2025 · incentivo federal R$ 76.500,00 · 17 residentes pagos" x="584.0" y="132.6" width="16.0" height="121.4" rx="4.0" ry="4.0"><title>DEZ/2025 · incentivo federal R$ 76.500,00 · 17 residentes pagos</title></rect><rect class="bar" data-tip="JAN/2026 · incentivo federal R$ 76.500,00 · 17 residentes pagos" x="622.7" y="132.6" width="16.0" height="121.4" rx="4.0" ry="4.0"><title>JAN/2026 · incentivo federal R$ 76.500,00 · 17 residentes pagos</title></rect><rect class="bar" data-tip="FEV/2026 · incentivo federal R$ 136.000,00 · 17 residentes pagos" x="661.3" y="38.2" width="16.0" height="215.8" rx="4.0" ry="4.0"><title>FEV/2026 · incentivo federal R$ 136.000,00 · 17 residentes pagos</title></rect><rect class="bar" data-tip="MAR/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos" x="700.0" y="101.7" width="16.0" height="152.3" rx="4.0" ry="4.0"><title>MAR/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos</title></rect><rect class="bar" data-tip="ABR/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos" x="738.7" y="101.7" width="16.0" height="152.3" rx="4.0" ry="4.0"><title>ABR/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos</title></rect><rect class="bar" data-tip="MAI/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos" x="777.3" y="101.7" width="16.0" height="152.3" rx="4.0" ry="4.0"><title>MAI/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos</title></rect><rect class="bar" data-tip="JUN/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos" x="816.0" y="101.7" width="16.0" height="152.3" rx="4.0" ry="4.0"><title>JUN/2026 · incentivo federal R$ 96.000,00 · 12 residentes pagos</title></rect><text class="tick zero" x="862.7" y="248.0" text-anchor="middle">0</text><path class="line s2" d="M 89.3 139.8 L 128.0 139.8 L 166.7 135.5 L 205.3 154.0 L 244.0 123.3 L 282.7 111.2 L 321.3 111.2 L 360.0 111.2 L 398.7 111.2 L 437.3 111.2 L 476.0 111.2 L 514.7 118.3 L 553.3 118.3 L 592.0 118.3 L 630.7 118.3 L 669.3 118.3 L 708.0 161.2 L 746.7 20.8 L 785.3 89.8 L 824.0 89.8 L 862.7 96.9"/><circle class="dot s2" cx="89.3" cy="139.8" r="4.5"/><circle class="dot s2" cx="862.7" cy="96.9" r="4.5"/><text class="dlab" x="97.3" y="131.8">Bolsa paga aos residentes (linha)</text><text class="tick xlab" x="89.3" y="274.0" text-anchor="middle">nov</text><text class="tick xlab" x="89.3" y="287.0" text-anchor="middle">24</text><text class="tick xlab" x="205.3" y="274.0" text-anchor="middle">fev</text><text class="tick xlab" x="205.3" y="287.0" text-anchor="middle">25</text><text class="tick xlab" x="321.3" y="274.0" text-anchor="middle">mai</text><text class="tick xlab" x="321.3" y="287.0" text-anchor="middle">25</text><text class="tick xlab" x="437.3" y="274.0" text-anchor="middle">ago</text><text class="tick xlab" x="437.3" y="287.0" text-anchor="middle">25</text><text class="tick xlab" x="553.3" y="274.0" text-anchor="middle">nov</text><text class="tick xlab" x="553.3" y="287.0" text-anchor="middle">25</text><text class="tick xlab" x="669.3" y="274.0" text-anchor="middle">fev</text><text class="tick xlab" x="669.3" y="287.0" text-anchor="middle">26</text><text class="tick xlab" x="785.3" y="274.0" text-anchor="middle">mai</text><text class="tick xlab" x="785.3" y="287.0" text-anchor="middle">26</text><text class="tick xlab" x="862.7" y="274.0" text-anchor="middle">jul</text><text class="tick xlab" x="862.7" y="287.0" text-anchor="middle">26</text></svg>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Competência por competência</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — link para a planilha</span>
+      </div>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Competência</th><th class="num">Residentes credenciados</th><th class="num">Residentes pagos</th>
+          <th class="num">Incentivo federal recebido</th><th class="num">Bolsa paga (prefeitura)</th><th class="num">Diferença</th></tr></thead>
+          <tbody>
+<tr><td>NOV/2024</td><td class="num">18</td><td class="num">11</td><td class="num">R$ 49.500,00</td><td class="num">R$ 72.000,00</td><td class="num">R$ -22.500,00</td></tr>
+<tr><td>DEZ/2024</td><td class="num">18</td><td class="num">10</td><td class="num">R$ 45.000,00</td><td class="num">R$ 72.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>JAN/2025</td><td class="num">18</td><td class="num">10</td><td class="num">R$ 45.000,00</td><td class="num">R$ 74.700,00</td><td class="num">R$ -29.700,00</td></tr>
+<tr><td>FEV/2025</td><td class="num">18</td><td class="num">6</td><td class="num">R$ 27.000,00</td><td class="num">R$ 63.000,00</td><td class="num">R$ -36.000,00</td></tr>
+<tr><td>MAR/2025</td><td class="num">15</td><td class="num">8</td><td class="num">R$ 36.000,00</td><td class="num">R$ 82.350,00</td><td class="num">R$ -46.350,00</td></tr>
+<tr><td>ABR/2025</td><td class="num">15</td><td class="num">14</td><td class="num">R$ 63.000,00</td><td class="num">R$ 90.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>MAI/2025</td><td class="num">15</td><td class="num">14</td><td class="num">R$ 63.000,00</td><td class="num">R$ 90.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>JUN/2025</td><td class="num">15</td><td class="num">14</td><td class="num">R$ 63.000,00</td><td class="num">R$ 90.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>JUL/2025</td><td class="num">15</td><td class="num">14</td><td class="num">R$ 63.000,00</td><td class="num">R$ 90.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>AGO/2025</td><td class="num">15</td><td class="num">14</td><td class="num">R$ 63.000,00</td><td class="num">R$ 90.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>SET/2025</td><td class="num">15</td><td class="num">14</td><td class="num">R$ 63.000,00</td><td class="num">R$ 90.000,00</td><td class="num">R$ -27.000,00</td></tr>
+<tr><td>OUT/2025</td><td class="num">18</td><td class="num">17</td><td class="num">R$ 76.500,00</td><td class="num">R$ 85.500,00</td><td class="num">R$ -9.000,00</td></tr>
+<tr><td>NOV/2025</td><td class="num">18</td><td class="num">17</td><td class="num">R$ 76.500,00</td><td class="num">R$ 85.500,00</td><td class="num">R$ -9.000,00</td></tr>
+<tr><td>DEZ/2025</td><td class="num">18</td><td class="num">17</td><td class="num">R$ 76.500,00</td><td class="num">R$ 85.500,00</td><td class="num">R$ -9.000,00</td></tr>
+<tr><td>JAN/2026</td><td class="num">18</td><td class="num">17</td><td class="num">R$ 76.500,00</td><td class="num">R$ 85.500,00</td><td class="num">R$ -9.000,00</td></tr>
+<tr><td>FEV/2026</td><td class="num">18</td><td class="num">17</td><td class="num">R$ 136.000,00</td><td class="num">R$ 85.500,00</td><td class="num">R$ 50.500,00</td></tr>
+<tr><td>MAR/2026</td><td class="num">18</td><td class="num">12</td><td class="num">R$ 96.000,00</td><td class="num">R$ 58.500,00</td><td class="num">R$ 37.500,00</td></tr>
+<tr><td>ABR/2026</td><td class="num">18</td><td class="num">12</td><td class="num">R$ 96.000,00</td><td class="num">R$ 147.000,00</td><td class="num">R$ -51.000,00</td></tr>
+<tr><td>MAI/2026</td><td class="num">18</td><td class="num">12</td><td class="num">R$ 96.000,00</td><td class="num">R$ 103.500,00</td><td class="num">R$ -7.500,00</td></tr>
+<tr><td>JUN/2026</td><td class="num">18</td><td class="num">12</td><td class="num">R$ 96.000,00</td><td class="num">R$ 103.500,00</td><td class="num">R$ -7.500,00</td></tr>
+<tr style="background:color-mix(in oklab, var(--warning) 14%, transparent)"><td>JUL/2026</td><td class="num">18</td><td class="num">0</td><td class="num">R$ 0,00</td><td class="num">R$ 99.000,00</td><td class="num">R$ -99.000,00</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td></td><td class="num"><strong>R$ 1.406.500,00</strong></td><td class="num"><strong>R$ 1.843.050,00</strong></td><td class="num"><strong>R$ -436.550,00</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">“Credenciados” é o teto reconhecido pelo MS (18 residentes de medicina); “pagos” é quantos
+      efetivamente geraram incentivo naquela competência. Entre mar/2026 e jun/2026 o município pagou bolsa a
+      22–23 residentes, mas só 12 geraram incentivo federal — os demais foram custeados com recursos próprios.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Quem paga a folha, na prática</h3>
+        <span class="badge est"><i class="dot"></i>Estimativa — mês típico de 2026</span>
+      </div>
+      <table>
+        <thead><tr><th>Mês típico (22 residentes)</th><th class="num">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Entra: incentivo federal (12 residentes × R$ 8.000)</td><td class="num">R$ 96.000,00</td></tr>
+          <tr><td>Sai: bolsas (22 × R$ 4.500)</td><td class="num">R$ 99.000,00</td></tr>
+          <tr><td>Sai: INSS patronal 20% sobre as bolsas</td><td class="num">R$ 19.800,00</td></tr>
+          <tr><td><strong>Custo total do programa</strong></td><td class="num"><strong>R$ 118.800,00</strong></td></tr>
+          <tr><td><strong>Cobertura federal</strong></td><td class="num"><strong>≈ 81%</strong></td></tr>
+          <tr><td><strong>Co-finança municipal</strong></td><td class="num"><strong>≈ R$ 22.800,00/mês</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="note">Leitura honesta: o aumento federal não fica “parado no fundo” — ele sustenta a maior parte
+      da folha, incluindo os residentes que <em>não</em> geram incentivo (cerca de 10 dos 22). O ponto
+      factual é outro: para os 12 residentes credenciados o governo federal paga R$ 8.000, e a bolsa que
+      chega ao profissional é R$ 4.500. A lei não obriga repassar a diferença — mas também não proíbe, e o
+      art. 3º, §1º prevê correção anual que nunca foi aplicada.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>⚠ Julho/2026: o incentivo veio zerado</h3>
+        <span class="badge aberto"><i class="dot"></i>Em aberto — causa a apurar</span>
+      </div>
+      <p>Na competência <strong>jul/2026</strong> o plano orçamentário “Demais programas, serviços e equipes da
+      Atenção Primária” (onde entra o incentivo de residência) foi transferido com <strong>R$ 0,00</strong>,
+      enquanto todos os outros planos da APS seguiram normais no mesmo mês: eSF+eAP R$ 931.126,00; saúde bucal
+      R$ 72.387,49; eMulti R$ 15.000,00; ACS R$ 343.652,00; per capita R$ 140.020,85.</p>
+      <p class="note">A planilha foi baixada em 13/10/2026 — três meses depois, então não é simples atraso de
+      processamento da mesma semana. As hipóteses previstas na Portaria GM/MS 10.193/2026 são: ausência de
+      envio de produção ao SIAPS por 3 competências (art. 172-H, I), cadastro irregular no SCNES (II) ou
+      ausência de cadastro de novo residente (III). A pergunta a fazer à gestão é direta: <em>qual foi a causa
+      do não pagamento da competência jul/2026 e o que foi feito para restabelecer?</em></p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Como este dado apareceu</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — reproduzível</span>
+      </div>
+      <p class="note">O painel público de pagamentos da APS estava com a API fora do ar para o relatório de
+      pagamento (erro 500 em todos os filtros, testado em 13/10/2026), mas o download da planilha pela
+      interface funcionou. O arquivo traz uma aba por tipo de equipe — incluindo “Residência”, com as colunas
+      de credenciados, pagos e valor por competência. Guarde o arquivo: é a prova documental do valor federal.</p>
+      <a class="src" href="https://relatorioaps.saude.gov.br/gerenciaaps/pagamento" target="_blank" rel="noopener">Painel de pagamentos da APS ↗</a>
+    </div>
+  </section>
+
+  <section id="dinheiro">
+    <h2 class="sec">De onde vem o dinheiro</h2>
+    <p class="lead">A trilha completa: da União para o Fundo Municipal e do Fundo Municipal para o seu bolso.</p>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Entradas federais da Atenção Primária (bloco)</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — relatório municipal</span>
+      </div>
+      <p>O relatório “Recursos Recebidos” da prefeitura mostra o que entrou no bloco federal da Atenção
+      Primária — onde o incentivo de residência está incluído: <strong>R$ 1.338.156,11 em ago/2026</strong> e
+      <strong>R$ 13.486.692,62 no acumulado do ano</strong>.</p>
+      <p class="note">O município não abre o incentivo de residência em linha separada. A API nacional que
+      faria isso (painel de pagamentos da APS) está indisponível — responde erro 500 para qualquer filtro,
+      inclusive Brasil, enquanto os relatórios de cobertura respondem normalmente.</p>
+      <a class="src" href="https://www.santamaria.rs.gov.br/transparencia/contas-publicas/rr" target="_blank" rel="noopener">Recursos Recebidos (prefeitura) ↗</a>
+      <a class="src" href="https://relatorioaps.saude.gov.br/gerenciaaps/pagamento" target="_blank" rel="noopener" style="margin-left:8px">Painel de pagamentos da APS (MS) ↗</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Quanto o incentivo federal vale, por mês</h3>
+        <span class="badge est"><i class="dot"></i>Estimativa — com premissa explícita</span>
+      </div>
+      <p><strong>Premissa:</strong> 11 residentes credenciados (o grupo pago com recurso federal nos
+      empenhos). Com o valor de R$ 8.000/residente introduzido em fev/2026:</p>
+      <table>
+        <thead><tr><th>Agosto/2026 (por mês)</th><th class="num">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Entra: bloco federal da Atenção Primária (inclui o incentivo)</td><td class="num">R$ 1.338.156,11</td></tr>
+          <tr><td>Sai: bolsas pagas aos 22 residentes</td><td class="num">R$ 99.000,00</td></tr>
+          <tr><td>Incentivo estimado (11 × R$ 8.000)</td><td class="num">≈ R$ 88.000,00</td></tr>
+          <tr><td>Diferença coberta com recursos próprios</td><td class="num">≈ R$ 11.000,00</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Antes do aumento (2025), o mesmo cálculo dava ≈ R$ 49.500 de entrada para ≈ R$ 36.000–40.500
+      de cobertura municipal. Leitura: <strong>o aumento federal aliviou o caixa do programa, mas não o bolso
+      do residente</strong>. O número exato de credenciados é a premissa — está entre os itens “em aberto”.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>Como fechar lacunas com pedido de informação</h3>
+        <span class="badge aberto"><i class="dot"></i>Em aberto — caminho pronto</span>
+      </div>
+      <p>Dois pedidos já redigidos na pasta: <strong>PEDIDO-LAI-bolsa-residentes.md</strong> (à prefeitura —
+      bruto, descontos e líquido de cada residente, empenhos, reajuste, credenciamento) e
+      <strong>PEDIDO-LAI-incentivo-federal-MS.md</strong> (ao Ministério da Saúde — valores do incentivo por
+      competência, residentes por equipe, portaria de credenciamento).</p>
+      <a class="src" href="https://falabr.cgu.gov.br" target="_blank" rel="noopener">Protocolar no Fala.BR ↗</a>
+      <a class="src" href="https://santamaria.rs.gov.br/ouvidoria" target="_blank" rel="noopener" style="margin-left:8px">Ouvidoria de Santa Maria ↗</a>
+    </div>
+  </section>
+
+  <section id="avaliar">
+    <h2 class="sec">Como avaliar estes achados</h2>
+    <p class="lead">Este dossiê mistura coisas de naturezas diferentes. Usar o selo certo para cada uma é o
+    que separa uma reclamação que a gestão responde de uma que ela arquiva.</p>
+
+    <div class="card">
+      <div class="card-head"><h3>1. Separe fato de inferência</h3><span class="badge fato"><i class="dot"></i>Método</span></div>
+      <ul class="tight">
+        <li><strong>Fato</strong> é o que está escrito no documento oficial: valor do empenho, data, número de residentes na descrição, o que a portaria manda. Se alguém contestar, o link resolve.</li>
+        <li><strong>Estimativa</strong> é conta feita com premissa. Aqui, a principal é o número de residentes credenciados (11). Se a premissa cair, a conclusão muda — por isso ela está escrita na cara.</li>
+        <li><strong>Em aberto</strong> é ausência de fonte pública — não é “provável que”, é “não sei ainda”. Não use como argumento até fechar.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>2. Confira pelo caminho independente</h3><span class="badge fato"><i class="dot"></i>Método</span></div>
+      <ul class="tight">
+        <li><strong>Pagamentos:</strong> abra dois ou três empenhos da tabela e leia a descrição do item — ela diz o mês de referência e quantos residentes foram pagos.</li>
+        <li><strong>Seu caso:</strong> no portal, filtre por ano + “Secretaria de Município da Saúde” e procure “FOLHA PGTO COLETIVA”. Em 2021/2022 aparecem nomes individuais; de 2023 em diante, a folha é coletiva (o seu nome não aparece — por isso a LAI).</li>
+        <li><strong>Seu INSS:</strong> Meu INSS → Extrato de Contribuição (CNIS) mostra mês a mês quem recolheu em seu nome e sobre qual valor. Se houver desconto de 11%, ele está lá; se o valor cai cheio, você recebe os R$ 4.500 brutos.</li>
+        <li><strong>Sua equipe:</strong> CNES → profissionais → busque seu nome e veja a equipe/INE e o código (“05 – Residência”, “01 – Residente”). É isso que determina se o município recebe o incentivo por você.</li>
+      </ul>
+      <a class="src" href="https://meu.inss.gov.br" target="_blank" rel="noopener">Meu INSS / CNIS ↗</a>
+      <a class="src" href="https://cnes.datasus.gov.br" target="_blank" rel="noopener" style="margin-left:8px">CNES ↗</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>3. Teste a hipótese contrária antes de afirmar</h3><span class="badge aberto"><i class="dot"></i>Método</span></div>
+      <ul class="tight">
+        <li>“O valor não subiu porque o município não recebeu o incentivo” → confere-se pelo credenciamento e pelos repasses. Se o município está credenciado e recebe R$ 8.000, a hipótese cai.</li>
+        <li>“A lei manda reajustar anualmente” → o art. 3º, §1º remete a “critérios formalizados pelo Ministério da Saúde”. A pergunta certa é <em>qual ato definiu esse critério</em> — e se ele existe.</li>
+        <li>“Falta dinheiro” → os empenhos mostram pagamentos em dia de 2021 a ago/2026. O que falta é reajuste, não pagamento.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>4. Peça o que a gestão é obrigada a responder</h3><span class="badge aberto"><i class="dot"></i>Método</span></div>
+      <p class="note">Em vez de “onde está o aumento?”, pergunte por escrito: qual o valor do incentivo do
+      art. 172-E recebido por competência; quantos residentes estão credenciados; qual ato aplicou (ou não) o
+      reajuste do art. 3º, §1º. São perguntas objetivas, com prazo legal de resposta — e as duas peças de LAI
+      na pasta já estão nesse formato.</p>
+    </div>
+  </section>
+
+  <section id="fazer">
+    <h2 class="sec">O que fazer com isso</h2>
+    <p class="lead">Quatro caminhos concretos — do mais rápido ao mais formal.</p>
+    <div class="actions">
+      <div class="action">
+        <h4>1. Confira seu INSS</h4>
+        <p>O Meu INSS mostra, mês a mês, quem recolheu em seu nome e sobre qual valor. É a resposta
+        definitiva sobre o desconto de 11%.</p>
+        <a class="go" href="https://meu.inss.gov.br" target="_blank" rel="noopener">Abrir Meu INSS ↗</a>
+      </div>
+      <div class="action">
+        <h4>2. Confira seu cadastro no CNES</h4>
+        <p>Veja em qual equipe (INE) você está registrado. É isso que determina se o município recebe o
+        incentivo federal por você — eAP não está na lista de equipes elegíveis.</p>
+        <a class="go" href="https://cnes.datasus.gov.br" target="_blank" rel="noopener">Abrir CNES ↗</a>
+      </div>
+      <div class="action">
+        <h4>3. Peça por escrito</h4>
+        <p>Os dois pedidos de informação prontos (prefeitura e Ministério da Saúde) perguntam o valor
+        recebido por competência, quantos residentes estão credenciados e por que o reajuste não foi
+        aplicado. Prazo legal de resposta: 20 dias.</p>
+        <a class="go" href="https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/pedidos/pedido-prefeitura.md" target="_blank" rel="noopener">Pedido à prefeitura ↗</a>
+        <a class="go" style="margin-top:8px" href="https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/pedidos/pedido-ministerio-saude.md" target="_blank" rel="noopener">Pedido ao Ministério da Saúde ↗</a>
+      </div>
+      <div class="action">
+        <h4>4. Compartilhe</h4>
+        <p>O dossiê é uma página única, offline e sem dados pessoais. Mande o link ou o arquivo para a
+        turma, para a coordenação do programa e para a associação de residentes.</p>
+        <a class="go" href="#" onclick="navigator.clipboard&amp;&amp;navigator.clipboard.writeText(location.href);return false">Copiar link desta página</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="fontes">
+    <h2 class="sec">Fontes</h2>
+    <p class="lead">Todas as fontes usadas, com o status de cada uma na data de hoje.</p>
+    <div class="card">
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Fonte</th><th>O que prova</th><th>Status</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td>Portal da Transparência de Santa Maria — Empenhos</td><td>Valores, datas, credores, natureza da despesa e fonte de recurso</td><td>Operando</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>Portal — Despesa por Categoria (TRD)</td><td>Execução mensal por natureza da despesa (PDFs oficiais)</td><td>Operando</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/despesa-por-categoria" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>Portal — Recursos Recebidos</td><td>Entradas federais por bloco (Atenção Primária, Especializada, Vigilância)</td><td>Operando</td><td><a href="https://www.santamaria.rs.gov.br/transparencia/contas-publicas/rr" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>API de Dados Abertos da prefeitura (Swagger)</td><td>Despesas e receitas em JSON</td><td><strong>Despesas quebrado</strong> (erro de coluna no servidor); Receitas ok</td><td><a href="https://gestaodepessoal.santamaria.rs.gov.br/DADOSABERTOS/swagger/v1/swagger.json" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>Portaria GM/MS 10.193/2026 (BVS Saúde Legis)</td><td>Valores do incentivo federal, equipes elegíveis, regras de suspensão</td><td>Operando</td><td><a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt10193_02_02_2026.html" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>APS (MS) — <strong>histórico de credenciamento</strong> (API <code>/credenciamento/solicitacoes-adesao/gerencia</code>)</td><td>Equipes pedidas e deferidas por município. Santa Maria: 16 eAP, 6 eSF, 19 ACS, 1 eCR</td><td>API responde (JSON ~14 MB)</td><td><a href="https://relatorioaps.saude.gov.br/gerenciaaps/pagamento" target="_blank" rel="noopener">abrir painel ↗</a></td></tr>
+            <tr><td>APS (MS) — <strong>planilha de pagamento</strong>, aba “eAP” (arquivo baixado em 13/10/2026)</td><td>Equipes eAP credenciadas/homologadas/pagas por competência: 24 (nov/2025–mar/2026) e 21 (abr–jul/2026)</td><td>Arquivo em <code>Excell relatorioaps saude gov/</code></td><td><a href="https://relatorioaps.saude.gov.br/gerenciaaps/pagamento" target="_blank" rel="noopener">baixar de novo ↗</a></td></tr>
+            <tr><td>Relatórios Públicos da APS (MS) — pagamentos</td><td>Valores do incentivo por competência</td><td><strong>Fora do ar</strong> — erro 500 em todos os filtros (13/10/2026)</td><td><a href="https://relatorioaps.saude.gov.br/gerenciaaps/pagamento" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>Edital UFSM 034/2025 / seleção UFN</td><td>Vagas por ano de cada programa</td><td>Operando</td><td><a href="https://www.ufsm.br/app/uploads/sites/345/2025/09/Edital-034-2025-RM.pdf" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>Meu INSS — extrato CNIS</td><td>Contribuições previdenciárias em seu nome</td><td>Requer login do titular</td><td><a href="https://meu.inss.gov.br" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+            <tr><td>CNES / DATASUS</td><td>Equipe (INE) e código do profissional residente</td><td>Operando</td><td><a href="https://cnes.datasus.gov.br" target="_blank" rel="noopener">abrir ↗</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="aberto">
+    <h2 class="sec">Em aberto</h2>
+    <p class="lead">O que ainda não tem resposta pública — e o que resolveria cada ponto.</p>
+    <div class="card">
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Pergunta</th><th>Como fecha</th></tr></thead>
+          <tbody>
+            <tr><td>Quantos residentes estão credenciados e quanto o município recebe por competência?</td><td>Painel de pagamentos da APS (quando voltar), pedido ao MS via Fala.BR, ou o item 6 do pedido à prefeitura</td></tr>
+            <tr><td>Existe ato que aplique o reajuste anual do art. 3º, §1º da lei municipal?</td><td>Pedido à prefeitura (item 5) — obriga posição oficial</td></tr>
+            <tr><td>Há desconto de 11% no valor pago ao residente?</td><td>Contracheque/recibo e extrato CNIS (autoatendimento)</td></tr>
+            <tr><td>Os 2 residentes em eAP podem ser vinculados a equipe elegível?</td><td>Coordenação do programa + Secretaria de Saúde + CNES</td></tr>
+            <tr><td>Turma atual da UFN e composição exata dos 22 pagos em ago/2026</td><td>COREMEs das duas instituições</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Página gerada em 13/10/2026 a partir de 266 empenhos públicos da Secretaria de Município da Saúde,
+    extraídos do Portal da Transparência de Santa Maria. Arquivo autocontido: funciona offline, não envia dado
+    nenhum a servidor. Dados de execução (empenhado) e não substituem os demonstrativos contábeis oficiais.
+  </footer>
+</main>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+<button class="btn theme" id="theme" title="Alternar tema claro/escuro">◐ tema</button>
+
+<script>
+(function () {
+  var MESES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  var EMP = [{"ano": 2023, "mes": 1, "nr": "1422", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1422/2023"}, {"ano": 2023, "mes": 1, "nr": "1425", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1425/2023"}, {"ano": 2023, "mes": 1, "nr": "1426", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1426/2023"}, {"ano": 2023, "mes": 1, "nr": "1427", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1427/2023"}, {"ano": 2023, "mes": 1, "nr": "1431", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1431/2023"}, {"ano": 2023, "mes": 1, "nr": "1433", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1433/2023"}, {"ano": 2023, "mes": 1, "nr": "1435", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1435/2023"}, {"ano": 2023, "mes": 1, "nr": "1438", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1438/2023"}, {"ano": 2023, "mes": 1, "nr": "1439", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1439/2023"}, {"ano": 2023, "mes": 1, "nr": "1440", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1440/2023"}, {"ano": 2023, "mes": 1, "nr": "1441", "data": "20/01/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1441/2023"}, {"ano": 2023, "mes": 2, "nr": "3237", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3237/2023"}, {"ano": 2023, "mes": 2, "nr": "3238", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3238/2023"}, {"ano": 2023, "mes": 2, "nr": "3239", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3239/2023"}, {"ano": 2023, "mes": 2, "nr": "3240", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3240/2023"}, {"ano": 2023, "mes": 2, "nr": "3241", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3241/2023"}, {"ano": 2023, "mes": 2, "nr": "3242", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3242/2023"}, {"ano": 2023, "mes": 2, "nr": "3243", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3243/2023"}, {"ano": 2023, "mes": 2, "nr": "3244", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3244/2023"}, {"ano": 2023, "mes": 2, "nr": "3245", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3245/2023"}, {"ano": 2023, "mes": 2, "nr": "3246", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3246/2023"}, {"ano": 2023, "mes": 2, "nr": "3247", "data": "17/02/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3247/2023"}, {"ano": 2023, "mes": 3, "nr": "5331", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5331/2023"}, {"ano": 2023, "mes": 3, "nr": "5332", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5332/2023"}, {"ano": 2023, "mes": 3, "nr": "5333", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5333/2023"}, {"ano": 2023, "mes": 3, "nr": "5334", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5334/2023"}, {"ano": 2023, "mes": 3, "nr": "5335", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5335/2023"}, {"ano": 2023, "mes": 3, "nr": "5336", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5336/2023"}, {"ano": 2023, "mes": 3, "nr": "5337", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5337/2023"}, {"ano": 2023, "mes": 3, "nr": "5338", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5338/2023"}, {"ano": 2023, "mes": 3, "nr": "5339", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5339/2023"}, {"ano": 2023, "mes": 3, "nr": "5340", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5340/2023"}, {"ano": 2023, "mes": 3, "nr": "5341", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5341/2023"}, {"ano": 2023, "mes": 3, "nr": "5342", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5342/2023"}, {"ano": 2023, "mes": 3, "nr": "5343", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5343/2023"}, {"ano": 2023, "mes": 3, "nr": "5344", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5344/2023"}, {"ano": 2023, "mes": 3, "nr": "5345", "data": "22/03/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/5345/2023"}, {"ano": 2023, "mes": 4, "nr": "6876", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6876/2023"}, {"ano": 2023, "mes": 4, "nr": "6877", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6877/2023"}, {"ano": 2023, "mes": 4, "nr": "6878", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6878/2023"}, {"ano": 2023, "mes": 4, "nr": "6879", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6879/2023"}, {"ano": 2023, "mes": 4, "nr": "6880", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6880/2023"}, {"ano": 2023, "mes": 4, "nr": "6881", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6881/2023"}, {"ano": 2023, "mes": 4, "nr": "6882", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6882/2023"}, {"ano": 2023, "mes": 4, "nr": "6883", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6883/2023"}, {"ano": 2023, "mes": 4, "nr": "6884", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6884/2023"}, {"ano": 2023, "mes": 4, "nr": "6885", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6885/2023"}, {"ano": 2023, "mes": 4, "nr": "6887", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6887/2023"}, {"ano": 2023, "mes": 4, "nr": "6888", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6888/2023"}, {"ano": 2023, "mes": 4, "nr": "6889", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6889/2023"}, {"ano": 2023, "mes": 4, "nr": "6890", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6890/2023"}, {"ano": 2023, "mes": 4, "nr": "6891", "data": "12/04/2023", "valor": 4500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6891/2023"}, {"ano": 2023, "mes": 5, "nr": "10170", "data": "29/05/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/10170/2023"}, {"ano": 2023, "mes": 6, "nr": "11508", "data": "27/06/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11508/2023"}, {"ano": 2023, "mes": 7, "nr": "13535", "data": "25/07/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13535/2023"}, {"ano": 2023, "mes": 8, "nr": "16547", "data": "28/08/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/16547/2023"}, {"ano": 2023, "mes": 9, "nr": "18016", "data": "26/09/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18016/2023"}, {"ano": 2023, "mes": 10, "nr": "20718", "data": "24/10/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/20718/2023"}, {"ano": 2023, "mes": 11, "nr": "23151", "data": "28/11/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/23151/2023"}, {"ano": 2023, "mes": 12, "nr": "24287", "data": "22/12/2023", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24287/2023"}, {"ano": 2024, "mes": 1, "nr": "1894", "data": "26/01/2024", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/1894/2024"}, {"ano": 2024, "mes": 2, "nr": "3842", "data": "26/02/2024", "valor": 67500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/3842/2024"}, {"ano": 2024, "mes": 3, "nr": "6783", "data": "25/03/2024", "valor": 76500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6783/2024"}, {"ano": 2024, "mes": 4, "nr": "8469", "data": "25/04/2024", "valor": 85500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8469/2024"}, {"ano": 2024, "mes": 5, "nr": "10636", "data": "23/05/2024", "valor": 81000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/10636/2024"}, {"ano": 2024, "mes": 6, "nr": "13146", "data": "25/06/2024", "valor": 81000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13146/2024"}, {"ano": 2024, "mes": 7, "nr": "14932", "data": "25/07/2024", "valor": 78450.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/14932/2024"}, {"ano": 2024, "mes": 8, "nr": "17274", "data": "27/08/2024", "valor": 72000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/17274/2024"}, {"ano": 2024, "mes": 9, "nr": "19665", "data": "25/09/2024", "valor": 72000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/19665/2024"}, {"ano": 2024, "mes": 10, "nr": "21323", "data": "24/10/2024", "valor": 72000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/21323/2024"}, {"ano": 2024, "mes": 11, "nr": "23355", "data": "25/11/2024", "valor": 72000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/23355/2024"}, {"ano": 2024, "mes": 12, "nr": "25813", "data": "23/12/2024", "valor": 72000.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/25813/2024"}, {"ano": 2025, "mes": 1, "nr": "2682", "data": "28/01/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2682/2025"}, {"ano": 2025, "mes": 1, "nr": "2685", "data": "28/01/2025", "valor": 25200.0, "n": "06", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2685/2025"}, {"ano": 2025, "mes": 2, "nr": "4563", "data": "25/02/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4563/2025"}, {"ano": 2025, "mes": 2, "nr": "4565", "data": "25/02/2025", "valor": 13500.0, "n": "03", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4565/2025"}, {"ano": 2025, "mes": 3, "nr": "7010", "data": "27/03/2025", "valor": 49500.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/7010/2025"}, {"ano": 2025, "mes": 3, "nr": "7012", "data": "27/03/2025", "valor": 32850.0, "n": "", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/7012/2025"}, {"ano": 2025, "mes": 4, "nr": "8963", "data": "25/04/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8963/2025"}, {"ano": 2025, "mes": 4, "nr": "8964", "data": "25/04/2025", "valor": 40500.0, "n": "09", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8964/2025"}, {"ano": 2025, "mes": 5, "nr": "11121", "data": "27/05/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11121/2025"}, {"ano": 2025, "mes": 5, "nr": "11122", "data": "27/05/2025", "valor": 40500.0, "n": "09", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11122/2025"}, {"ano": 2025, "mes": 6, "nr": "13255", "data": "25/06/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13255/2025"}, {"ano": 2025, "mes": 6, "nr": "13257", "data": "25/06/2025", "valor": 40500.0, "n": "09", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13257/2025"}, {"ano": 2025, "mes": 7, "nr": "15854", "data": "28/07/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15854/2025"}, {"ano": 2025, "mes": 7, "nr": "15855", "data": "28/07/2025", "valor": 40500.0, "n": "09", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15855/2025"}, {"ano": 2025, "mes": 8, "nr": "18081", "data": "26/08/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18081/2025"}, {"ano": 2025, "mes": 8, "nr": "18083", "data": "26/08/2025", "valor": 40500.0, "n": "09", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18083/2025"}, {"ano": 2025, "mes": 9, "nr": "20293", "data": "25/09/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/20293/2025"}, {"ano": 2025, "mes": 9, "nr": "20294", "data": "25/09/2025", "valor": 40500.0, "n": "09", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/20294/2025"}, {"ano": 2025, "mes": 10, "nr": "22531", "data": "23/10/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/22531/2025"}, {"ano": 2025, "mes": 10, "nr": "22532", "data": "23/10/2025", "valor": 36000.0, "n": "08", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/22532/2025"}, {"ano": 2025, "mes": 11, "nr": "24824", "data": "25/11/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24824/2025"}, {"ano": 2025, "mes": 11, "nr": "24825", "data": "25/11/2025", "valor": 36000.0, "n": "08", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/24825/2025"}, {"ano": 2025, "mes": 12, "nr": "25980", "data": "22/12/2025", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/25980/2025"}, {"ano": 2025, "mes": 12, "nr": "25981", "data": "22/12/2025", "valor": 36000.0, "n": "08", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/25981/2025"}, {"ano": 2026, "mes": 1, "nr": "2198", "data": "28/01/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2198/2026"}, {"ano": 2026, "mes": 1, "nr": "2199", "data": "28/01/2026", "valor": 36000.0, "n": "08", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/2199/2026"}, {"ano": 2026, "mes": 2, "nr": "4229", "data": "24/02/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4229/2026"}, {"ano": 2026, "mes": 2, "nr": "4231", "data": "24/02/2026", "valor": 36000.0, "n": "08", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/4231/2026"}, {"ano": 2026, "mes": 3, "nr": "6629", "data": "25/03/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6629/2026"}, {"ano": 2026, "mes": 3, "nr": "6631", "data": "25/03/2026", "valor": 9000.0, "n": "02", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/6631/2026"}, {"ano": 2026, "mes": 4, "nr": "8874", "data": "27/04/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8874/2026"}, {"ano": 2026, "mes": 4, "nr": "8876", "data": "27/04/2026", "valor": 97500.0, "n": "12", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/8876/2026"}, {"ano": 2026, "mes": 5, "nr": "11247", "data": "25/05/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11247/2026"}, {"ano": 2026, "mes": 5, "nr": "11248", "data": "25/05/2026", "valor": 54000.0, "n": "12", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/11248/2026"}, {"ano": 2026, "mes": 6, "nr": "13434", "data": "24/06/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13434/2026"}, {"ano": 2026, "mes": 6, "nr": "13435", "data": "24/06/2026", "valor": 54000.0, "n": "12", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/13435/2026"}, {"ano": 2026, "mes": 7, "nr": "15049", "data": "27/07/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15049/2026"}, {"ano": 2026, "mes": 7, "nr": "15051", "data": "27/07/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/15051/2026"}, {"ano": 2026, "mes": 8, "nr": "18085", "data": "26/08/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18085/2026"}, {"ano": 2026, "mes": 8, "nr": "18088", "data": "26/08/2026", "valor": 49500.0, "n": "11", "link": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho/18088/2026"}];
+  var ANTIGOS = {"2021-04": {"total": 31500.0, "n": 5}, "2021-05": {"total": 4500.0, "n": 1}, "2021-06": {"total": 4500.0, "n": 1}, "2021-07": {"total": 4500.0, "n": 1}, "2021-09": {"total": 27000.0, "n": 5}, "2021-11": {"total": 45000.0, "n": 10}, "2021-12": {"total": 22500.0, "n": 5}, "2022-01": {"total": 22500.0, "n": 5}, "2022-02": {"total": 22500.0, "n": 5}, "2022-03": {"total": 22500.0, "n": 5}, "2022-05": {"total": 175500.0, "n": 28}, "2022-06": {"total": 58500.0, "n": 13}, "2022-07": {"total": 58500.0, "n": 13}, "2022-08": {"total": 58500.0, "n": 13}, "2022-09": {"total": 49500.0, "n": 11}, "2022-10": {"total": 49500.0, "n": 11}, "2022-11": {"total": 49500.0, "n": 11}, "2022-12": {"total": 49500.0, "n": 11}};
+  var POR_MES = {"2021-04": 31500.0, "2021-05": 4500.0, "2021-06": 4500.0, "2021-07": 4500.0, "2021-08": 0.0, "2021-09": 27000.0, "2021-10": 0.0, "2021-11": 45000.0, "2021-12": 22500.0, "2022-01": 22500.0, "2022-02": 22500.0, "2022-03": 22500.0, "2022-04": 0.0, "2022-05": 175500.0, "2022-06": 58500.0, "2022-07": 58500.0, "2022-08": 58500.0, "2022-09": 49500.0, "2022-10": 49500.0, "2022-11": 49500.0, "2022-12": 49500.0, "2023-01": 49500.0, "2023-02": 49500.0, "2023-03": 67500.0, "2023-04": 67500.0, "2023-05": 67500.0, "2023-06": 67500.0, "2023-07": 67500.0, "2023-08": 67500.0, "2023-09": 67500.0, "2023-10": 67500.0, "2023-11": 67500.0, "2023-12": 67500.0, "2024-01": 67500.0, "2024-02": 67500.0, "2024-03": 76500.0, "2024-04": 85500.0, "2024-05": 81000.0, "2024-06": 81000.0, "2024-07": 78450.0, "2024-08": 72000.0, "2024-09": 72000.0, "2024-10": 72000.0, "2024-11": 72000.0, "2024-12": 72000.0, "2025-01": 74700.0, "2025-02": 63000.0, "2025-03": 82350.0, "2025-04": 90000.0, "2025-05": 90000.0, "2025-06": 90000.0, "2025-07": 90000.0, "2025-08": 90000.0, "2025-09": 90000.0, "2025-10": 85500.0, "2025-11": 85500.0, "2025-12": 85500.0, "2026-01": 85500.0, "2026-02": 85500.0, "2026-03": 58500.0, "2026-04": 147000.0, "2026-05": 103500.0, "2026-06": 103500.0, "2026-07": 99000.0, "2026-08": 99000.0};
+
+  function brl(v) {
+    return "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
+
+  /* --- tema --- */
+  var root = document.documentElement, btn = document.getElementById("theme");
+  try { var t = localStorage.getItem("dossie-tema"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var atual = root.getAttribute("data-theme");
+    var prox = atual === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", prox);
+    try { localStorage.setItem("dossie-tema", prox); } catch (e) {}
+  });
+
+  /* --- progresso --- */
+  var prog = document.getElementById("prog");
+  addEventListener("scroll", function () {
+    var h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
+  }, {passive: true});
+
+  /* --- tooltip --- */
+  var tip = document.getElementById("tip");
+  function mostra(e, txt) {
+    tip.textContent = txt; tip.style.opacity = "1";
+    var x = e.clientX + 14, y = e.clientY + 14, r = tip.getBoundingClientRect();
+    if (x + r.width > innerWidth - 8) x = e.clientX - r.width - 12;
+    if (y + r.height > innerHeight - 8) y = e.clientY - r.height - 12;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+  function esconde() { tip.style.opacity = "0"; }
+
+  /* --- painel do mes (clique na barra) --- */
+  var painel = document.getElementById("painel-mes");
+  function abreMes(ano, mes) {
+    var chave = ano + "-" + (mes < 10 ? "0" + mes : mes);
+    var html = '<div class="ph"><h3 style="margin:0;font-size:15.5px">Empenhos de ' + MESES[mes-1] + "/" + ano +
+               " — " + brl(POR_MES[chave] || 0) + '</h3><button class="btn" id="fecha-mes">fechar</button></div>';
+    if (ano >= 2023) {
+      var linhas = EMP.filter(function (e) { return e.ano === ano && e.mes === mes; });
+      if (!linhas.length) { html += '<p class="note">Sem empenho específico neste mês (pagamento agrupado no mês seguinte).</p>'; }
+      else {
+        html += '<table><thead><tr><th>Empenho</th><th>Emissão</th><th class="num">Valor</th><th class="num">Residentes</th><th>Detalhe</th></tr></thead><tbody>';
+        linhas.forEach(function (e) {
+          html += '<tr><td class="num">' + e.nr + '</td><td>' + e.data + '</td><td class="num">' + brl(e.valor) +
+                  '</td><td class="num">' + (e.n || "—") + '</td><td><a href="' + e.link +
+                  '" target="_blank" rel="noopener">abrir no portal ↗</a></td></tr>';
+        });
+        html += '</tbody></table>';
+      }
+    } else {
+      var a = ANTIGOS[chave];
+      html += '<p class="note">Em 2021 e 2022 os pagamentos eram individuais (um empenho por residente).' +
+              (a ? ' Neste mês foram <strong>' + a.n + ' empenhos</strong>, somando <strong>' + brl(a.total) + '</strong> (~' + Math.round(a.total/4500) + ' residentes).' : ' Sem empenho específico neste mês.') +
+              ' Os nomes não são reproduzidos aqui por privacidade — a consulta nominal está no portal.</p>' +
+              '<p><a href="https://www.santamaria.rs.gov.br/transparencia/despesa/empenho" target="_blank" rel="noopener">Abrir o portal e filtrar por ' + ano + ' + Secretaria da Saúde ↗</a></p>';
+    }
+    painel.innerHTML = html;
+    painel.scrollIntoView({block: "nearest", behavior: "smooth"});
+    document.getElementById("fecha-mes").addEventListener("click", function () { painel.innerHTML = ""; });
+  }
+  document.querySelectorAll(".bar").forEach(function (b) {
+    var txt = b.dataset.tip;
+    b.addEventListener("mouseenter", function (e) { mostra(e, txt); });
+    b.addEventListener("mousemove", function (e) { mostra(e, txt); });
+    b.addEventListener("mouseleave", esconde);
+    function abre(ev) {
+      ev.preventDefault();
+      document.querySelectorAll(".bar.sel").forEach(function (o) { o.classList.remove("sel"); });
+      b.classList.add("sel");
+      abreMes(+b.dataset.ano, +b.dataset.mes);
+    }
+    b.addEventListener("click", abre);
+    b.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") abre(e); });
+  });
+
+  /* --- scroll-spy --- */
+  var links = Array.prototype.slice.call(document.querySelectorAll("#nav a"));
+  var secoes = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  var obs = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) {
+      if (en.isIntersecting) {
+        links.forEach(function (a, i) { a.setAttribute("aria-current", secoes[i] === en.target ? "true" : "false"); });
+      }
+    });
+  }, {rootMargin: "-30% 0px -60% 0px"});
+  secoes.forEach(function (s) { if (s) obs.observe(s); });
+})();
+</script>
+</body>
+</html>
