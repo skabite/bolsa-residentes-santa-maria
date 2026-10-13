@@ -2,7 +2,7 @@
 """Baixa todos os empenhos da Secretaria de Municipio da Saude de Santa Maria/RS.
 
 Uso: python3 crawl_saude.py 2021 2022 2023 ...
-Gera /tmp/bolsa-work/empenhos_saude_<ano>.csv
+Gera empenhos_saude_<ano>.csv na mesma pasta do script
 """
 import csv
 import os
@@ -10,7 +10,7 @@ import re
 import sys
 import time
 
-sys.path.insert(0, "/tmp/bolsa-work")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from empenho import EmpenhoClient
 
 UNIDADE = "Secretaria de Município da Saúde"
