@@ -36,6 +36,25 @@ Cada número tem link para a fonte primária.
 
 ![Incentivo federal x bolsa paga](dados/grafico-incentivo-vs-bolsa.svg)
 
+### Onde atuam os residentes da UFN (7 unidades)
+
+Cruzamento das unidades informadas pelos residentes com o CNES — o nome da unidade indica a modalidade da equipe:
+
+| Unidade | Nome no CNES | CNES | Modalidade |
+|---|---|---|---|
+| Passo das Tropas | UNIDADE ESF PASSO DAS TROPAS | 7091702 | eSF |
+| Parque Pinheiro | UNIDADE ESF PARQUE PINHEIRO | 3290050 | eSF |
+| Lídia | UNIDADE ESF LIDIA | 2242559 | eSF |
+| Santa Marta | UNIDADE ESF NOVA SANTA MARTA | 9761306 | eSF |
+| Binato | UNIDADE ESF ROBERTO BINATO | 2241307 | eSF |
+| Alto da Boa Vista | UNIDADE ESF ALTO DA BOA VISTA | 3445453 | eSF |
+| Itararé | UNIDADE DE SAUDE ITARARE **EAP** (há também a UNIDADE ESF ITARARE) | 2243547 | **eAP** |
+
+O município tem no CNES **21 unidades “ESF” e 15 unidades “EAP”**. Seis das sete unidades da UFN são eSF —
+que **é** modalidade elegível ao incentivo federal. Para a maior parte dos residentes da UFN, portanto, o
+fator decisivo não é a modalidade da unidade, e sim **o cadastro individual** (código “05 – Residência” /
+“01 – Residente”, vinculado a equipe com INE).
+
 ---
 
 ## Como conferir cada número
