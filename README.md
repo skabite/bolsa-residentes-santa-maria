@@ -136,10 +136,13 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
   geram incentivo. O que este repositório documenta é a diferença entre o valor federal por residente
   credenciado (R$ 8.000) e a bolsa paga (R$ 4.500), e o reajuste anual previsto na lei municipal que
   nunca foi aplicado.
-- **O ponto em aberto mais relevante** é a competência **jul/2026**, em que o incentivo de residência foi
-  transferido com R$ 0,00 enquanto os demais repasses da APS vieram normais. A causa (suspensão por
-  cadastro/produção, prevista no art. 172-H, ou outro motivo) precisa de resposta oficial — é o que os
-  pedidos em `pedidos/` perguntam.
+- **O ponto em aberto mais relevante** é a contagem: em junho e julho de 2026 o CNES registra 26 médicos
+  residentes (25 em equipes eSF, com INEs **homologados** em portaria do MS), mas o Ministério pagou por
+  **12** em mar–jun/2026 e **zero** em jul/2026. Foram descartadas, com documentos, as hipóteses de cadastro
+  ausente, de INE ausente e de equipe não homologada. Restam, como explicação possível, a regularidade dos
+  residentes/programas na **CNRM/CNRAPS** (art. 172-E, §4º, I), a **produção no SIAPS** (art. 172-H) ou a
+  régua interna de contagem do Ministério. O caminho para fechar são os dois pedidos de informação em
+  `pedidos/`, reescritos com essas perguntas específicas.
 - **Contagens de equipe ≠ contagem de residentes.** O histórico de credenciamento do MS registra 16 equipes
   eAP aprovadas para o município e as planilhas de 2026 mostram 21 a 24 equipes eAP pagas por competência;
   quantos *residentes* estão lotados em cada equipe não é informação pública — vem da coordenação do
