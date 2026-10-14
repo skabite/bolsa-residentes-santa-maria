@@ -141,8 +141,8 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
   **12** em mar–jun/2026 e **zero** em jul/2026. Foram descartadas, com documentos, as hipóteses de cadastro
   ausente, de INE ausente e de equipe não homologada. Restam, como explicação possível, a regularidade dos
   residentes/programas na **CNRM/CNRAPS** (art. 172-E, §4º, I), a **produção no SIAPS** (art. 172-H) ou a
-  régua interna de contagem do Ministério. O caminho para fechar são os dois pedidos de informação em
-  `pedidos/`, reescritos com essas perguntas específicas.
+  régua interna de contagem do Ministério. Para fechar, o caminho é pedido de acesso à informação
+  (Fala.BR, para o Ministério; e-SIC municipal, para a prefeitura) com as perguntas específicas.
 - **Contagens de equipe ≠ contagem de residentes.** O histórico de credenciamento do MS registra 16 equipes
   eAP aprovadas para o município e as planilhas de 2026 mostram 21 a 24 equipes eAP pagas por competência;
   quantos *residentes* estão lotados em cada equipe não é informação pública — vem da coordenação do
@@ -154,6 +154,8 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
 
 Correções são bem-vindas — especialmente se você encontrar um empenho, planilha ou norma que contrarie
 algo aqui. Abra uma *issue* com o link da fonte. Se você é residente da UFSM ou da UFN e quer conferir
-seu próprio caso, os dois pedidos de informação em `pedidos/` estão prontos para protocolo.
+seu próprio caso, o caminho é: (1) CNES, para ver seu registro e sua equipe; (2) Meu INSS/CNIS, para a
+contribuição previdenciária; (3) pedido de acesso à informação ao Ministério da Saúde (Fala.BR) e à
+prefeitura (e-SIC), perguntando a contagem do incentivo por competência e por equipe.
 
 Dados públicos, uso livre. Código dos scripts sob licença MIT (ver `LICENSE`).
