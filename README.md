@@ -55,6 +55,21 @@ que **é** modalidade elegível ao incentivo federal. Para a maior parte dos res
 fator decisivo não é a modalidade da unidade, e sim **o cadastro individual** (código “05 – Residência” /
 “01 – Residente”, vinculado a equipe com INE).
 
+### O CNES mostra 26 médicos residentes registrados — o Ministério pagou por 12
+
+Varredura das 36 unidades ESF e EAP do município na base pública do CNES (API de Dados Abertos do MS):
+
+| Competência | Residentes registrados no CNES | Residentes pagos pelo MS |
+|---|---|---|
+| fev/2026 | 20 | 17 |
+| jun/2026 | **26** | **12** |
+
+Dos 26 registrados (jun/2026): **25 estão em equipes eSF** — que são elegíveis — e **1 em equipe eAP**
+(não elegível). Todos têm vínculo "05 – Residência / 01 – Residente" e **todos têm INE** (vínculo a equipe).
+Entre fevereiro e junho a turma virou: 4 residentes formaram e 10 entraram (turma de março) — e o número pago
+pelo Ministério caiu de 17 para 12 exatamente no mês da troca, sem voltar depois. Detalhe por unidade em
+[`dados/cnes_medicos_residentes_por_unidade.csv`](dados/cnes_medicos_residentes_por_unidade.csv) (sem nomes).
+
 ---
 
 ## Como conferir cada número

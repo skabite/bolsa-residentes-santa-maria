@@ -582,6 +582,66 @@
 
     <div class="card">
       <div class="card-head">
+        <h3>Onde estão os residentes, segundo o CNES (jun/2026)</h3>
+        <span class="badge fato"><i class="dot"></i>Fato — base oficial do CNES</span>
+      </div>
+      <p class="note">Varredura das 36 unidades ESF e EAP do município na base pública do CNES
+      (API de Dados Abertos do Ministério da Saúde). São <strong>26 médicos residentes</strong> com registro
+      ativo — todos com CBO “2231F9 – MEDICO RESIDENTE”, vínculo “05 – Residência / 01 – Residente” e
+      <strong>todos vinculados a uma equipe com INE</strong>.</p>
+      <table>
+        <thead><tr><th>Unidade</th><th>Modalidade da unidade</th><th class="num">Médicos residentes</th><th>INE(s)</th></tr></thead>
+        <tbody>
+          <tr><td>ESF São Francisco</td><td>ESF</td><td class="num">5</td><td>0001662821, 0001662848</td></tr>
+          <tr><td>ESF São José</td><td>ESF</td><td class="num">5</td><td>0000433012, 0000433020</td></tr>
+          <tr><td>ESF Itararé</td><td>ESF</td><td class="num">2</td><td>0001642804</td></tr>
+          <tr><td>ESF Parque Pinheiro</td><td>ESF</td><td class="num">2</td><td>0000433152</td></tr>
+          <tr><td>ESF Victor Hoffmann</td><td>ESF</td><td class="num">2</td><td>0000432997</td></tr>
+          <tr><td>ESF Alto da Boa Vista</td><td>ESF</td><td class="num">1</td><td>0000433187</td></tr>
+          <tr><td>ESF Bela União</td><td>ESF</td><td class="num">1</td><td>0000433136</td></tr>
+          <tr><td>ESF Lídia</td><td>ESF</td><td class="num">1</td><td>0000432989</td></tr>
+          <tr><td>ESF Nova Santa Marta</td><td>ESF</td><td class="num">1</td><td>0001680390</td></tr>
+          <tr><td>ESF Passo das Tropas</td><td>ESF</td><td class="num">1</td><td>0001792016</td></tr>
+          <tr><td>ESF Roberto Binato</td><td>ESF</td><td class="num">1</td><td>0000432946</td></tr>
+          <tr><td>ESF São João</td><td>ESF</td><td class="num">1</td><td>0000433144</td></tr>
+          <tr><td>ESF Wilson Paulo Noal</td><td>ESF</td><td class="num">1</td><td>0001628712</td></tr>
+          <tr><td>Centro Social Urbano</td><td>unidade “EAP” — equipe <strong>ESF</strong></td><td class="num">1</td><td>0002105403</td></tr>
+          <tr><td>Joy Betts</td><td>unidade “EAP” — equipe <strong>EAP</strong></td><td class="num">1</td><td>0002091690</td></tr>
+          <tr><td><strong>Total</strong></td><td></td><td class="num"><strong>26</strong></td><td>25 em equipes ESF · 1 em eAP</td></tr>
+        </tbody>
+      </table>
+      <p class="note"><strong>Por que isso importa:</strong> o incentivo federal só existe para residente
+      vinculado a equipe de modalidade elegível (eSF, eSB, eMulti, eSFF, eSFR, eCR, eAPP). Dos 26, apenas
+      <strong>1</strong> está numa equipe fora da lista (eAP) — todos os outros 25 estão em equipes ESF.
+      Não há nome de pessoa nesta tabela (a lista nominal é pública no CNES, mas não é reproduzida aqui).</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>O que a base oficial mostra × o que o Ministério pagou</h3>
+        <span class="badge est"><i class="dot"></i>Estimativa — cruzamento de duas bases oficiais</span>
+      </div>
+      <table>
+        <thead><tr><th>Competência</th><th class="num">Residentes registrados no CNES</th><th class="num">Residentes pagos pelo MS</th><th class="num">Diferença</th></tr></thead>
+        <tbody>
+          <tr><td>fev/2026</td><td class="num">20</td><td class="num">17</td><td class="num">−3</td></tr>
+          <tr><td>jun/2026</td><td class="num">26</td><td class="num">12</td><td class="num"><strong>−14</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="note">Entre fevereiro e junho a turma virou: <strong>4 residentes saíram</strong> (formaram) e
+      <strong>10 entraram</strong> (turma de março/2026). O número pago pelo Ministério caiu de 17 para 12
+      <em>exatamente no mês da troca</em> — e nunca voltou. Como a planilha do próprio MS registra
+      <strong>18 residentes credenciados</strong>, o teto do município não explica a queda: o que falta é o
+      <strong>reconhecimento, por competência, dos residentes que entraram</strong>.</p>
+      <p class="note">Hipóteses, em ordem de probabilidade, todas verificáveis com a gestão e com o
+      Ministério: (1) os residentes da turma nova ainda não foram computados nas competências seguintes
+      (registro tardio/homologação pendente); (2) parte das equipes que receberam residentes não está
+      homologada para o incentivo de residência; (3) suspensão por ausência de produção no SIAPS
+      (art. 172-H) — hipótese reforçada pelo <strong>zero de jul/2026</strong>.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
         <h3>Onde atuam os residentes da UFN (7 unidades)</h3>
         <span class="badge fato"><i class="dot"></i>Fato — cadastro do CNES</span>
       </div>
