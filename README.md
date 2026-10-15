@@ -2,10 +2,10 @@
 
 ![dados](https://img.shields.io/badge/dados-empenhos%20p%C3%BAblicos-2a78d6)
 ![fonte](https://img.shields.io/badge/fonte-Portal%20da%20Transpar%C3%AAncia%20%2B%20MS-1baf7a)
-![atualizado](https://img.shields.io/badge/atualizado-13%2F10%2F2026-898781)
+![atualizado](https://img.shields.io/badge/atualizado-15%2F10%2F2026-898781)
 
-**O governo federal paga R$ 8.000 por residente de medicina. A bolsa que chega ao residente é R$ 4.500 —
-o mesmo valor de 2021, sem reajuste.**
+**O Ministério da Saúde paga R$ 8.000 por residente de medicina que ele conta — e em 2026 contou 12 dos 22
+(nenhum em julho). A bolsa que chega ao residente é R$ 4.500 — o mesmo valor de 2021, sem reajuste.**
 
 Este repositório reúne os documentos públicos e a análise que sustentam essa afirmação: os empenhos da
 prefeitura, as planilhas oficiais de pagamento do Ministério da Saúde e o texto das normas aplicáveis.
@@ -22,8 +22,9 @@ Cada número tem link para a fonte primária.
 | Residentes em 2026 | **22** — 15 na UFSM (7 R1 + 7 R2 + 1 ano adicional) e 7 na UFN |
 | Bolsa paga pela prefeitura | **R$ 4.500** por residente/mês — inalterada desde o primeiro pagamento, em abril de 2021 |
 | Custo mensal do programa (ago/2026) | **R$ 118.800** = R$ 99.000 de bolsas (22 × R$ 4.500) + R$ 19.800 de INSS patronal (20%) |
-| Incentivo federal por residente de medicina (2026) | **R$ 8.000** — era R$ 4.500 até jan/2026 (Portaria GM/MS 10.193/2026) |
-| Residentes que geram o incentivo federal | **12 dos 22** (mar–jun/2026) |
+| Incentivo federal por residente de medicina **contado pelo Ministério** (2026) | **R$ 8.000** — era R$ 4.500 até jan/2026 (Portaria GM/MS 10.193/2026) |
+| Residentes contados pelo Ministério | **12 dos 22** (mar–jun/2026) e **0** em jul/2026 — com 18 credenciados |
+| Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.434** (nov/2024–jul/2026) — abaixo da bolsa |
 | Total repassado pela União ao município | **R$ 1.406.500** (nov/2024 a jul/2026) |
 | Total pago em bolsas pela prefeitura no mesmo período | **R$ 1.843.050** |
 | Competência **jul/2026** | incentivo federal transferido: **R$ 0,00** — o município pagou os R$ 99.000 mesmo assim |
@@ -31,6 +32,10 @@ Cada número tem link para a fonte primária.
 ### Bolsas pagas por mês (empenhos municipais)
 
 ![Bolsas pagas por mês](dados/grafico-bolsas-por-mes.svg)
+
+Todos os empenhos da bolsa são **da prefeitura**. A divisão em dois empenhos por mês (11 + 11 em ago/2026)
+é a fonte que ela declara — um com dinheiro do SUS federal que já está no Fundo Municipal (fonte 1600), outro
+com impostos municipais (fonte 1500) — e não acompanha a contagem do Ministério.
 
 ### Incentivo federal recebido × bolsa paga (barras = federal, linha = municipal)
 
@@ -91,14 +96,15 @@ pelo Ministério caiu de 17 para 12 exatamente no mês da troca, sem voltar depo
 ```
 index.html                                  dossiê navegável (mesmo conteúdo da página publicada)
 relatorio.md                                relatório completo, com tabelas e ressalvas metodológicas
-pedidos/
-  pedido-prefeitura.md                      pedido de informação (LAI) para a prefeitura
-  pedido-ministerio-saude.md                pedido de informação (LAI) para o Ministério da Saúde
 dados/
   bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada
   bolsa_empenhos_coletivos_2023_2026.csv    empenho por empenho, com link para a página oficial
   bolsa_agregado_2021_2022.csv              2021–2022, quando os pagamentos eram individuais
   incentivo_federal_residencia.csv          o que o MS transferiu, por competência (aba “Residência”)
+  incentivo_federal_recebido_2026.csv       data e valor de cada crédito na conta do município (Lei 9.452/97)
+  incentivo_federal_media_por_residente.csv média federal por residente pago pela prefeitura, por competência
+  cnes_medicos_residentes_por_unidade.csv   médicos residentes no CNES por unidade (sem nomes)
+  ines_homologacao_equipes_com_residentes.csv  homologação dos INEs com residentes
   grafico-*.svg                             gráficos usados neste README
 scripts/                                    o que extrai e reconfere os dados (ver scripts/README abaixo)
 ```
@@ -132,10 +138,11 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
 - **São dados de execução orçamentária** (empenhado, liquidado, pago) publicados pelo próprio município;
   não substituem os demonstrativos contábeis oficiais.
 - **A leitura é factual, não acusatória.** O incentivo federal não é uma bolsa do profissional: é custeio
-  transferido ao fundo municipal, e sustenta a maior parte da folha — inclusive dos residentes que não
-  geram incentivo. O que este repositório documenta é a diferença entre o valor federal por residente
-  credenciado (R$ 8.000) e a bolsa paga (R$ 4.500), e o reajuste anual previsto na lei municipal que
-  nunca foi aplicado.
+  transferido ao fundo municipal, e hoje **não cobre** a folha: em média entrou R$ 4.189 por residente pago
+  em mar–jun/2026, contra R$ 5.400 de custo (bolsa + 20% de INSS patronal). O que este repositório documenta
+  é a diferença entre o valor federal por residente contado (R$ 8.000) e a bolsa paga (R$ 4.500), a contagem
+  baixa do Ministério (12 de 22) e o reajuste anual previsto na lei municipal que nunca foi aplicado. Com os
+  18 credenciados contados, o próprio incentivo pagaria a folha e sobrariam ≈ R$ 25 mil/mês.
 - **O ponto em aberto mais relevante** é a contagem: em junho e julho de 2026 o CNES registra 26 médicos
   residentes (25 em equipes eSF, com INEs **homologados** em portaria do MS), mas o Ministério pagou por
   **12** em mar–jun/2026 e **zero** em jul/2026. Foram descartadas, com documentos, as hipóteses de cadastro

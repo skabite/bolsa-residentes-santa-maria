@@ -3,6 +3,17 @@
 Levantamento feito em 13/10/2026 a partir dos dois documentos da pasta e de bases públicas oficiais
 (Portal da Transparência de Santa Maria, FNS, DOU/BVS MS). Números extras estão em `dados/`.
 
+> **Revisão de 15/10/2026 — o que mudou:**
+> - **Média por residente.** R$ 8.000 é o valor por residente *contado* pelo Ministério, não por residente
+>   pago pela prefeitura. Dividindo o incentivo que de fato entrou pelos residentes pagos, a média foi
+>   **R$ 4.189** em mar–jun/2026, **R$ 0** em jul/2026 e **R$ 3.434** de nov/2024 a jul/2026 — abaixo da bolsa
+>   em todos os meses, menos fev/2026 (`dados/incentivo_federal_media_por_residente.csv`).
+> - **Todos os empenhos da bolsa são da prefeitura.** "Recurso federal" e "recurso municipal" são a *fonte*
+>   que ela declara em cada empenho, e a divisão 11 + 11 não acompanha a contagem do Ministério.
+> - **eAP:** o CNES de jun/2026 mostra **1** médico residente em equipe eAP (não 2); os outros 25 estão em eSF.
+> - A estimativa da seção 5.3 (11 credenciados) foi **superada** pelo dado oficial da seção 5.4
+>   (18 credenciados, 12 contados).
+
 ---
 
 ## 1. O que diz cada documento
@@ -94,11 +105,11 @@ pagamento coletiva” (2023–2026). Categoria contábil: “RESIDÊNCIA MÉDICA
 | 2026 (jan–ago) | R$ 781.500,00 | 13 a 23 |
 
 - O valor **por residente é R$ 4.500,00 do começo ao fim** — nunca houve reajuste, apesar do art. 3º, §1º da lei e do aumento do incentivo federal em 2026.
-- Em 2026 há **dois grupos** de empenhos por mês: 11 residentes pagos com recurso federal (1600.4500) e 8–12 pagos com recurso municipal (1500 – ASPS). Total 19–23 residentes/mês.
+- Desde 2025 há **dois empenhos** por mês, ambos da prefeitura: 11 residentes com fonte declarada federal (1600.4500 — dinheiro do SUS já no Fundo Municipal) e 2–12 com fonte municipal (1500 – impostos). Total 13–23 residentes/mês em 2026.
 - Sobre INSS: a prefeitura paga **20% patronal sobre as bolsas** em empenho separado (ex.: R$ 13.500 em dez/2023, sobre R$ 67.500 de bolsas — descrição “VALOR REF. OBRIGAÇÃO PATRONAL (20%) SOBRE AS BOLSAS / AUXÍLIOS AOS MÉDICOS RESIDENTES”).
 - Em 2021 a classificação contábil era “AUXÍLIO A PESSOAS FÍSICAS” (o 3.3.90.48 previsto na lei); depois passou a “OUTROS SERVIÇOS DE TERCEIROS – PESSOA FÍSICA” (3.3.90.36), o que faz o elemento 3.3.90.48 aparecer como R$ 0,00 nos relatórios anuais recentes.
 
-Dados completos: `dados/bolsa_residentes_empenhos.csv` (empenho por empenho, com link do detalhe)
+Dados completos: `dados/bolsa_empenhos_coletivos_2023_2026.csv` (empenho por empenho, com link do detalhe)
 e `dados/bolsa_residentes_por_mes.csv` (agregado mensal).
 
 ---
@@ -120,12 +131,14 @@ pago (R1, R2, ano adicional e eventuais prorrogações).
 
 A Portaria GM/MS 10.193/2026 (art. 172-E, §3º) admite o cadastro de residentes, para fins do incentivo,
 **apenas** nas equipes **eSF, eSB, eMulti, eSFF da UBSF, eSFR, eCR e eAPP**. A **equipe de Atenção Primária
-(eAP) não está na lista** — os 2 residentes do município lotados em eAP, portanto, não geram o repasse
+(eAP) não está na lista** — o residente do município cadastrado em equipe eAP (1, segundo o CNES de jun/2026), portanto, não gera o repasse
 federal de R$ 8.000/mês. Como a lei municipal (art. 3º, §2º) condiciona a bolsa à existência do repasse
 federal, esse é o grupo mais exposto. Conferir no CNES (cnes.datasus.gov.br) em qual equipe/INE cada
 residente está cadastrado e levar o caso à Secretaria de Saúde e à coordenação do programa.
 
 ### 5.3 O que entra para o município
+
+> *Superada pela seção 5.4 (dado oficial do MS: 18 credenciados, 12 contados em mar–jun/2026). Mantida como registro.*
 
 O relatório “Recursos Recebidos” da prefeitura (https://www.santamaria.rs.gov.br/transparencia/contas-publicas/rr)
 mostra o bloco federal da Atenção Primária — **R$ 1.338.156,11 em ago/2026** e **R$ 13.486.692,62 no ano** —
@@ -134,7 +147,7 @@ mas **não abre o incentivo de residência em linha separada**. Estimativa, supo
 para 22 residentes → o município ainda cobre ≈ R$ 11.000/mês com recursos próprios. Antes do aumento (2025),
 entravam ≈ R$ 49.500 e a cobertura municipal era de ≈ R$ 36.000–40.500/mês. Ou seja: o aumento federal
 aliviou o caixa do programa, mas não o bolso do residente. O número exato de credenciados precisa ser
-confirmado no e-Gestor APS e no DOU (ou via LAI — item 6 do pedido).
+confirmado no e-Gestor APS e no DOU (ou via LAI).
 
 ### 5.4 O incentivo federal efetivamente recebido (dado oficial — planilha do MS)
 
