@@ -13,6 +13,8 @@ Levantamento feito em 13/10/2026 a partir dos dois documentos da pasta e de base
 > - **eAP:** o CNES de jun/2026 mostra **1** médico residente em equipe eAP (não 2); os outros 25 estão em eSF.
 > - A estimativa da seção 5.3 (11 credenciados) foi **superada** pelo dado oficial da seção 5.4
 >   (18 credenciados, 12 contados).
+> - **Onde trava a contagem** (investigação em andamento, com o texto da portaria transcrito do DOU):
+>   ver [`investigacao.md`](investigacao.md).
 
 ---
 

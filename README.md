@@ -96,6 +96,8 @@ pelo Ministério caiu de 17 para 12 exatamente no mês da troca, sem voltar depo
 ```
 index.html                                  dossiê navegável (mesmo conteúdo da página publicada)
 relatorio.md                                relatório completo, com tabelas e ressalvas metodológicas
+investigacao.md                             caderno de investigação: onde trava a contagem, hipóteses e próximos passos
+CLAUDE.md                                   contexto e regras para sessões de trabalho com o Claude
 dados/
   bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada
   bolsa_empenhos_coletivos_2023_2026.csv    empenho por empenho, com link para a página oficial
@@ -105,6 +107,7 @@ dados/
   incentivo_federal_media_por_residente.csv média federal por residente pago pela prefeitura, por competência
   cnes_medicos_residentes_por_unidade.csv   médicos residentes no CNES por unidade (sem nomes)
   ines_homologacao_equipes_com_residentes.csv  homologação dos INEs com residentes
+  portaria_10193_2026_arts_172E_172IA.md    texto dos arts. 172-E a 172-I-A, transcrito do DOU de 02/02/2026
   grafico-*.svg                             gráficos usados neste README
 scripts/                                    o que extrai e reconfere os dados (ver scripts/README abaixo)
 ```
