@@ -56,14 +56,16 @@ com impostos municipais (fonte 1500) — e não acompanha a contagem do Ministé
 Pela Portaria GM/MS 10.193/2026, só entra na conta o residente com matrícula regular na CNRM, cadastro
 "05 – Residência / 01 – Residente" no CNES, vínculo a equipe elegível (eSF etc.), 40 h semanais na equipe e no
 máximo 2 residentes de medicina por eSF — e o total não passa das vagas credenciadas (18). O cadastro no CNES é
-responsabilidade da gestão municipal (art. 172-F, §5º). Texto dos artigos em
+responsabilidade da gestão municipal (art. 172-F, §5º); a situação na CNRM depende das COREMEs; o credenciamento,
+do Ministério. Texto dos artigos em
 [`dados/portaria_10193_2026_arts_172E_172IA.md`](dados/portaria_10193_2026_arts_172E_172IA.md).
 
 No CNES de jun/2026 havia **26** médicos residentes registrados (25 em equipes eSF, 1 em eAP), para 23 pagos
 pela prefeitura. Os 17 INEs com residentes estão homologados. A contagem do Ministério caiu de 17 para 12 em
 mar/2026, o mês em que a turma nova entrou, e não voltou a subir. Na consulta de out/2026 a três unidades, o
 cadastro dos novos residentes estava completo; havia duas equipes com 3 residentes de medicina (acima do limite),
-dois registros abaixo de 40 h e pelo menos um registro ativo de quem já saiu. A causa da contagem baixa e do zero
+dois registros abaixo de 40 h e pelo menos um registro ativo de quem já saiu; as outras 12 unidades ainda não
+foram conferidas. A causa da contagem baixa e do zero
 de julho está em aberto (pedido de informação ao Ministério protocolado). Detalhe por unidade em
 [`dados/cnes_medicos_residentes_por_unidade.csv`](dados/cnes_medicos_residentes_por_unidade.csv) (sem nomes).
 
@@ -91,7 +93,9 @@ relatorio.md                                relatório completo, com tabelas e r
 investigacao.md                             caderno de investigação: onde trava a contagem, hipóteses e próximos passos
 CLAUDE.md                                   contexto e regras para sessões de trabalho com o Claude
 dados/
-  bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada
+  bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada; INSS patronal
+                                            só nos meses coletados (vazio = não coletado)
+  inss_patronal_empenhos.csv                empenho do INSS patronal sobre as bolsas, com link oficial
   bolsa_empenhos_coletivos_2023_2026.csv    folha coletiva (mai/2023–ago/2026), empenho por empenho, com link oficial
   bolsa_agregado_individuais_2021_2023.csv  abr/2021–abr/2023, quando os pagamentos eram individuais (só totais)
   incentivo_federal_residencia.csv          o que o MS transferiu, por competência (aba “Residência”)

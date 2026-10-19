@@ -48,10 +48,13 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
 
   | Grupo | Quantos |
   |---|---|
-  | Matrícula anterior a mar/2026: 7 R2 UFSM + 4 R2 UFN + 1 de turma anterior | **12** |
-  | Matrícula iniciada em mar/2026: 7 R1 UFSM + 3 R1 UFN + 1 de ano adicional | **11** |
+  | Matrícula anterior a mar/2026 | **12** |
+  | Matrícula iniciada em mar/2026 | **11** |
   | Total abr–jun/2026 (bate com os 23 pagos pela prefeitura) | 23 |
-  | Hoje: 15 UFSM + 7 UFN | 22 |
+  | Hoje (bate com os 22 pagos) | 22 |
+
+  A divisão por programa e por ano fica fora deste arquivo: com grupos de 1 pessoa ela permitiria
+  deduzir quem saiu e quando.
 
 - **CNES de 15/10/2026** (fichas públicas de São José, São Francisco e Victor Hoffmann; resumo agregado):
   - Todos os R1 têm cadastro **correto**: CBO 2231F9, vínculo Residência/Residente, 40h, equipe eSF,
@@ -59,7 +62,7 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
   - **Dois registros de residentes estão abaixo de 40h**; os demais têm 40h.
   - **Duas equipes têm 3 residentes de medicina** (limite 2): São José equipe 16 (INE 0000433012) e São
     Francisco equipe 30 (INE 0001662821).
-  - Há pelo menos **um registro ativo de quem já deixou o programa**, numa das equipes com 3 residentes.
+  - Há pelo menos **um registro ativo de quem já deixou o programa**.
   - Caracterização: São José consta como "UNIDADE SEM ATIVIDADE DE ENSINO"; São Francisco como "UNIDADE
     AUXILIAR DE ENSINO". Não se sabe se o MS confere isso.
 - **Todos os empenhos da bolsa são da prefeitura**; "federal" × "municipal" é só a fonte declarada
@@ -69,14 +72,14 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
 
 ## Hipóteses, em ordem
 
-1. **Matrícula da turma de 2026 não reconhecida (CNRM)** — principal. Os 12 contados são exatamente quem
-   tinha matrícula antes de mar/2026; os 11 que começaram em mar/2026 (UFSM, UFN e o ano adicional) não aparecem.
-   O cadastro CNES dos R1 está correto, então o único requisito individual que sobra é o § 4º, I–II do
-   172-E (situação regular na CNRM). Contra: exigiria falha simultânea de programas diferentes; pode
+1. **Matrícula da turma de 2026 não reconhecida (CNRM)** — principal. Os 12 contados batem em número com
+   quem tinha matrícula antes de mar/2026; os 11 que começaram em mar/2026 não aparecem. A planilha só traz o
+   total, então a correspondência um a um não está provada. Nas 3 unidades conferidas o cadastro CNES dos R1
+   está correto, então o requisito individual que sobra ali é o § 4º, I–II do 172-E (situação regular na CNRM). Contra: exigiria falha simultânea de programas diferentes; pode
    ser também a forma como o MS passou a ler o CNRM com a portaria nova (fev/2026).
 2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas.
-3. **Limite de 2 por eSF** — explica 2 (um residente em cada equipe com 3), e o registro ativo de quem
-   já saiu agrava um dos casos.
+3. **Limite de 2 por eSF** — explica 2 (um em cada equipe com 3). Registros de quem já saiu também
+   precisam de baixa.
 4. **Zero de jul/2026 = suspensão do art. 172-H** depois de 3 competências com residentes "irregulares"
    (mar/abr/mai ou abr/mai/jun). Se for isso, regularizar os cadastros destrava (sem retroativo).
    Não confirmado: o texto não diz se a suspensão é do incentivo inteiro ou por vaga.
@@ -121,4 +124,9 @@ citado em 13/10 (estava errado; corrigido na página com nota).
   contadas" identificado; fichas CNES de 3 unidades analisadas.
 - **19/10/2026** — revisão de conformidade legal (LGPD, honra, direitos autorais, ética do residente):
   caderno reescrito sem atributos individuais; correções datadas no relatorio.md; saídas dos scripts
-  protegidas; redesenho da página para celular em andamento.
+  protegidas; página redesenhada para celular. Revisão adversarial da página nova (fatos e regras):
+  hipótese de julho e atribuição da contagem reescritas sem afirmar causa (CNES da gestão, CNRM das
+  COREMEs, credenciamento do Ministério); alcance do CNES explicitado (3 de 15 unidades); premissa do
+  retroativo de março escrita; vagas do gráfico em degraus (15 em mar–set/2025); empenho do INSS
+  patronal (18203/2026) nos dados; tabela de composição reduzida aos totais; comparações com Ijuí
+  (R$ 6.000 desde 2023) e Santos.

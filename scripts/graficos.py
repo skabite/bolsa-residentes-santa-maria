@@ -14,6 +14,7 @@ import csv
 import os
 import re
 import sys
+from decimal import ROUND_HALF_UP, Decimal
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DADOS = os.path.join(RAIZ, "dados")
@@ -21,13 +22,18 @@ MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "
 W = 360
 
 
+def arred(v, casas):
+    # arredondamento comercial (2.812,50 -> 2.813), nao o "do banqueiro" do format do Python
+    return Decimal(str(v)).quantize(Decimal(1).scaleb(-casas), rounding=ROUND_HALF_UP)
+
+
 def brl(v, casas=0):
-    s = f"{v:,.{casas}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    s = f"{arred(v, casas):,.{casas}f}".replace(",", "X").replace(".", ",").replace("X", ".")
     return "R$ " + s
 
 
 def num(v):
-    s = f"{v:.1f}".replace(".", ",")
+    s = f"{arred(v, 1):.1f}".replace(".", ",")
     return s[:-2] if s.endswith(",0") else s
 
 
@@ -56,9 +62,20 @@ def pagos_contados():
     for v in (0, 5, 10, 15, 20, 25):
         p.append(f'<line class="g-grid" x1="{X0}" x2="{X1}" y1="{y(v):.1f}" y2="{y(v):.1f}"/>'
                  f'<text class="g-tick" x="{X0 - 6}" y="{y(v) + 4:.1f}" text-anchor="end">{v}</text>')
-    # teto credenciado
-    p.append(f'<path class="g-ref" d="M {X0} {y(18):.1f} H {X1}"/>')
-    p.append(f'<text class="g-lab" x="{X1 + 6}" y="{y(18) + 4:.1f}">18 vagas</text>')
+    # vagas credenciadas, em degraus (15 em mar-set/2025, 18 no resto)
+    vagas_por = {l["competencia"]: int(l["medicos_credenciados"]) for l in ler("incentivo_federal_residencia.csv")}
+    vagas = [vagas_por[l["competencia"]] for l in linhas]
+    d = f"M {X0} {y(vagas[0]):.1f}"
+    for i in range(1, n):
+        if vagas[i] != vagas[i - 1]:
+            d += f" H {(x(i - 1) + x(i)) / 2:.1f} V {y(vagas[i]):.1f}"
+    p.append(f'<path class="g-ref" d="{d} H {X1}"/>')
+    p.append(f'<text class="g-lab" x="{X1 + 6}" y="{y(vagas[-1]) + 4:.1f}">{vagas[-1]} vagas</text>')
+    baixa = [i for i, v in enumerate(vagas) if v < vagas[-1]]
+    if baixa:
+        meio = (x(baixa[0]) + x(baixa[-1])) / 2
+        p.append(f'<text class="g-tick" x="{meio:.1f}" y="{y(vagas[baixa[0]]) - 5:.1f}" '
+                 f'text-anchor="middle">{vagas[baixa[0]]} vagas</text>')
     # marca da turma nova
     i_mar = [l["competencia"] for l in linhas].index("MAR/2026")
     p.append(f'<path class="g-mark" d="M {x(i_mar):.1f} {Y1} V {Y0}"/>')
@@ -78,7 +95,7 @@ def pagos_contados():
     passo = (X1 - X0) / (n - 1)
     for i, l in enumerate(linhas):
         comp = l["competencia"].lower()
-        tip = f"{comp} · prefeitura pagou {num(pag[i])} · Ministério contou {con[i]}"
+        tip = f"{comp} · prefeitura pagou {num(pag[i])} · Ministério contou {con[i]} · {vagas[i]} vagas"
         p.append(f'<rect class="g-hit" data-tip="{tip}" x="{x(i) - passo / 2:.1f}" y="{Y1}" '
                  f'width="{passo:.1f}" height="{Y0 - Y1}"><title>{tip}</title></rect>')
     p.append("</svg>")
