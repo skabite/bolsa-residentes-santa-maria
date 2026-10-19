@@ -2,10 +2,11 @@
 
 ![dados](https://img.shields.io/badge/dados-empenhos%20p%C3%BAblicos-2a78d6)
 ![fonte](https://img.shields.io/badge/fonte-Portal%20da%20Transpar%C3%AAncia%20%2B%20MS-1baf7a)
-![atualizado](https://img.shields.io/badge/atualizado-15%2F10%2F2026-898781)
+![atualizado](https://img.shields.io/badge/atualizado-19%2F10%2F2026-898781)
 
-**O Ministério da Saúde paga R$ 8.000 por residente de medicina que ele conta — e em 2026 contou 12 dos 22
-(nenhum em julho). A bolsa que chega ao residente é R$ 4.500 — o mesmo valor de 2021, sem reajuste.**
+**A bolsa dos residentes de MFC de Santa Maria está em R$ 4.500 desde 2021. A lei municipal prevê correção
+anual, que nunca foi aplicada. O incentivo federal que poderia pagar a correção existe, mas o Ministério da
+Saúde está contando só parte dos residentes: 12 de cerca de 23 em mar–jun/2026, e nenhum em julho.**
 
 Este repositório reúne os documentos públicos e a análise que sustentam essa afirmação: os empenhos da
 prefeitura, as planilhas oficiais de pagamento do Ministério da Saúde e o texto das normas aplicáveis.
@@ -19,15 +20,24 @@ Cada número tem link para a fonte primária.
 
 | | |
 |---|---|
-| Residentes em 2026 | **22** — 15 na UFSM (7 R1 + 7 R2 + 1 ano adicional) e 7 na UFN |
+| Residentes hoje | **22** — 15 na UFSM e 7 na UFN (informação dos residentes; confere com os empenhos de ago/2026) |
 | Bolsa paga pela prefeitura | **R$ 4.500** por residente/mês — inalterada desde o primeiro pagamento, em abril de 2021 |
 | Custo mensal do programa (ago/2026) | **R$ 118.800** = R$ 99.000 de bolsas (22 × R$ 4.500) + R$ 19.800 de INSS patronal (20%) |
 | Incentivo federal por residente de medicina **contado pelo Ministério** (2026) | **R$ 8.000** — era R$ 4.500 até jan/2026 (Portaria GM/MS 10.193/2026) |
-| Residentes contados pelo Ministério | **12 dos 22** (mar–jun/2026) e **0** em jul/2026 — com 18 credenciados |
+| Residentes contados pelo Ministério | **12** de cerca de 23 pagos (mar–jun/2026) e **0** em jul/2026 — com 18 vagas credenciadas |
 | Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.434** (nov/2024–jul/2026) — abaixo da bolsa |
 | Total repassado pela União ao município | **R$ 1.406.500** (nov/2024 a jul/2026) |
 | Total pago em bolsas pela prefeitura no mesmo período | **R$ 1.843.050** |
-| Competência **jul/2026** | incentivo federal transferido: **R$ 0,00** — o município pagou os R$ 99.000 mesmo assim |
+| Competência **jul/2026** | incentivo federal transferido: **R$ 0,00** — a bolsa de julho (R$ 99.000) foi paga normalmente |
+
+### Dá para pedir reajuste?
+
+Sim, com o argumento certo. A base não é "a prefeitura fica com R$ 3.500 por residente" — ela não fica: hoje
+completa a folha com dinheiro próprio. A base é a lei (art. 3º, §1º da Lei 6.516/2020, correção anual nunca
+aplicada) e uma proposta em que a prefeitura também ganha: regularizar a contagem. Com as 18 vagas credenciadas
+contadas, o próprio incentivo pagaria uma bolsa de até **R$ 5.454** aos 22 residentes, com INSS. Referências
+de correção: reajuste de 23,29% da bolsa federal em 2022 → **R$ 5.548**; IPCA de jan/2021 a set/2026 →
+**≈ R$ 6.228** (estimativas). Detalhes, respostas da gestão e comparação com outros municípios na página.
 
 ### Bolsas pagas por mês (empenhos municipais)
 
@@ -41,38 +51,20 @@ com impostos municipais (fonte 1500) — e não acompanha a contagem do Ministé
 
 ![Incentivo federal x bolsa paga](dados/grafico-incentivo-vs-bolsa.svg)
 
-### Onde atuam os residentes da UFN (7 unidades)
+### Onde trava a contagem
 
-Cruzamento das unidades informadas pelos residentes com o CNES — o nome da unidade indica a modalidade da equipe:
+Pela Portaria GM/MS 10.193/2026, só entra na conta o residente com matrícula regular na CNRM, cadastro
+"05 – Residência / 01 – Residente" no CNES, vínculo a equipe elegível (eSF etc.), 40 h semanais na equipe e no
+máximo 2 residentes de medicina por eSF — e o total não passa das vagas credenciadas (18). O cadastro no CNES é
+responsabilidade da gestão municipal (art. 172-F, §5º). Texto dos artigos em
+[`dados/portaria_10193_2026_arts_172E_172IA.md`](dados/portaria_10193_2026_arts_172E_172IA.md).
 
-| Unidade | Nome no CNES | CNES | Modalidade |
-|---|---|---|---|
-| Passo das Tropas | UNIDADE ESF PASSO DAS TROPAS | 7091702 | eSF |
-| Parque Pinheiro | UNIDADE ESF PARQUE PINHEIRO | 3290050 | eSF |
-| Lídia | UNIDADE ESF LIDIA | 2242559 | eSF |
-| Santa Marta | UNIDADE ESF NOVA SANTA MARTA | 9761306 | eSF |
-| Binato | UNIDADE ESF ROBERTO BINATO | 2241307 | eSF |
-| Alto da Boa Vista | UNIDADE ESF ALTO DA BOA VISTA | 3445453 | eSF |
-| Itararé | UNIDADE DE SAUDE ITARARE **EAP** (há também a UNIDADE ESF ITARARE) | 2243547 | **eAP** |
-
-O município tem no CNES **21 unidades “ESF” e 15 unidades “EAP”**. Seis das sete unidades da UFN são eSF —
-que **é** modalidade elegível ao incentivo federal. Para a maior parte dos residentes da UFN, portanto, o
-fator decisivo não é a modalidade da unidade, e sim **o cadastro individual** (código “05 – Residência” /
-“01 – Residente”, vinculado a equipe com INE).
-
-### O CNES mostra 26 médicos residentes registrados — o Ministério pagou por 12
-
-Varredura das 36 unidades ESF e EAP do município na base pública do CNES (API de Dados Abertos do MS):
-
-| Competência | Residentes registrados no CNES | Residentes pagos pelo MS |
-|---|---|---|
-| fev/2026 | 20 | 17 |
-| jun/2026 | **26** | **12** |
-
-Dos 26 registrados (jun/2026): **25 estão em equipes eSF** — que são elegíveis — e **1 em equipe eAP**
-(não elegível). Todos têm vínculo "05 – Residência / 01 – Residente" e **todos têm INE** (vínculo a equipe).
-Entre fevereiro e junho a turma virou: 4 residentes formaram e 10 entraram (turma de março) — e o número pago
-pelo Ministério caiu de 17 para 12 exatamente no mês da troca, sem voltar depois. Detalhe por unidade em
+No CNES de jun/2026 havia **26** médicos residentes registrados (25 em equipes eSF, 1 em eAP), para 23 pagos
+pela prefeitura. Os 17 INEs com residentes estão homologados. A contagem do Ministério caiu de 17 para 12 em
+mar/2026, o mês em que a turma nova entrou, e não voltou a subir. Na consulta de out/2026 a três unidades, o
+cadastro dos novos residentes estava completo; havia duas equipes com 3 residentes de medicina (acima do limite),
+dois registros abaixo de 40 h e pelo menos um registro ativo de quem já saiu. A causa da contagem baixa e do zero
+de julho está em aberto (pedido de informação ao Ministério protocolado). Detalhe por unidade em
 [`dados/cnes_medicos_residentes_por_unidade.csv`](dados/cnes_medicos_residentes_por_unidade.csv) (sem nomes).
 
 ---
@@ -145,15 +137,17 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
   transferido ao fundo municipal, e hoje **não cobre** a folha: em média entrou R$ 4.189 por residente pago
   em mar–jun/2026, contra R$ 5.400 de custo (bolsa + 20% de INSS patronal). O que este repositório documenta
   é a diferença entre o valor federal por residente contado (R$ 8.000) e a bolsa paga (R$ 4.500), a contagem
-  baixa do Ministério (12 de 22) e o reajuste anual previsto na lei municipal que nunca foi aplicado. Com os
-  18 credenciados contados, o próprio incentivo pagaria a folha e sobrariam ≈ R$ 25 mil/mês.
-- **O ponto em aberto mais relevante** é a contagem: em junho e julho de 2026 o CNES registra 26 médicos
-  residentes (25 em equipes eSF, com INEs **homologados** em portaria do MS), mas o Ministério pagou por
-  **12** em mar–jun/2026 e **zero** em jul/2026. Foram descartadas, com documentos, as hipóteses de cadastro
-  ausente, de INE ausente e de equipe não homologada. Restam, como explicação possível, a regularidade dos
-  residentes/programas na **CNRM/CNRAPS** (art. 172-E, §4º, I), a **produção no SIAPS** (art. 172-H) ou a
-  régua interna de contagem do Ministério. Para fechar, o caminho é pedido de acesso à informação
-  (Fala.BR, para o Ministério; e-SIC municipal, para a prefeitura) com as perguntas específicas.
+  baixa do Ministério (12 de cerca de 23) e o reajuste anual previsto na lei municipal que nunca foi aplicado.
+  Com os 18 credenciados contados, o próprio incentivo pagaria a folha e sobrariam ≈ R$ 25 mil/mês.
+- **O ponto em aberto mais relevante** é a contagem (ver "Onde trava a contagem" acima e
+  [`investigacao.md`](investigacao.md)). Foram descartadas, com documentos, as hipóteses de cadastro ausente,
+  de INE ausente e de equipe não homologada. Restam a matrícula na **CNRM** da turma de 2026 (art. 172-E,
+  §4º, I), a validação no e-Gestor e os ajustes de cadastro já identificados. Pedido de informação ao
+  Ministério protocolado no Fala.BR.
+- **Iniciativa pessoal e independente**: não representa nem tem endosso da UFSM, da UFN ou da Prefeitura.
+  Sem nomes, CPF, cartão SUS ou dados bancários; residentes só em números agregados. Pedidos de correção ou de
+  retirada: abra uma *issue*. Uma resposta da Secretaria de Saúde ou das COREMEs será publicada com o mesmo
+  destaque.
 - **Contagens de equipe ≠ contagem de residentes.** O histórico de credenciamento do MS registra 16 equipes
   eAP aprovadas para o município e as planilhas de 2026 mostram 21 a 24 equipes eAP pagas por competência;
   quantos *residentes* estão lotados em cada equipe não é informação pública — vem da coordenação do
