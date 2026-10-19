@@ -15,6 +15,11 @@ Levantamento feito em 13/10/2026 a partir dos dois documentos da pasta e de base
 >   (18 credenciados, 12 contados).
 > - **Onde trava a contagem** (investigação em andamento, com o texto da portaria transcrito do DOU):
 >   ver [`investigacao.md`](investigacao.md).
+>
+> **Revisão de 19/10/2026** — trechos que a leitura de 13/10 deixava imprecisos, corrigidos no próprio lugar
+> com a marca *Correção (19/10/2026)*: a "diferença que fica no Fundo" (seções 3 e 6.2), a ideia de que a
+> trilha C é paga com a trilha B (seção 2), o papel da eAP (5.2 e 5.4), o credenciamento (6.3), o reajuste
+> (6.1), o alcance da lei sobre o ano adicional (6.7) e o início da folha coletiva (mai/2023, seção 5).
 
 ---
 
@@ -59,6 +64,11 @@ Manutenção das Ações e Serviços Públicos de Saúde” (código de recurso 
 recebe o incentivo federal e repassa parte dele ao residente como bolsa; a lei municipal, inclusive,
 condiciona o pagamento à existência desse repasse.
 
+> *Correção (19/10/2026):* todos os empenhos da bolsa são da prefeitura. A fonte federal (1600, Bloco de Manutenção) é
+declarada para 11 residentes por mês e a municipal (1500, impostos) para os demais; o Bloco de Manutenção é a conta
+geral da APS, não só o incentivo de residência. De nov/2024 a jul/2026 o incentivo recebido (R$ 1.406.500) foi menor
+que as bolsas pagas (R$ 1.843.050).
+
 ---
 
 ## 3. Valores exatos (e o que mudou em 2026)
@@ -71,6 +81,11 @@ condiciona o pagamento à existência desse repasse.
 
 Em 2026 o incentivo federal por residente de medicina **quase dobrou**, mas o valor da bolsa municipal
 permaneceu em R$ 4.500 — a diferença fica no Fundo Municipal de Saúde.
+
+> *Correção (19/10/2026):* R$ 8.000 é o valor por residente **contado pelo Ministério**, não por residente pago. Com 12
+contados de 22–23 pagos (mar–jun/2026) e 0 em jul/2026, não sobra diferença: a média federal por residente pago
+foi R$ 4.189 em mar–jun/2026 e R$ 3.434 de nov/2024 a jul/2026, abaixo da bolsa (ver
+`dados/incentivo_federal_media_por_residente.csv`). Só em fev/2026 o incentivo superou a folha.
 
 ---
 
@@ -96,6 +111,9 @@ permaneceu em R$ 4.500 — a diferença fica no Fundo Municipal de Saúde.
 Empenhos da Secretaria de Município da Saúde com descrição “BOLSA AUXÍLIO, AO MÉDICO RESIDENTE…”
 (2021–2022, um empenho por residente) e “BOLSAS / AUXÍLIOS AOS MÉDICOS RESIDENTES” em “folha de
 pagamento coletiva” (2023–2026). Categoria contábil: “RESIDÊNCIA MÉDICA”.
+
+> *Correção (19/10/2026):* os empenhos individuais (um por residente, R$ 4.500 cada) vão até abr/2023; a folha coletiva
+começa em mai/2023 (empenho 10170/2023).
 
 | Ano | Total empenhado (bolsas) | Nº de residentes (variação no ano) |
 |---|---|---|
@@ -137,6 +155,10 @@ A Portaria GM/MS 10.193/2026 (art. 172-E, §3º) admite o cadastro de residentes
 federal de R$ 8.000/mês. Como a lei municipal (art. 3º, §2º) condiciona a bolsa à existência do repasse
 federal, esse é o grupo mais exposto. Conferir no CNES (cnes.datasus.gov.br) em qual equipe/INE cada
 residente está cadastrado e levar o caso à Secretaria de Saúde e à coordenação do programa.
+
+> *Correção (19/10/2026):* a eAP explica no máximo 1 dos residentes não contados; a prefeitura já paga residentes que o
+Ministério não conta. A saída prevista na norma é lotar o residente em equipe homologada elegível (art. 172-F, § 4º,
+da Portaria de Consolidação GM/MS 6/2017, na redação da Portaria 10.193/2026), com atuação real de 40h nela.
 
 ### 5.3 O que entra para o município
 
@@ -180,6 +202,7 @@ Três leituras importantes:
 2. **Entre mar e jun/2026 só 12 residentes geraram incentivo**, embora a prefeitura tenha pago bolsa a
    22–23 no período: cerca de 10 residentes são custeados com recursos próprios do município. É aqui que
    os residentes fora de equipe elegível (ex.: eAP) aparecem no orçamento.
+   *Correção (19/10/2026):* o CNES mostra só 1 residente em eAP; a eAP não explica os ~10 não contados. O padrão observado é outro: a queda coincide com a entrada da turma de mar/2026 (ver `investigacao.md`).
 3. **Jul/2026: incentivo zerado.** O plano orçamentário “Demais programas, serviços e equipes da Atenção
    Primária” foi transferido com R$ 0,00, enquanto todos os outros planos da APS seguiram normais no mesmo
    mês (eSF+eAP R$ 931.126,00; saúde bucal R$ 72.387,49; eMulti R$ 15.000,00; ACS R$ 343.652,00; per capita
@@ -194,12 +217,15 @@ o caixa do programa, mas não cobriu toda a folha** — e não houve repasse do 
 ## 6. Dúvidas e pontos que os documentos não esclarecem
 
 1. **Reajuste**: o art. 3º, §1º manda corrigir “conforme critérios do MS”, mas nenhum ato municipal aplicou correção — o valor está em R$ 4.500 desde 2020, mesmo com o incentivo federal por residente em R$ 8.000 (2026). Quais “critérios do MS” seriam esses e por que não foram aplicados?
+   *Correção (19/10/2026):* o valor não foi corrigido desde 2021; a lei prevê correção “conforme critérios formalizados pelo MS” e não localizamos o ato que defina esses critérios (em aberto).
 2. **Destinação do aumento federal**: a lei não diz que o valor recebido a mais deve ser repassado ao residente. Com o incentivo em R$ 8.000 e a bolsa em R$ 4.500 por residente credenciado, o excedente de até R$ 3.500/residente/mês fica no Fundo Municipal de Saúde — na prática, ajudando a cobrir a parcela da folha que hoje sai de recursos próprios (ver 5.3). Não há, na lei, vinculação desse aumento ao profissional.
+   *Correção (19/10/2026):* o “excedente” só existiria se o Ministério contasse todos os residentes pagos. Com 12 contados (mar–jun/2026) e 0 (jul/2026), a média federal por residente pago ficou abaixo da bolsa (R$ 4.189 e R$ 0); o município completou a folha com recursos próprios (ver 5.4).
 3. **Credenciamento**: não localizei portaria de credenciamento de Santa Maria especificamente para o incentivo de residência (art. 172-E). O município usa recursos “fundo a fundo – Bloco de Manutenção” para pagar as bolsas, mas quantos residentes estão efetivamente credenciados precisa ser conferido no e-Gestor APS e no DOU.
+   *Correção (19/10/2026):* a planilha oficial do Ministério (seção 5.4) mostra 18 residentes credenciados desde out/2025 (15 em mar–set/2025).
 4. **Elemento de despesa**: a lei fixou 3.3.90.48, a execução usa 3.3.90.36 (“Outros serviços de terceiros – pessoa física”). Isso muda a natureza jurídica do gasto (bolsa x serviço) e dificulta o rastreamento pelo elemento previsto na própria lei.
 5. **Previdenciário**: a prefeitura paga 20% patronal sobre as bolsas (tratando como remuneração), mas não há clareza sobre desconto de 11% no valor do residente nem sobre o tratamento tributário — o §3º da lei diz que não há parcelas trabalhistas, o que não resolve a questão previdenciária.
 6. **Paralisação do repasse**: como o pagamento municipal é condicionado ao repasse federal, uma suspensão do incentivo (art. 172-H: 3 competências sem produção no SIAPS ou sem cadastro no SCNES) pode interromper a bolsa dos residentes sem que a lei defina o que acontece nesse caso.
-7. **Quem entra e quem fica de fora**: em 2026 foram pagos 19–23 residentes; a lei fala apenas em R1 e R2 dos programas da UFSM e da UFN. Residentes de ano adicional (R3), de outras especialidades ou de outros programas não estão claramente contemplados.
+7. **Alcance da lei**: a lei municipal fala apenas em R1 e R2 dos programas da UFSM e da UFN; ela não regula o ano adicional, outras especialidades ou outros programas. Para o incentivo federal, o ano adicional é elegível (art. 172-E, § 4º, II).
 8. **INSS de 11%**: como saber o que foi descontado. Ver seção 7.
 
 ---

@@ -100,8 +100,8 @@ investigacao.md                             caderno de investigação: onde trav
 CLAUDE.md                                   contexto e regras para sessões de trabalho com o Claude
 dados/
   bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada
-  bolsa_empenhos_coletivos_2023_2026.csv    empenho por empenho, com link para a página oficial
-  bolsa_agregado_2021_2022.csv              2021–2022, quando os pagamentos eram individuais
+  bolsa_empenhos_coletivos_2023_2026.csv    folha coletiva (mai/2023–ago/2026), empenho por empenho, com link oficial
+  bolsa_agregado_individuais_2021_2023.csv  abr/2021–abr/2023, quando os pagamentos eram individuais (só totais)
   incentivo_federal_residencia.csv          o que o MS transferiu, por competência (aba “Residência”)
   incentivo_federal_recebido_2026.csv       data e valor de cada crédito na conta do município (Lei 9.452/97)
   incentivo_federal_media_por_residente.csv média federal por residente pago pela prefeitura, por competência
@@ -112,9 +112,10 @@ dados/
 scripts/                                    o que extrai e reconfere os dados (ver scripts/README abaixo)
 ```
 
-**Sem dados pessoais.** Os pagamentos de 2021 e 2022 eram feitos em empenhos individuais, com o nome do
-residente como credor. Esses registros aparecem aqui **apenas agregados por mês** — os nomes não são
-reproduzidos. A partir de 2023 o credor é a “folha de pagamento coletiva”, sem nomes.
+**Sem dados pessoais.** De abr/2021 a abr/2023 os pagamentos eram feitos em empenhos individuais, um por
+residente. Esses registros aparecem aqui **apenas agregados por mês**, sem link para cada empenho — os nomes
+não são reproduzidos. A partir de mai/2023 o pagamento sai numa “folha de pagamento coletiva”, sem nomes.
+*Correção (19/10/2026): o texto anterior dizia “a partir de 2023”; jan–abr/2023 ainda eram empenhos individuais.*
 
 ---
 

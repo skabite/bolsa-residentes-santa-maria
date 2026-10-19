@@ -1,8 +1,11 @@
 # Caderno de investigação — onde trava o incentivo federal
 
-Estado em **15/10/2026**. Este arquivo é a memória de trabalho entre sessões: o que já foi
+Estado em **19/10/2026**. Este arquivo é a memória de trabalho entre sessões: o que já foi
 estabelecido, o que é hipótese, o que foi descartado e o que falta. A página pública (`index.html`)
-só recebe o que estiver confirmado. Sem nomes de pessoas — residentes aparecem por papel (R1/R2/R3) e unidade.
+só recebe o que estiver confirmado. **Este arquivo também é público** (o GitHub Pages publica o
+repositório): sem nomes e sem atributo individual (carga horária, origem, saída, gênero, licença) de quem
+possa ser identificado. Grupo com menos de 3 pessoas por papel ou por equipe aparece só como número.
+Detalhes individuais vão à gestão e às COREMEs por canal privado.
 
 ## A pergunta
 
@@ -40,24 +43,23 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
 - **Repasse federal não é retroativo**: em todas as competências o valor = contados × valor unitário;
   nenhum acerto posterior aparece. Mês não contado = dinheiro perdido. A bolsa municipal, sim, é paga
   com retroativo.
-- **Composição real** (informada pelo usuário, que é residente do programa; UFN R2 = 4 confere com o
+- **Composição real** (informação de residentes do programa, não oficial; UFN R2 = 4 confere com o
   resultado publicado da seleção):
 
   | Grupo | Quantos |
   |---|---|
-  | Matrícula anterior a mar/2026: 7 R2 UFSM + 4 R2 UFN + 1 R2 que ficou até ago/2026 | **12** |
-  | Matrícula iniciada em mar/2026: 7 R1 UFSM + 3 R1 UFN + 1 R3 (ano adicional, vinda de outro programa) | **11** |
+  | Matrícula anterior a mar/2026: 7 R2 UFSM + 4 R2 UFN + 1 de turma anterior | **12** |
+  | Matrícula iniciada em mar/2026: 7 R1 UFSM + 3 R1 UFN + 1 de ano adicional | **11** |
   | Total abr–jun/2026 (bate com os 23 pagos pela prefeitura) | 23 |
-  | Hoje (depois da saída de ago/2026): 15 UFSM + 7 UFN | 22 |
+  | Hoje: 15 UFSM + 7 UFN | 22 |
 
 - **CNES de 15/10/2026** (fichas públicas de São José, São Francisco e Victor Hoffmann; resumo agregado):
   - Todos os R1 têm cadastro **correto**: CBO 2231F9, vínculo Residência/Residente, 40h, equipe eSF,
     entrada em **10/03/2026** (a turma de 2025 entrou em 07/03/2025 com o mesmo cadastro e foi reconhecida).
-  - A maioria dos R2 está com 40h. **Dois residentes estão abaixo de 40h** (um R2 e o R3).
+  - **Dois registros de residentes estão abaixo de 40h**; os demais têm 40h.
   - **Duas equipes têm 3 residentes de medicina** (limite 2): São José equipe 16 (INE 0000433012) e São
     Francisco equipe 30 (INE 0001662821).
-  - Um **registro de residente que já saiu do programa (ago/2026) continua ativo** na São José equipe 16,
-    ocupando uma das 2 vagas da equipe.
+  - Há pelo menos **um registro ativo de quem já deixou o programa**, numa das equipes com 3 residentes.
   - Caracterização: São José consta como "UNIDADE SEM ATIVIDADE DE ENSINO"; São Francisco como "UNIDADE
     AUXILIAR DE ENSINO". Não se sabe se o MS confere isso.
 - **Todos os empenhos da bolsa são da prefeitura**; "federal" × "municipal" é só a fonte declarada
@@ -68,31 +70,30 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
 ## Hipóteses, em ordem
 
 1. **Matrícula da turma de 2026 não reconhecida (CNRM)** — principal. Os 12 contados são exatamente quem
-   tinha matrícula antes de mar/2026; os 11 que começaram em mar/2026 (UFSM, UFN e a R3) não aparecem.
+   tinha matrícula antes de mar/2026; os 11 que começaram em mar/2026 (UFSM, UFN e o ano adicional) não aparecem.
    O cadastro CNES dos R1 está correto, então o único requisito individual que sobra é o § 4º, I–II do
    172-E (situação regular na CNRM). Contra: exigiria falha simultânea de programas diferentes; pode
    ser também a forma como o MS passou a ler o CNRM com a portaria nova (fev/2026).
 2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas.
-3. **Limite de 2 por eSF** — explica 2 (um R1 na São José 16, um na São Francisco 30), e o registro de
-   quem já saiu agrava o caso da São José.
+3. **Limite de 2 por eSF** — explica 2 (um residente em cada equipe com 3), e o registro ativo de quem
+   já saiu agrava um dos casos.
 4. **Zero de jul/2026 = suspensão do art. 172-H** depois de 3 competências com residentes "irregulares"
    (mar/abr/mai ou abr/mai/jun). Se for isso, regularizar os cadastros destrava (sem retroativo).
    Não confirmado: o texto não diz se a suspensão é do incentivo inteiro ou por vaga.
 
 **Descartadas**: cadastro ausente; INE ausente; equipe não homologada (os 17 INEs com residentes estão
 homologados); modalidade eAP como causa principal (só 1 residente em eAP); vínculo errado nos R1;
-carga horária como causa geral (R2 de outras unidades têm 40h); "R3 era R2 interna" (ela é externa);
-"residente que saiu continuava no CNES em julho" (ela saiu em agosto — julho estava certo; corrigido
-na página).
+carga horária como causa geral (quase todos os registros têm 40h); o caso de "registro desatualizado"
+citado em 13/10 (estava errado; corrigido na página com nota).
 
 ## Próximos passos
 
 - **Gestor (e-Gestor APS)**: quais residentes foram validados em cada competência e o motivo dos não
   validados; motivo do zero de jul/2026; se o credenciamento (18) precisa ser ampliado/atualizado.
-  Correções que não dependem de nada: dar baixa do registro de quem saiu em ago/2026; resolver as duas equipes
+  Correções que não dependem de nada: dar baixa dos registros de quem já saiu; resolver as duas equipes
   com 3 residentes (art. 172-F § 4º permite mudar de equipe homologada); alinhar a carga horária dos
   dois residentes abaixo de 40h com a dos colegas.
-- **COREMEs (UFSM e UFN)**: situação da turma de 2026 (R1 e R3) no SisCNRM e desde quando. Perguntar
+- **COREMEs (UFSM e UFN)**: situação da turma de 2026 (R1 e ano adicional) no SisCNRM e desde quando. Perguntar
   também se aderiram ao **Edital SGTES/MS nº 10/2026 (Mais Residências)**: bolsa-formação de
   R$ 4.000/mês paga pelo MS direto ao residente que fizer o curso de preceptoria em MFC, se o programa
   tiver aderido (residentes matriculados em abr/2026; Portaria GM/MS 8.403/2025).
@@ -102,10 +103,14 @@ na página).
   planilha do MS com ago/set/2026; fichas CNES das outras 12 unidades com residentes (lista de CNES em
   `dados/cnes_medicos_residentes_por_unidade.csv`) para fechar o 26 × 22.
 
-## Perguntas em aberto ao usuário
+## Privacidade e histórico
 
-- A folha de jul/2026 teve 22, mas havia 23 pessoas no programa. Quem ficou sem a bolsa de julho?
-- Por que um R2 está abaixo de 40h no CNES se os outros R2, com o mesmo rodízio, estão com 40h?
+- Versões anteriores a 19/10/2026 deste caderno e da página (commits até 62d1598) traziam detalhes
+  individuais que hoje não aparecem mais. Decisão em 19/10/2026: **não reescrever o histórico do git** por
+  iniciativa própria (risco baixo, custo alto); reescrever só se alguém citado pedir (LGPD art. 18), sabendo
+  que clones já feitos não são alcançados.
+- Saídas dos scripts de coleta (com nomes de credores) ficam em `scripts/saida/`, que é ignorada pelo git.
+  PDFs e extratos enviados no chat nunca entram no repositório.
 
 ## Registro das sessões
 
@@ -114,3 +119,6 @@ na página).
   ("R$ 8.000 por residente que o Ministério conta"); empenhos explicados como todos municipais; caso
   do CNES de julho retirado; texto da Portaria 10.193/2026 transcrito; padrão "matrículas de 2026 não
   contadas" identificado; fichas CNES de 3 unidades analisadas.
+- **19/10/2026** — revisão de conformidade legal (LGPD, honra, direitos autorais, ética do residente):
+  caderno reescrito sem atributos individuais; correções datadas no relatorio.md; saídas dos scripts
+  protegidas; redesenho da página para celular em andamento.

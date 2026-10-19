@@ -5,6 +5,7 @@ import json
 import os
 import re
 import sys
+import time
 
 import requests
 
@@ -39,9 +40,11 @@ def main():
         nr, ano = a.split("/")
         pares.append((nr, ano))
     s = requests.Session()
-    s.headers.update({"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/126 Safari/537.36"})
+    s.headers.update({"User-Agent": "Mozilla/5.0 (compatible; bolsa-residentes-sm/1.0; +https://github.com/skabite/bolsa-residentes-santa-maria)"})
     out = []
-    for nr, ano in pares:
+    for i, (nr, ano) in enumerate(pares):
+        if i:
+            time.sleep(1)  # cortesia com o portal
         dados, itens = detalhe(s, nr, ano)
         if not dados:
             print(f"{nr}/{ano}: NAO ENCONTRADO")
@@ -56,7 +59,11 @@ def main():
         for it in itens[:3]:
             print("   ITEM:", {k: it[k] for k in list(it)[:12]})
         out.append({"nr": nr, "ano": ano, "dados": dados, "itens": itens})
-    json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "detalhes.json"), "w"), ensure_ascii=False, indent=1)
+    # a saida traz o credor (pode ser pessoa fisica): fica em scripts/saida/, ignorada pelo git
+    saida = os.path.join(os.path.dirname(os.path.abspath(__file__)), "saida")
+    os.makedirs(saida, exist_ok=True)
+    with open(os.path.join(saida, "detalhes.json"), "w", encoding="utf-8") as fh:
+        json.dump(out, fh, ensure_ascii=False, indent=1)
 
 
 if __name__ == "__main__":
