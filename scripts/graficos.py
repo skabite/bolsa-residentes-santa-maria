@@ -4,7 +4,8 @@
 Uso:  python3 scripts/graficos.py            (atualiza index.html no lugar)
       python3 scripts/graficos.py --mostrar  (so imprime os nomes e tamanhos)
 
-Cada grafico fica entre os marcadores <!--g:nome--> e <!--/g:nome--> no index.html.
+Cada grafico fica entre os marcadores <!--g:nome--> e <!--/g:nome--> no index.html; os dados da
+tabela de empenhos ficam entre <!--d:dados--> e <!--/d:dados-->.
 Os SVGs usam viewBox de 360 de largura (pensados para o celular) e classes CSS da pagina
 (.g-grid, .g-axis, .g-tick, .g-s1, .g-s2, .g-ref, .g-bar, .g-hit, .g-lab), entao as cores
 seguem o tema claro/escuro. Sem dependencias alem da biblioteca padrao.
@@ -177,6 +178,27 @@ def bolsa_mes():
 GRAFICOS = {"pagos-contados": pagos_contados, "media-residente": media_residente, "bolsa-mes": bolsa_mes}
 
 
+# ---------------------------------------------------------------- dados embutidos (tabela de empenhos)
+def dados_js():
+    """Empenhos da folha coletiva (mai/2023 em diante) e totais mensais dos empenhos individuais.
+    Os individuais (abr/2021-abr/2023) entram so agregados: a pagina oficial de cada um mostra o nome."""
+    import json
+    emp = []
+    for l in ler("bolsa_empenhos_coletivos_2023_2026.csv"):
+        fed = l["fonte_recurso"].startswith("Transfer")
+        emp.append({"a": int(l["ano"]), "m": int(l["mes"]), "nr": l["nrEmpenho"], "d": l["data_emissao"],
+                    "v": float(l["valor_empenhado"]), "n": l["n_residentes_declarado"].lstrip("0"),
+                    "f": "federal" if fed else "municipal", "u": l["link_detalhe"]})
+    agg = [{"a": int(l["ano"]), "m": int(l["mes"]), "q": int(l["numero_de_empenhos"]), "v": float(l["valor_total"])}
+           for l in ler("bolsa_agregado_individuais_2021_2023.csv")]
+    mes = {f'{l["ano"]}-{int(l["mes"])}': float(l["valor_bolsas"]) for l in ler("bolsa_residentes_por_mes.csv")}
+    corpo = json.dumps({"emp": emp, "agg": agg, "mes": mes}, ensure_ascii=False, separators=(",", ":"))
+    return f'<script id="dados" type="application/json">{corpo}</script>'
+
+
+BLOCOS = {"d:dados": dados_js}
+
+
 def main():
     if "--mostrar" in sys.argv:
         for nome, f in GRAFICOS.items():
@@ -184,12 +206,15 @@ def main():
         return
     caminho = os.path.join(RAIZ, "index.html")
     html = open(caminho, encoding="utf-8").read()
-    for nome, f in GRAFICOS.items():
-        padrao = re.compile(r"(<!--g:%s-->).*?(<!--/g:%s-->)" % (nome, nome), re.S)
+    alvos = {f"g:{nome}": f for nome, f in GRAFICOS.items()}
+    alvos.update(BLOCOS)
+    for chave, f in alvos.items():
+        padrao = re.compile(r"(<!--%s-->).*?(<!--/%s-->)" % (chave, chave), re.S)
         if not padrao.search(html):
-            print(f"aviso: marcador <!--g:{nome}--> nao encontrado")
+            print(f"aviso: marcador <!--{chave}--> nao encontrado")
             continue
-        html = padrao.sub(lambda mo: mo.group(1) + f() + mo.group(2), html)
+        conteudo = f()
+        html = padrao.sub(lambda mo: mo.group(1) + conteudo + mo.group(2), html)
     open(caminho, "w", encoding="utf-8").write(html)
     print("graficos atualizados em index.html")
 
