@@ -130,3 +130,9 @@ citado em 13/10 (estava errado; corrigido na página com nota).
   retroativo de março escrita; vagas do gráfico em degraus (15 em mar–set/2025); empenho do INSS
   patronal (18203/2026) nos dados; tabela de composição reduzida aos totais; comparações com Ijuí
   (R$ 6.000 desde 2023) e Santos.
+- **20/10/2026** — revisões de UX, acessibilidade, texto e código aplicadas: fontes em grupos
+  recolhidos (página de 18,9 para 13,7 telas a 360 px), tabelas que cabem no celular (a federal com
+  coluna fixa), contraste AA, "repassa" (Ministério → município) × "paga" (prefeitura → residente),
+  glossário ampliado, gráficos navegáveis por arrasto e botões, página legível sem JavaScript,
+  `scripts/graficos.py` com rótulos tirados dos dados e erro se faltar marcador. Próximo passo
+  sugerido: ofício à Secretaria e às COREMEs antes de divulgar mais.
