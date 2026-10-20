@@ -39,5 +39,7 @@ trabalho, leia [`investigacao.md`](investigacao.md)**: estado atual, hipóteses,
 - `README.md` — resumo e como conferir
 - `relatorio.md` — relatório longo de 13/10/2026, com revisão de 15/10
 - `investigacao.md` — caderno de investigação (estado atual)
+- `verificacao.md` — como conferir cada afirmação e o que ainda está "a conferir"
+- `pedidos/` (ignorada) — rascunhos de ofício e pedidos de LAI
 - `dados/` — CSVs, trechos da portaria e snapshots do CNES sem nomes
 - `scripts/` — coleta no portal da prefeitura (precisa de rede)

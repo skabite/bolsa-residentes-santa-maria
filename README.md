@@ -73,6 +73,8 @@ de julho está em aberto (pedido de informação ao Ministério protocolado). De
 
 ## Como conferir cada número
 
+Guia completo, com o estado de cada verificação: [`verificacao.md`](verificacao.md).
+
 | A afirmação | Onde conferir |
 |---|---|
 | Valores, datas e quantos residentes foram pagos | [Portal da Transparência de Santa Maria → Despesa → Empenho](https://www.santamaria.rs.gov.br/transparencia/despesa/empenho) — filtre o ano e a unidade *Secretaria de Município da Saúde*, busque por `FOLHA PGTO COLETIVA` |
@@ -91,6 +93,7 @@ de julho está em aberto (pedido de informação ao Ministério protocolado). De
 index.html                                  dossiê navegável (mesmo conteúdo da página publicada)
 relatorio.md                                relatório completo, com tabelas e ressalvas metodológicas
 investigacao.md                             caderno de investigação: onde trava a contagem, hipóteses e próximos passos
+verificacao.md                              como conferir cada afirmação em fonte pública, e o que ainda falta conferir
 CLAUDE.md                                   contexto e regras para sessões de trabalho com o Claude
 dados/
   bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada; INSS patronal
@@ -167,4 +170,5 @@ seu próprio caso, o caminho é: (1) CNES, para ver seu registro e sua equipe; (
 contribuição previdenciária; (3) pedido de acesso à informação ao Ministério da Saúde (Fala.BR) e à
 prefeitura (e-SIC), perguntando a contagem do incentivo por competência e por equipe.
 
-Dados públicos, uso livre. Código dos scripts sob licença MIT (ver `LICENSE`).
+Dados públicos, uso livre. Textos sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br) (cite a fonte);
+código dos scripts sob licença MIT (ver `LICENSE`).
