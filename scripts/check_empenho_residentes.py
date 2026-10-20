@@ -4,8 +4,8 @@ bolsa dos medicos residentes (Secretaria de Municipio da Saude).
 
 Como funciona: a tela /transparencia/despesa/empenho e um componente Livewire.
 O script faz o handshake (pega o data-csrf e o wire:snapshot) e envia os filtros
-por POST em /livewire/update - sem navegador e sem captcha (o captcha so existe
-no export).
+por POST em /livewire/update. Usa a tela publica de listagem; nao usa a exportacao
+nem resolve captcha (acesso automatizado previsto na Lei 12.527/2011, art. 8o, par. 3o, III).
 
 Uso:  python3 check_empenho_residentes.py [ano]
 Saida (uma linha por achado):
@@ -33,7 +33,7 @@ RUIDO = re.compile(r"(?i)(rm-?40|hospital|assistencial|moradia|mais m[ée]dicos|
 def main():
     ano = sys.argv[1] if len(sys.argv) > 1 else "2026"
     s = requests.Session()
-    s.headers.update({"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) Chrome/126 Safari/537.36"})
+    s.headers.update({"User-Agent": "Mozilla/5.0 (compatible; bolsa-residentes-sm/1.0; +https://github.com/skabite/bolsa-residentes-santa-maria)"})
     try:
         raw = s.get(URL, timeout=90).text
     except Exception as e:

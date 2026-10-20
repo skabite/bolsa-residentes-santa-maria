@@ -1,2 +1,7 @@
 # Pedidos de acesso à informação (LAI) — não publicar por ora
 pedidos/
+__pycache__/
+scripts/saida/
+scripts/empenhos_saude_*.csv
+scripts/detalhes.json
+*.pdf
