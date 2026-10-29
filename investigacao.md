@@ -51,7 +51,7 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
   | Matrícula anterior a mar/2026 | **12** |
   | Matrícula iniciada em mar/2026 | **11** |
   | Total abr–jun/2026 (bate com os 23 pagos pela prefeitura) | 23 |
-  | Hoje (bate com os 22 pagos) | 22 |
+  | Ago/2026 (bate com os 22 pagos) | 22 |
 
   A divisão por programa e por ano fica fora deste arquivo: com grupos de 1 pessoa ela permitiria
   deduzir quem saiu e quando.
@@ -77,9 +77,9 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
    total, então a correspondência um a um não está provada. Nas 3 unidades conferidas o cadastro CNES dos R1
    está correto, então o requisito individual que sobra ali é o § 4º, I–II do 172-E (situação regular na CNRM). Contra: exigiria falha simultânea de programas diferentes; pode
    ser também a forma como o MS passou a ler o CNRM com a portaria nova (fev/2026).
-2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas. Pode ser exigência
-   nova de 2026: pela busca de 29/10, a Portaria 4.411/2022 pedia o cadastro "na composição de equipe
-   homologada" sem fixar horas (a conferir no texto; ver a seção sobre estágio externo abaixo).
+2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas. Não é exigência
+   nova de 2026: a Portaria 4.411/2022 (art. 172-E, § 10) já exigia a carga horária mínima da composição;
+   o "40 (quarenta) horas" literal só aparecia para eSB (§ 9º). Ver a seção sobre estágio externo abaixo.
 3. **Limite de 2 por eSF** — explica 2 (um em cada equipe com 3). Registros de quem já saiu também
    precisam de baixa.
 4. **Zero de jul/2026 = suspensão do art. 172-H** depois de 3 competências com residentes "irregulares"
@@ -101,8 +101,12 @@ quem está em estágio nem ligar isso aos dois registros abaixo de 40h** (grupos
   quarenta horas semanais na composição" das equipes listadas (art. 172-F § 6º); o cadastro no SCNES é da gestão
   (§ 5º); a conta usa residentes "atuantes" no município (172-E § 2º). O verbo é *cumprir*: o cadastro de 40h tem
   de corresponder a 40h reais na equipe.
-- **Margem:** a residência médica pode ter até 60h semanais (Lei 6.932/1981, art. 5º; fonte 21, a conferir no
-  Planalto). Estágio externo em parte da semana, mantendo 40h na equipe, cumpre as duas regras. Estágio em tempo
+- **As 40h antes de 2026 (conferido em 29/10/2026):** a Portaria GM/MS 4.411/2022 já mandava o profissional em
+  formação cumprir "a carga horária semanal mínima exigida para a composição da eSF ou eSB" (art. 172-E, § 10).
+  O número "40 (quarenta) horas" só aparece literalmente para eSB (§ 9º); para eSF, o mínimo de 40h vinha da
+  carga horária exigida para a composição da equipe, não nasceu com a 10.193/2026.
+- **Margem:** a residência médica pode ter até 60h semanais (Lei 6.932/1981, art. 5º; fonte 21, conferida no
+  Planalto em 29/10/2026). Estágio externo em parte da semana, mantendo 40h na equipe, cumpre as duas regras. Estágio em tempo
   integral fora da equipe: manter 40h no CNES não reflete a realidade (risco para a gestão em auditoria; a
   Portaria SAS/MS 134/2011 trata da fidedignidade do SCNES, a conferir se está vigente).
 - **"Na rede" não basta:** só contam horas na composição de eSF, eSB, eMulti, eSFF/UBSF, eSFR, eCR ou eAPP. CAPS,
@@ -111,12 +115,13 @@ quem está em estágio nem ligar isso aos dois registros abaixo de 40h** (grupos
   sem perda, se os outros 18 estiverem regulares (172-E § 2º). Escalonar os estágios protege o repasse. Hoje a
   folga não ajuda: a contagem está em 12 por outros motivos (hipótese 1).
 - **A perguntar ao Ministério:** (a) se "cumulativamente" permite somar horas em mais de uma equipe elegível (ex.:
-  eSF + eMulti); (b) como tratar o residente em estágio externo; (c) se a exigência de 40h já existia antes de 2026.
+  eSF + eMulti); (b) como tratar o residente em estágio externo; (c) como aplica, na prática, a carga horária mínima
+  que já vinha da 4.411/2022.
 - **"Outros programas fazem isso":** não achamos orientação pública do Ministério. A busca de 29/10 mostrou
   programas que fixam um mínimo de horas na unidade (João Pessoa, Portaria 18/2016 da RMFC: 32h; regulamento
   da ESP/SC: 45h em serviço na atenção básica, de 60h) — vistos só em resumo de busca, a conferir. Perguntar às
   COREMEs como outros programas organizam a semana durante estágios.
-- **Para conferir (links):** Portaria GM/MS 4.411/2022
+- **Para conferir (links):** Portaria GM/MS 4.411/2022 (conferida em 29/10/2026)
   (https://bvsms.saude.gov.br/bvs/saudelegis/gm/2022/prt4411_22_12_2022.html); nota técnica do Ministério sobre o
   recurso adicional para residência na APS, 2023
   (https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/notas-tecnicas/2023/sei_ms-0024042088-nota-tecnica.pdf);
@@ -140,12 +145,15 @@ quem está em estágio nem ligar isso aos dois registros abaixo de 40h** (grupos
   20 + 10 dias). Ao chegar a resposta, comparar com as hipóteses acima.
 - **Dados a atualizar quando houver acesso** (o usuário topou baixar o que a sessão não alcança; passo a passo
   com links em `verificacao.md`, seção "Atualizar os dados"): planilha do MS com ago/set/2026 (o mais importante:
-  mostra se o repasse voltou depois do zero de julho); créditos de ago–out/2026 em "Recursos recebidos"; empenho
-  de set/out/2026 (`scripts/check_empenho_residentes.py`); fichas CNES das outras 12 unidades com residentes
-  (lista de CNES em `dados/cnes_medicos_residentes_por_unidade.csv`) para fechar o 26 × 22. Depois de mudar os
+  mostra se o repasse voltou depois do zero de julho); créditos de ago–out/2026 em "Recursos recebidos"; fichas
+  CNES das outras 12 unidades com residentes (lista de CNES em `dados/cnes_medicos_residentes_por_unidade.csv`)
+  para fechar o 26 registros × 21–22 pagos. Depois de mudar os
   CSVs: `dados/situacao_dos_dados.csv` (período e data da coleta) e `python3 scripts/montar_site.py`.
-- **Pista a conferir**: a busca de 29/10 citou a Portaria GM/MS 10.345, de 13/03/2026, que credencia municípios
-  para custeio da APS, inclusive equipes integradas a residência. Ver se Santa Maria está nela e com quantas vagas.
+- **Pista conferida (29/10/2026)**: a Portaria GM/MS 10.345/2026 (DOU de 05/05/2026, ed. 82, seção 1, p. 131)
+  credencia equipes da APS e, no Anexo XXI, "novas vagas" de residência. Santa Maria (IBGE 431690) **não está**
+  no Anexo XXI: não ganhou vagas novas de residência por essa portaria. Aparece só no Anexo VII, com 3 INEs
+  (0002044692, 0002105403, 0002044471) para eSF em substituição a equipes homologadas — sem relação com residência.
+  Link: <https://in.gov.br/web/dou/-/portaria-gm/ms-n-10.345-de-13-de-marco-de-2026-*-703189310>.
 
 ## Privacidade e histórico
 
@@ -184,3 +192,11 @@ quem está em estágio nem ligar isso aos dois registros abaixo de 40h** (grupos
   "Até quando vão os dados" (`dados/situacao_dos_dados.csv`). `scripts/montar_site.py` monta as partes comuns,
   gráficos e tabelas e confere fontes, termos e links. Análise do estágio externo e das 40h (seção acima). Rede
   da sessão bloqueou todos os sites do governo: dados não atualizados; lista do que baixar passada ao usuário.
+- **29/10/2026 (dados)** — empenhos de setembro e outubro/2026 incluídos: 11 + 10 residentes,
+  R$ 94.500 de bolsas por mês e R$ 18.900 de INSS patronal (empenhos 20440/20441 e 22817/22818;
+  INSS 20447 e 22835), conferidos no portal. Os créditos de ago–out/2026 ainda não foram publicados
+  (o relatório de outubro só lista créditos até 09/10). A API do painel do Ministério segue com erro
+  500 em todas as competências: ago/set não foram baixados; julho foi validado na planilha de 13/10.
+  Fontes 1 e 21 conferidas (Lei 6.516/2020 e Lei 6.932/1981); a Portaria 10.345/2026 não deu vagas
+  novas de residência a Santa Maria (só 3 INEs de substituição); a 4.411/2022 já exigia a carga
+  horária mínima da composição. A folha caiu de 22 (ago) para 21 residentes (set–out) nos empenhos.
