@@ -20,8 +20,8 @@ dependem de alguém abrir o link num navegador comum. São poucos passos, descri
 
 | # | Afirmação | Fonte primária e caminho | Estado |
 |---|---|---|---|
-| 1 | A lei municipal prevê **correção anual** da bolsa (art. 3º, §1º) e liga o pagamento ao repasse federal | Lei municipal 6.516, de 29/12/2020. Site da Câmara (camara-sm.rs.gov.br) → Atividades legislativas → Legislação → Lei → buscar "6516" | **A conferir.** O dossiê cita a lei por resumo e traz duas redações do §1º ("critérios do Ministério da Saúde" e "critérios formalizados pelo MS"). O parágrafo que liga a bolsa ao repasse também não está confirmado. Copiar o texto literal do art. 3º antes do ofício. |
-| 2 | A bolsa está em **R$ 4.500 desde 2021**, sem correção | Portal da Transparência de Santa Maria → Despesa → Empenho → unidade Secretaria de Município da Saúde → buscar "FOLHA PGTO COLETIVA". Cada empenho em `dados/bolsa_empenhos_coletivos_2023_2026.csv` tem o link oficial (coluna `link_detalhe`) | Conferido na fonte primária (empenhos de abr/2021 a ago/2026; valor ÷ residentes declarados = R$ 4.500) |
+| 1 | A lei municipal prevê **correção anual** da bolsa (art. 3º, §1º) e liga o pagamento ao repasse federal | Lei municipal 6.516, de 29/12/2020. Site da Câmara (camara-sm.rs.gov.br) → Atividades legislativas → Legislação → Lei → buscar "6516" (página: <https://camara-sm.rs.gov.br/atividades-legislativas/legislacao/lei/70865/lei-n--6516-2020>) | Conferido na fonte primária (site da Câmara, 29/10/2026; texto integral e .doc oficial). Art. 3º, §1º: "O valor da Complementação será corrigido anualmente conforme critérios formalizados pelo Ministério da Saúde." O §2º vincula o pagamento à pré-existência do repasse federal |
+| 2 | A bolsa está em **R$ 4.500 desde 2021**, sem correção | Portal da Transparência de Santa Maria → Despesa → Empenho → unidade Secretaria de Município da Saúde → buscar "FOLHA PGTO COLETIVA". Cada empenho em `dados/bolsa_empenhos_coletivos_2023_2026.csv` tem o link oficial (coluna `link_detalhe`) | Conferido na fonte primária (empenhos de abr/2021 a out/2026; valor ÷ residentes declarados = R$ 4.500) |
 | 3 | O Ministério repassa **R$ 8.000 por residente de medicina contado** desde fev/2026 | Portaria GM/MS 10.193/2026, DOU nº 22 de 02/02/2026, Seção 1, p. 104. Autenticidade: código **05152026020200104** em in.gov.br/autenticidade.html | Conferido na fonte primária (página do DOU). Transcrição em `dados/portaria_10193_2026_arts_172E_172IA.md` |
 | 4 | Requisitos para contar: CNRM regular, CNES "Residência/Residente", equipe elegível, 40 h, até 2 por eSF; cadastro é responsabilidade da gestão (172-F, §5º); suspensão após 3 competências (172-H) | Mesma portaria, arts. 172-E a 172-H | Conferido na fonte primária |
 | 5 | **18 vagas credenciadas**; contados: 17 (out/2025–fev/2026), **12** (mar–jun/2026), **0** (jul/2026) | Painel de pagamentos da APS (relatorioaps.saude.gov.br/gerenciaaps/pagamento) → município Santa Maria/RS → baixar a planilha → aba **Residência** (colunas `medicos_credenciados` e `medicos_pagos`) | Conferido na fonte primária (planilha baixada em 13/10/2026). Os meses de ago/set/2026 ainda não foram baixados |
@@ -44,8 +44,8 @@ dependem de alguém abrir o link num navegador comum. São poucos passos, descri
 | 12 | 26 médicos residentes registrados no CNES em jun/2026; 25 em eSF e 1 em eAP | CNES (cnes.datasus.gov.br) → Consultas → Estabelecimentos → cada unidade → abas Profissionais e Equipes | Conferido (contagem por unidade em `dados/cnes_medicos_residentes_por_unidade.csv`) |
 | 13 | Duas equipes com 3 residentes (São José, equipe 16; São Francisco, equipe 30); dois registros abaixo de 40 h; pelo menos um registro de quem já saiu | Fichas do CNES dessas unidades | Conferido em **3 de 15 unidades** (15/10/2026). As outras 12 ainda não foram conferidas |
 | 14 | A queda de 17 para 12 coincide com a entrada da turma de mar/2026 (12 matrículas anteriores + 11 novas) | Planilha do item 5 (a queda). A composição das turmas é **informação dos residentes, não oficial**; só as COREMEs podem confirmar | Fato: a queda. **Não oficial:** a composição. Causa **em aberto** (pedido ao Ministério via Fala.BR em andamento) |
-| 15 | O residente precisa *cumprir* 40 h semanais "na composição" da equipe (eSF e as outras listadas); o cadastro no CNES é da gestão | Portaria 10.193/2026, art. 172-F, §§ 5º e 6º | Conferido na fonte primária |
-| 16 | A residência médica tem no máximo 60 h semanais (por isso cabe estágio externo em parte da semana com 40 h na equipe) | Lei 6.932/1981, art. 5º: planalto.gov.br/ccivil_03/leis/l6932.htm | **A conferir** (abrir o art. 5º) |
+| 15 | O residente precisa *cumprir* 40 h semanais "na composição" da equipe (eSF e as outras listadas); o cadastro no CNES é da gestão | Portaria 10.193/2026, art. 172-F, §§ 5º e 6º; Portaria 4.411/2022, art. 172-E, §§ 9º e 10 (<https://bvsms.saude.gov.br/bvs/saudelegis/gm/2022/prt4411_22_12_2022.html>) | Conferido na fonte primária. A exigência não nasceu em 2026: a Portaria 4.411/2022 (art. 172-E, §10) já exigia a carga horária mínima da composição; o "40 (quarenta) horas" literal só aparecia para eSB (§9º) |
+| 16 | A residência médica tem no máximo 60 h semanais (por isso cabe estágio externo em parte da semana com 40 h na equipe) | Lei 6.932/1981, art. 5º: planalto.gov.br/ccivil_03/leis/l6932.htm | Conferido na fonte primária (Planalto, 29/10/2026): "máximo de 60 (sessenta) horas semanais", com "um máximo de 24 (vinte e quatro) horas de plantão" |
 | 17 | Com 22 pagos e 18 vagas, até 4 residentes podem ficar fora da conta no mesmo mês sem perda de repasse | Conta sobre os itens 5 e 7 e o art. 172-E, § 2º | Estimativa |
 
 ## 4. Comparação com outros municípios
@@ -65,11 +65,11 @@ São contexto, não base do pedido. No ofício, citar no máximo os conferidos.
 
 ## Antes de enviar um ofício, o mínimo
 
-1. Copiar o texto literal do art. 3º da Lei 6.516/2020 (item 1).
+1. Usar o texto literal do art. 3º da Lei 6.516/2020, já conferido (item 1).
 2. Conferir o IPCA exato na Calculadora do Cidadão (item 9).
 3. Baixar de novo a planilha do Ministério para ver ago/set/2026 (item 5).
 4. Não afirmar a composição das turmas nem a causa da queda: perguntar.
-5. Se o ofício tratar de estágio externo, abrir o art. 5º da Lei 6.932/1981 (item 16).
+5. O art. 5º da Lei 6.932/1981 já está conferido (item 16).
 
 ---
 
@@ -82,7 +82,7 @@ Em ordem de importância:
 1. **Planilha de pagamentos da APS (Ministério)** — mostra se o repasse voltou depois do zero de julho.
    [relatorioaps.saude.gov.br/gerenciaaps/pagamento](https://relatorioaps.saude.gov.br/gerenciaaps/pagamento) →
    município **Santa Maria/RS** → competências de **nov/2024 até a mais recente** → baixar a planilha (Excel) → aba
-   **Residência**. Alternativa, a API do mesmo painel (estava com erro 500 em 13/10/2026; se abrir, salvar a página):
+   **Residência**. Alternativa, a API do mesmo painel (estava com erro 500 em 13/10/2026 e continuava em 29/10/2026; se abrir, salvar a página):
    `https://relatorioaps-prd.saude.gov.br/financiamento/pagamento?unidadeGeografica=MUNICIPIO&coUf=43&coMunicipio=431690&nuCompInicio=202608&nuCompFim=202609&tipoRelatorio=COMPLETO`
 2. **Créditos na conta do município** — confirma o que de fato entrou.
    [Portal da prefeitura → Recursos recebidos](https://www.santamaria.rs.gov.br/transparencia/contas-publicas/rr) →
