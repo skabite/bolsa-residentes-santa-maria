@@ -50,11 +50,13 @@ contadas, o próprio incentivo pagaria uma bolsa de até **R$ 5.454** aos 22 res
 de correção: reajuste de 23,29% da bolsa federal em 2022 → **R$ 5.548**; IPCA de jan/2021 a set/2026 →
 **≈ R$ 6.228** (estimativas). Detalhes, respostas da gestão e comparação com outros municípios na página.
 
-### Bolsas pagas por mês (empenhos municipais)
+### Bolsas empenhadas por mês (empenhos municipais)
 
-![Bolsas pagas por mês](dados/grafico-bolsas-por-mes.svg)
+![Bolsas empenhadas por mês, até ago/2026](dados/grafico-bolsas-por-mes.svg)
 
-Todos os empenhos da bolsa são **da prefeitura**. A divisão em dois empenhos por mês (11 + 11 em ago/2026)
+*O gráfico vai até ago/2026; set e out/2026 estão na tabela e no gráfico do site.*
+
+Todos os empenhos da bolsa são **da prefeitura**. A divisão em dois empenhos por mês (11 + 11 em ago/2026; 11 + 10 em set–out/2026)
 é a fonte que ela declara — um com dinheiro do SUS federal que já está no Fundo Municipal (fonte 1600), outro
 com impostos municipais (fonte 1500) — e não acompanha a contagem do Ministério.
 
@@ -81,8 +83,9 @@ de julho está em aberto (pedido de informação ao Ministério protocolado). De
 [`dados/cnes_medicos_residentes_por_unidade.csv`](dados/cnes_medicos_residentes_por_unidade.csv) (sem nomes).
 
 Residente em estágio externo só continua na conta se cumprir 40 h reais na equipe; como a residência pode ter até
-60 h semanais, um estágio em parte da semana cabe. Com 22 pagos e 18 vagas, até 4 podem ficar fora da conta no
-mesmo mês sem perda, se os outros 18 estiverem em ordem (estimativa; detalhes na página Contagem).
+60 h semanais, um estágio em parte da semana cabe. Com 22 pagos em ago/2026 e 18 vagas, até 4 podiam ficar fora da conta no
+mesmo mês sem perda; com os 21 de set–out/2026, até 3, se os outros 18 estiverem em ordem (estimativa;
+detalhes na página Contagem).
 
 ---
 

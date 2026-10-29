@@ -51,7 +51,7 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
   | Matrícula anterior a mar/2026 | **12** |
   | Matrícula iniciada em mar/2026 | **11** |
   | Total abr–jun/2026 (bate com os 23 pagos pela prefeitura) | 23 |
-  | Hoje (bate com os 22 pagos) | 22 |
+  | Ago/2026 (bate com os 22 pagos) | 22 |
 
   A divisão por programa e por ano fica fora deste arquivo: com grupos de 1 pessoa ela permitiria
   deduzir quem saiu e quando.
@@ -77,9 +77,9 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
    total, então a correspondência um a um não está provada. Nas 3 unidades conferidas o cadastro CNES dos R1
    está correto, então o requisito individual que sobra ali é o § 4º, I–II do 172-E (situação regular na CNRM). Contra: exigiria falha simultânea de programas diferentes; pode
    ser também a forma como o MS passou a ler o CNRM com a portaria nova (fev/2026).
-2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas. Pode ser exigência
-   nova de 2026: pela busca de 29/10, a Portaria 4.411/2022 pedia o cadastro "na composição de equipe
-   homologada" sem fixar horas (a conferir no texto; ver a seção sobre estágio externo abaixo).
+2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas. Não é exigência
+   nova de 2026: a Portaria 4.411/2022 (art. 172-E, § 10) já exigia a carga horária mínima da composição;
+   o "40 (quarenta) horas" literal só aparecia para eSB (§ 9º). Ver a seção sobre estágio externo abaixo.
 3. **Limite de 2 por eSF** — explica 2 (um em cada equipe com 3). Registros de quem já saiu também
    precisam de baixa.
 4. **Zero de jul/2026 = suspensão do art. 172-H** depois de 3 competências com residentes "irregulares"
@@ -145,9 +145,9 @@ quem está em estágio nem ligar isso aos dois registros abaixo de 40h** (grupos
   20 + 10 dias). Ao chegar a resposta, comparar com as hipóteses acima.
 - **Dados a atualizar quando houver acesso** (o usuário topou baixar o que a sessão não alcança; passo a passo
   com links em `verificacao.md`, seção "Atualizar os dados"): planilha do MS com ago/set/2026 (o mais importante:
-  mostra se o repasse voltou depois do zero de julho); créditos de ago–out/2026 em "Recursos recebidos"; empenho
-  de set/out/2026 (`scripts/check_empenho_residentes.py`); fichas CNES das outras 12 unidades com residentes
-  (lista de CNES em `dados/cnes_medicos_residentes_por_unidade.csv`) para fechar o 26 × 22. Depois de mudar os
+  mostra se o repasse voltou depois do zero de julho); créditos de ago–out/2026 em "Recursos recebidos"; fichas
+  CNES das outras 12 unidades com residentes (lista de CNES em `dados/cnes_medicos_residentes_por_unidade.csv`)
+  para fechar o 26 registros × 21–22 pagos. Depois de mudar os
   CSVs: `dados/situacao_dos_dados.csv` (período e data da coleta) e `python3 scripts/montar_site.py`.
 - **Pista conferida (29/10/2026)**: a Portaria GM/MS 10.345/2026 (DOU de 05/05/2026, ed. 82, seção 1, p. 131)
   credencia equipes da APS e, no Anexo XXI, "novas vagas" de residência. Santa Maria (IBGE 431690) **não está**

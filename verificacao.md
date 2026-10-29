@@ -34,7 +34,7 @@ dependem de alguém abrir o link num navegador comum. São poucos passos, descri
 |---|---|---|---|
 | 8 | Bolsa federal: R$ 3.330,43 → **R$ 4.106,09** (+23,29%) a partir de jan/2022 | Portaria Interministerial MEC/MS nº 9, de 13/10/2021, DOU de 15/10/2021. Buscar em in.gov.br pelo título | Conferido em reprodução (ABMES) e em edital vigente (Fiocruz 2026). **A conferir** no DOU |
 | 9 | Inflação (IPCA) de jan/2021 a set/2026: cerca de +38,4% → **≈ R$ 6.228** | Calculadora do Cidadão do Banco Central (bcb.gov.br → Calculadora do Cidadão → Correção de valores → IPCA, 12/2020 a 09/2026, valor 4.500) | Estimativa feita com as taxas anuais do IBGE. **Conferir o valor exato** na calculadora (a diferença deve ser de poucos reais) |
-| 10 | Com 18 contados, o incentivo cobre bolsa de **R$ 5.454** para 22 residentes | Conta: 18 × 8.000 = 144.000; 144.000 ÷ (22 × 1,2) = 5.454,55 | Conta sobre os itens 3, 5 e 7 |
+| 10 | Com 18 contados, o incentivo cobre bolsa de **R$ 5.454** para 22 residentes (ago/2026; com 21, R$ 5.714) | Conta: 18 × 8.000 = 144.000; 144.000 ÷ (22 × 1,2) = 5.454,55; com 21, 144.000 ÷ (21 × 1,2) = 5.714,29 | Conta sobre os itens 3, 5 e 7 |
 | 11 | Mais Residências: bolsa-formação de **R$ 4.000/mês** paga pelo Ministério ao residente que faz o curso de preceptoria, se o programa aderiu | Edital SGTES/MS nº 10/2026 e comunicado aos residentes de MFC (gov.br/saude → Chamamentos públicos 2026) | Conferido na página do edital |
 
 ## 3. O que trava a contagem
@@ -46,7 +46,7 @@ dependem de alguém abrir o link num navegador comum. São poucos passos, descri
 | 14 | A queda de 17 para 12 coincide com a entrada da turma de mar/2026 (12 matrículas anteriores + 11 novas) | Planilha do item 5 (a queda). A composição das turmas é **informação dos residentes, não oficial**; só as COREMEs podem confirmar | Fato: a queda. **Não oficial:** a composição. Causa **em aberto** (pedido ao Ministério via Fala.BR em andamento) |
 | 15 | O residente precisa *cumprir* 40 h semanais "na composição" da equipe (eSF e as outras listadas); o cadastro no CNES é da gestão | Portaria 10.193/2026, art. 172-F, §§ 5º e 6º; Portaria 4.411/2022, art. 172-E, §§ 9º e 10 (<https://bvsms.saude.gov.br/bvs/saudelegis/gm/2022/prt4411_22_12_2022.html>) | Conferido na fonte primária. A exigência não nasceu em 2026: a Portaria 4.411/2022 (art. 172-E, §10) já exigia a carga horária mínima da composição; o "40 (quarenta) horas" literal só aparecia para eSB (§9º) |
 | 16 | A residência médica tem no máximo 60 h semanais (por isso cabe estágio externo em parte da semana com 40 h na equipe) | Lei 6.932/1981, art. 5º: planalto.gov.br/ccivil_03/leis/l6932.htm | Conferido na fonte primária (Planalto, 29/10/2026): "máximo de 60 (sessenta) horas semanais", com "um máximo de 24 (vinte e quatro) horas de plantão" |
-| 17 | Com 22 pagos e 18 vagas, até 4 residentes podem ficar fora da conta no mesmo mês sem perda de repasse | Conta sobre os itens 5 e 7 e o art. 172-E, § 2º | Estimativa |
+| 17 | Com 22 pagos (ago/2026) e 18 vagas, até 4 residentes podiam ficar fora da conta no mesmo mês sem perda de repasse; com 21 (set–out/2026), até 3 | Conta sobre os itens 5 e 7 e o art. 172-E, § 2º | Estimativa |
 
 ## 4. Comparação com outros municípios
 
