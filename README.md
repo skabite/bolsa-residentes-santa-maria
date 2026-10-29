@@ -31,9 +31,9 @@ passe o mouse ou toque para ver a referência num balão e abrir o documento ori
 
 | | |
 |---|---|
-| Residentes hoje | **22** — 15 na UFSM e 7 na UFN (informação dos residentes; confere com os empenhos de ago/2026) |
+| Residentes | **22** em ago/2026 — 15 na UFSM e 7 na UFN (informação dos residentes; confere com os empenhos de ago/2026). Em set–out/2026, os empenhos declaram **21** |
 | Bolsa paga pela prefeitura | **R$ 4.500** por residente/mês — inalterada desde o primeiro pagamento, em abril de 2021 |
-| Custo mensal do programa (ago/2026) | **R$ 118.800** = R$ 99.000 de bolsas (22 × R$ 4.500) + R$ 19.800 de INSS patronal (20%) |
+| Custo mensal do programa (ago/2026) | **R$ 118.800** = R$ 99.000 de bolsas (22 × R$ 4.500) + R$ 19.800 de INSS patronal (20%). Em set–out/2026: **R$ 113.400** = R$ 94.500 (21 × R$ 4.500) + R$ 18.900 |
 | Incentivo federal por residente de medicina **contado pelo Ministério** (2026) | **R$ 8.000** — era R$ 4.500 até jan/2026 (Portaria GM/MS 10.193/2026) |
 | Residentes contados pelo Ministério | **12** de cerca de 23 pagos (mar–jun/2026) e **0** em jul/2026 — com 18 vagas credenciadas |
 | Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.434** (nov/2024–jul/2026) — abaixo da bolsa |
@@ -116,7 +116,7 @@ dados/
   bolsa_residentes_por_mes.csv              bolsa municipal por mês (2021–2026), agregada; INSS patronal
                                             só nos meses coletados (vazio = não coletado)
   inss_patronal_empenhos.csv                empenho do INSS patronal sobre as bolsas, com link oficial
-  bolsa_empenhos_coletivos_2023_2026.csv    folha coletiva (mai/2023–ago/2026), empenho por empenho, com link oficial
+  bolsa_empenhos_coletivos_2023_2026.csv    folha coletiva (mai/2023–out/2026), empenho por empenho, com link oficial
   bolsa_agregado_individuais_2021_2023.csv  abr/2021–abr/2023, quando os pagamentos eram individuais (só totais)
   incentivo_federal_residencia.csv          o que o MS transferiu, por competência (aba “Residência”)
   incentivo_federal_recebido_2026.csv       data e valor de cada crédito na conta do município (Lei 9.452/97)

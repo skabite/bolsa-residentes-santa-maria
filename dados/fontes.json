@@ -9,10 +9,11 @@
     {
       "n": 1, "grupo": "normas",
       "titulo": "Lei municipal 6.516, de 29/12/2020 (Santa Maria)",
-      "prova": "Cria a bolsa de R$ 4.500, liga o pagamento à existência do repasse federal e prevê correção anual segundo critérios do Ministério da Saúde (art. 3º, §1º).",
-      "estado": "conferir",
-      "nota": "O dossiê cita a lei por resumo. Antes de um ofício, copiar o texto literal do art. 3º.",
+      "prova": "Cria a bolsa de R$ 4.500, liga o pagamento à existência do repasse federal e prevê correção anual conforme critérios formalizados pelo Ministério da Saúde (art. 3º, §1º).",
+      "estado": "primaria",
+      "nota": "Conferido no site da Câmara em 29/10/2026 (texto integral e .doc oficial). O art. 3º, §1º confirma a correção anual conforme critérios formalizados pelo Ministério da Saúde; texto literal em verificacao.md, item 1.",
       "links": [
+        {"rotulo": "Texto (Câmara)", "url": "https://camara-sm.rs.gov.br/atividades-legislativas/legislacao/lei/70865/lei-n--6516-2020"},
         {"rotulo": "Câmara de Vereadores (busque 6.516)", "url": "https://camara-sm.rs.gov.br/atividades-legislativas?tipo=legislacao&subtipo=lei&ano=0"}
       ]
     },
@@ -66,7 +67,7 @@
       "titulo": "Portal da Transparência de Santa Maria: empenhos",
       "prova": "Valor, data, fonte de recurso e número de residentes de cada pagamento da bolsa, 2021–2026, e o INSS patronal.",
       "estado": "primaria",
-      "nota": "Conferido empenho por empenho, de abr/2021 a ago/2026; cada empenho tem link para a página oficial.",
+      "nota": "Conferido empenho por empenho, de abr/2021 a out/2026; cada empenho tem link para a página oficial.",
       "links": [
         {"rotulo": "Portal", "url": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho"},
         {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/tree/main/dados"}
@@ -214,8 +215,8 @@
       "n": 21, "grupo": "normas",
       "titulo": "Lei 6.932/1981 (residência médica)",
       "prova": "Art. 5º: os programas de residência médica têm no máximo 60 horas semanais, incluídas até 24 horas de plantão.",
-      "estado": "conferir",
-      "nota": "Citada pelo limite de 60 horas. Abrir o art. 5º no site do Planalto antes de usar em ofício.",
+      "estado": "primaria",
+      "nota": "Conferido no Planalto em 29/10/2026. Art. 5º: máximo de 60 (sessenta) horas semanais, nelas incluídas um máximo de 24 (vinte e quatro) horas de plantão.",
       "links": [
         {"rotulo": "Texto (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l6932.htm"}
       ]
