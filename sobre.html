@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sobre o dossiê — Bolsa MFC Santa Maria</title>
+<meta name="description" content="Como o dossiê da bolsa dos residentes de MFC de Santa Maria foi feito: selos, método, o que está em aberto, correções, privacidade e como reutilizar.">
+<!--b:cabeca-->
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231d5fae'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="assets/dossie.css">
+<script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("dossie-tema"); if (t === "light" || t === "dark") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+<!--/b:cabeca-->
+</head>
+<body data-pagina="sobre.html">
+<!--b:topo-->
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="bar">
+  <a class="marca" href="index.html">Bolsa MFC <span>· Santa Maria</span></a>
+  <nav class="nav-topo" aria-label="Páginas principais"><a href="index.html">Início</a><a href="reajuste.html">Reajuste</a><a href="contagem.html">Contagem</a><a href="numeros.html">Números</a><a href="fazer.html">O que fazer</a><a href="fontes.html">Fontes</a></nav>
+  <div class="bar-acoes">
+    <a class="bar-btn so-celular" href="fontes.html">Fontes</a>
+    <a class="bar-btn primario" href="#mapa" id="abre-menu" aria-haspopup="dialog">Menu</a>
+  </div>
+</header>
+<!--/b:topo-->
+
+<main id="conteudo">
+  <header class="topo-pagina">
+    <p class="rotulo">Sobre</p>
+    <h1>Sobre o dossiê</h1>
+    <p class="lead">Como os números foram feitos, o que ainda está em aberto e o que mudou desde a primeira versão.</p>
+  </header>
+
+  <!--b:toc--><nav class="toc" aria-label="Nesta página"><p>Nesta página</p><ol><li><a href="#selos">Os selos</a></li><li><a href="#metodo">Método</a></li><li><a href="#em-aberto">Em aberto</a></li><li><a href="#correcoes">Correções</a></li><li><a href="#privacidade">Privacidade</a></li><li><a href="#reuso">Reutilizar</a></li></ol></nav><!--/b:toc-->
+
+  <section id="selos" data-toc="Os selos">
+    <h2>Como ler os selos</h2>
+    <p><span class="selo fato">Fato</span> está escrito num documento oficial e tem link.
+    <span class="selo est">Estimativa</span> é uma conta com premissa escrita ao lado.
+    <span class="selo aberto">Em aberto</span> ainda não tem fonte pública.
+    <span class="selo info">Informação dos residentes (não oficial)</span> vem dos próprios residentes e não tem documento
+    público.</p>
+    <p>Na <a href="fontes.html">lista de fontes</a>, cada fonte diz também se já foi conferida no documento original:
+    <span class="estado primaria">conferida na fonte primária</span>, <span class="estado parcial">conferida em parte</span>
+    (em reprodução, cópia ou resumo) ou <span class="estado conferir">a conferir</span>.</p>
+  </section>
+
+  <section id="metodo" data-toc="Método">
+    <h2>Método e ressalvas</h2>
+    <p>Os dados são de execução orçamentária (empenhado e pago) publicados pela prefeitura e da planilha de pagamentos da
+    APS do Ministério. Não substituem os demonstrativos contábeis oficiais. A inflação foi calculada com as taxas anuais
+    do IBGE; o valor exato está na Calculadora do Cidadão do Banco Central.</p>
+    <p>"Residentes pagos" é a bolsa do mês dividida por R$ 4.500. "Contados" é o número da planilha do Ministério.
+    No <a href="dados/incentivo_federal_residencia.csv">CSV da planilha</a>, os contados estão na coluna medicos_pagos e as
+    vagas, em medicos_credenciados. Premissa: os R$ 43.500 a mais empenhados em abril/2026 (empenho 8876/2026) foram
+    tratados como retroativo de março, quando a turma nova começou. Sem esse ajuste, março teria 13 pagos e abril 32,7; a
+    média de mar–jun/2026 (R$ 4.189) é a mesma nos dois casos.</p>
+    <p>As páginas são montadas a partir dos arquivos de dados por um script (scripts/montar_site.py): quando um CSV muda,
+    gráficos e tabelas mudam juntos, e o script confere que toda fonte citada existe e que todo link interno funciona.</p>
+  </section>
+
+  <section id="em-aberto" data-toc="Em aberto">
+    <h2>Em aberto</h2>
+    <p class="lead">O que ainda não tem resposta pública, e a quem perguntar.</p>
+    <ul>
+      <li>Por que o Ministério conta 12 residentes, e zero em julho, se há 18 vagas credenciadas? (pedido de informação ao Ministério)</li>
+      <li>A turma de 2026 está regular na CNRM? (COREMEs)</li>
+      <li>Qual critério a prefeitura considera aplicável para a correção do art. 3º, §1º? (requerimento à prefeitura)</li>
+      <li>Por que o CNES tem mais registros do que residentes pagos? (CNES atualizado e lista dos programas)</li>
+      <li>Como o Ministério trata o residente em estágio externo, e se as 40 horas podem somar mais de uma equipe elegível? (Ministério)</li>
+      <li>Os programas de Santa Maria aderiram ao Mais Residências? (COREMEs)</li>
+    </ul>
+  </section>
+
+  <section id="correcoes" data-toc="Correções">
+    <h2>Correções e mudanças</h2>
+    <p class="lead">O que mudou no dossiê e por quê, da mais recente para a mais antiga.</p>
+    <ul>
+      <li><b>29/10/2026.</b> O dossiê, que era uma página única, foi dividido em páginas. Trechos com fonte passaram a mostrar
+      a referência num balão; termos técnicos, a definição. Novos: a tabela "Até quando vão os dados", a seção sobre estágio
+      externo e as 40 horas, a busca e o estado de conferência na lista de fontes, e a Lei 6.932/1981 (fonte 21). Os links
+      antigos (por exemplo, #reajuste ou #ref-5) levam à página nova.</li>
+      <li><b>20/10/2026.</b> Revisão de leitura e acessibilidade: textos mais curtos, "repassa" para o caminho Ministério →
+      município e "paga" para prefeitura → residente, glossário ampliado, tabelas que cabem no celular, contraste maior.</li>
+      <li><b>19/10/2026.</b> A versão anterior dizia que 4 residentes saíram e 10 entraram entre fevereiro e junho, pela
+      variação de registros no CNES (de 20 para 26). O CNES mostra só o saldo; pela composição informada pelos residentes
+      (não oficial), foram 11 entradas em março.</li>
+      <li><b>19/10/2026.</b> A folha coletiva começa em maio/2023, não em janeiro; janeiro a abril de 2023 ainda eram
+      empenhos individuais e passaram a aparecer só agregados.</li>
+      <li><b>19/10/2026.</b> O incentivo federal foi criado em 2019 (Portaria 3.510), não em 2022. O aumento de 2026 foi de
+      78%, não "dobrou". Em abr–jun/2026 foram 12 contados de 23 pagos.</li>
+      <li><b>19/10/2026.</b> Saiu a tabela das unidades informadas pelos residentes da UFN, que divergia do CNES num caso.</li>
+      <li><b>15/10/2026.</b> R$ 8.000 é por residente contado, não por residente pago; a manchete e o gráfico por residente
+      foram refeitos.</li>
+      <li><b>15/10/2026.</b> Um caso citado como registro desatualizado no CNES estava errado e foi retirado.</li>
+    </ul>
+  </section>
+
+  <section id="privacidade" data-toc="Privacidade">
+    <h2>Privacidade e independência</h2>
+    <p><strong>Iniciativa pessoal e independente.</strong> Não representa nem tem endosso da UFSM, da UFN ou da Prefeitura de
+    Santa Maria; os nomes das instituições aparecem só para identificar as fontes.</p>
+    <p><strong>Sem dados pessoais.</strong> Sem nomes, CPF, cartão SUS ou dados bancários. Residentes aparecem só em números
+    agregados, e nenhum dado individual (carga horária, data de saída, origem) de quem possa ser identificado. Os
+    pagamentos individuais de 2021 a 2023 aparecem só somados por mês. A composição das turmas é informação dos residentes,
+    marcada como não oficial.</p>
+    <p><strong>Correções e resposta.</strong> Pedidos de correção ou de retirada podem ser feitos por uma
+    <a href="https://github.com/skabite/bolsa-residentes-santa-maria/issues" target="_blank" rel="noopener">issue no GitHub</a>.
+    Uma resposta da Secretaria de Saúde ou das COREMEs será publicada aqui com o mesmo destaque.</p>
+  </section>
+
+  <section id="reuso" data-toc="Reutilizar">
+    <h2>Reutilizar</h2>
+    <p>Dados públicos, uso livre. Textos sob <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY 4.0</a>
+    (cite a fonte); código dos scripts sob licença MIT. Tudo está no
+    <a href="https://github.com/skabite/bolsa-residentes-santa-maria" target="_blank" rel="noopener">repositório do projeto</a>,
+    com o relatório longo, o caderno de investigação e o guia de verificação.</p>
+  </section>
+
+  <!--b:pager--><nav aria-label="Página anterior e próxima"><ul class="pager"><li class="ant"><a href="glossario.html" rel="prev"><span>‹ Anterior</span><b>Glossário</b></a></li></ul></nav><!--/b:pager-->
+</main>
+<!--b:rodape-->
+<footer>
+  <nav id="mapa" aria-label="Todas as páginas"><ul><li><a href="index.html">Início</a></li><li><a href="reajuste.html">Reajuste</a></li><li><a href="contagem.html">Contagem</a></li><li><a href="numeros.html">Números</a></li><li><a href="fazer.html">O que fazer</a></li><li><a href="linha-do-tempo.html">Linha do tempo</a></li><li><a href="fontes.html">Fontes</a></li><li><a href="glossario.html">Glossário</a></li><li><a href="sobre.html" aria-current="page">Sobre</a></li></ul></nav>
+  <p><strong>Iniciativa pessoal e independente.</strong> Não representa nem tem endosso da UFSM, da UFN ou da Prefeitura de
+  Santa Maria; os nomes das instituições aparecem só para identificar as fontes.</p>
+  <p><strong>Privacidade.</strong> Sem nomes, CPF, cartão SUS ou dados bancários. Residentes aparecem só em números
+  agregados. Os dados vêm de fontes públicas oficiais, exceto a composição das turmas, informada por residentes (não
+  oficial) e marcada como tal.</p>
+  <p><strong>Correções e resposta.</strong> Pedidos de correção ou de retirada podem ser feitos por uma
+  <a href="https://github.com/skabite/bolsa-residentes-santa-maria/issues" target="_blank" rel="noopener">issue no GitHub</a>. Uma resposta da Secretaria de Saúde ou das
+  COREMEs será publicada aqui com o mesmo destaque.</p>
+  <p>Atualizado em 29/10/2026. O site não usa rastreadores nem envia dados a nenhum servidor. Textos sob
+  <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY 4.0</a>; código sob
+  licença MIT. <a href="sobre.html">Sobre o dossiê</a>.</p>
+</footer>
+
+<dialog id="menu" class="folha" aria-labelledby="menu-tit">
+  <div class="folha-topo"><h2 id="menu-tit">Páginas</h2><button class="fechar" type="button" data-fechar>Fechar</button></div>
+  <div class="folha-corpo">
+    <ul class="menu-lista">
+      <li><a href="index.html"><span><b>Início</b><small>A situação em 2 minutos, com os quatro pontos principais.</small></span></a></li>
+      <li><a href="reajuste.html"><span><b>Dá para pedir reajuste?</b><small>O pedido, quanto seria e como outras cidades fazem.</small></span></a></li>
+      <li><a href="contagem.html"><span><b>Onde trava a contagem</b><small>Os requisitos do Ministério, um a um, e o estágio externo.</small></span></a></li>
+      <li><a href="numeros.html"><span><b>Os números</b><small>Gráficos, tabelas, cada empenho e até quando vão os dados.</small></span></a></li>
+      <li><a href="fazer.html"><span><b>O que fazer</b><small>Para residentes, gestão municipal e COREMEs, com os canais.</small></span></a></li>
+      <li><a href="linha-do-tempo.html"><span><b>Linha do tempo</b><small>Do incentivo de 2019 ao zero de julho de 2026.</small></span></a></li>
+      <li><a href="fontes.html"><span><b>Fontes</b><small>As referências, com o que cada uma prova e onde é citada.</small></span></a></li>
+      <li><a href="glossario.html"><span><b>Glossário</b><small>CNES, CNRM, competência, empenho e outros termos.</small></span></a></li>
+      <li><a href="sobre.html" aria-current="page"><span><b>Sobre o dossiê</b><small>Método, correções, privacidade e como reutilizar.</small></span></a></li>
+    </ul>
+    <div class="tema" role="group" aria-label="Tema">
+      <button type="button" data-tema="auto">Automático</button>
+      <button type="button" data-tema="light">Claro</button>
+      <button type="button" data-tema="dark">Escuro</button>
+    </div>
+  </div>
+</dialog>
+<div class="balao" id="balao" hidden></div>
+<div class="tip" id="tip" aria-hidden="true"></div>
+<script src="assets/fontes.js"></script>
+<script src="assets/dossie.js"></script>
+<!--/b:rodape-->
+</body>
+</html>

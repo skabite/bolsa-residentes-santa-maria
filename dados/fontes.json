@@ -1,0 +1,224 @@
+{
+  "_leia": "Registro das fontes do dossiê. Alimenta fontes.html e os balões das páginas (assets/fontes.js). Depois de editar, rode python3 scripts/montar_site.py. O número (n) é a âncora fontes.html#ref-n: não renumere. estado: primaria = conferida no documento original; parcial = conferida em reprodução, cópia ou resumo; conferir = falta abrir o original.",
+  "grupos": [
+    {"id": "normas", "titulo": "Normas"},
+    {"id": "oficiais", "titulo": "Dados oficiais"},
+    {"id": "contexto", "titulo": "Contexto e comparações"}
+  ],
+  "fontes": [
+    {
+      "n": 1, "grupo": "normas",
+      "titulo": "Lei municipal 6.516, de 29/12/2020 (Santa Maria)",
+      "prova": "Cria a bolsa de R$ 4.500, liga o pagamento à existência do repasse federal e prevê correção anual segundo critérios do Ministério da Saúde (art. 3º, §1º).",
+      "estado": "conferir",
+      "nota": "O dossiê cita a lei por resumo. Antes de um ofício, copiar o texto literal do art. 3º.",
+      "links": [
+        {"rotulo": "Câmara de Vereadores (busque 6.516)", "url": "https://camara-sm.rs.gov.br/atividades-legislativas?tipo=legislacao&subtipo=lei&ano=0"}
+      ]
+    },
+    {
+      "n": 2, "grupo": "normas",
+      "titulo": "Portaria GM/MS 10.193/2026",
+      "prova": "R$ 8.000 por residente de medicina contado; requisitos (CNRM, CNES, equipe, 40h, até 2 por eSF); credenciamento; suspensão (arts. 172-E a 172-I).",
+      "estado": "primaria",
+      "nota": "Lida no DOU nº 22, de 02/02/2026, Seção 1, p. 104 (código de autenticidade 05152026020200104).",
+      "links": [
+        {"rotulo": "Texto (BVS/MS)", "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt10193_02_02_2026.html"},
+        {"rotulo": "Transcrição dos artigos", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/portaria_10193_2026_arts_172E_172IA.md"}
+      ]
+    },
+    {
+      "n": 3, "grupo": "normas",
+      "titulo": "Bolsa federal de residência: R$ 4.106,09 desde jan/2022",
+      "prova": "Portaria Interministerial MEC/MS 9, de 13/10/2021 (DOU de 15/10/2021): reajuste de 23,29%, de R$ 3.330,43, a partir de jan/2022. O edital de 2026 da Fiocruz confirma o valor vigente.",
+      "estado": "parcial",
+      "nota": "Lida em reprodução (ABMES) e no edital da Fiocruz de 2026; falta abrir no DOU.",
+      "links": [
+        {"rotulo": "Texto da portaria (ABMES)", "url": "https://abmes.org.br/legislacoes/detalhe/3741/portaria-interministerial-n-9"},
+        {"rotulo": "Edital Fiocruz 2026", "url": "https://www.fiocruzbrasilia.fiocruz.br/wp-content/uploads/2026/08/RESIDENCIAS-Edital-Unificado_2026.pdf"},
+        {"rotulo": "Reajuste de 2022", "url": "https://portal.afya.com.br/formacao/valores-de-bolsas-de-residencia-terao-reajuste-de-2329-a-partir-de-2022", "secundaria": true}
+      ]
+    },
+    {
+      "n": 4, "grupo": "normas",
+      "titulo": "Mais Residências: Edital SGTES/MS 10/2026",
+      "prova": "Bolsa-formação de R$ 4.000 por mês ao residente de MFC que faz o curso de preceptoria, se o programa aderir (Portaria GM/MS 8.403/2025).",
+      "estado": "primaria",
+      "nota": "Conferido na página do edital.",
+      "links": [
+        {"rotulo": "Edital", "url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/participacao-social/chamamentos-publicos/2026/chamamento-publico-no-10-2026-sgtes/edital-no-10-2026"},
+        {"rotulo": "Comunicado aos residentes", "url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/participacao-social/chamamentos-publicos/2026/chamamento-publico-no-10-2026-sgtes/comunicado-para-residente-mfc"}
+      ]
+    },
+    {
+      "n": 5, "grupo": "oficiais",
+      "titulo": "Planilha de pagamentos da APS (Ministério da Saúde), aba \"Residência\"",
+      "prova": "Vagas credenciadas, residentes contados e valor transferido por mês, nov/2024 a jul/2026.",
+      "estado": "primaria",
+      "nota": "Planilha baixada em 13/10/2026. Os meses de ago/2026 em diante ainda não foram baixados.",
+      "links": [
+        {"rotulo": "Painel do Ministério", "url": "https://relatorioaps.saude.gov.br/gerenciaaps/pagamento"},
+        {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/incentivo_federal_residencia.csv"}
+      ]
+    },
+    {
+      "n": 6, "grupo": "oficiais",
+      "titulo": "Portal da Transparência de Santa Maria: empenhos",
+      "prova": "Valor, data, fonte de recurso e número de residentes de cada pagamento da bolsa, 2021–2026, e o INSS patronal.",
+      "estado": "primaria",
+      "nota": "Conferido empenho por empenho, de abr/2021 a ago/2026; cada empenho tem link para a página oficial.",
+      "links": [
+        {"rotulo": "Portal", "url": "https://www.santamaria.rs.gov.br/transparencia/despesa/empenho"},
+        {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/tree/main/dados"}
+      ]
+    },
+    {
+      "n": 7, "grupo": "oficiais",
+      "titulo": "Recursos recebidos (Lei 9.452/97)",
+      "prova": "Data e valor de cada crédito federal na conta do município: o incentivo cai entre os dias 13 e 17, cerca de dois meses depois.",
+      "estado": "primaria",
+      "nota": "Conferido no portal da prefeitura. Falta a conferência independente na consulta do Fundo Nacional de Saúde.",
+      "links": [
+        {"rotulo": "Portal", "url": "https://www.santamaria.rs.gov.br/transparencia/contas-publicas/rr"},
+        {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/incentivo_federal_recebido_2026.csv"}
+      ]
+    },
+    {
+      "n": 8, "grupo": "oficiais",
+      "titulo": "CNES (DATASUS)",
+      "prova": "Registro de cada residente: unidade, equipe, vínculo e carga horária. Contagem por unidade nas competências de fev e jun/2026; fichas de 3 unidades (São José, São Francisco e Victor Hoffmann) consultadas em 15/10/2026. Para conferir, busque a unidade em Consultas > Estabelecimentos e abra as abas de profissionais e de equipes.",
+      "estado": "primaria",
+      "nota": "As fichas das outras 12 unidades com residentes ainda não foram conferidas.",
+      "links": [
+        {"rotulo": "CNES", "url": "https://cnes.datasus.gov.br"},
+        {"rotulo": "Por unidade (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/cnes_medicos_residentes_por_unidade.csv"}
+      ]
+    },
+    {
+      "n": 9, "grupo": "oficiais",
+      "titulo": "Equipes homologadas",
+      "prova": "As 17 equipes com residentes constam como homologadas no arquivo público do Ministério.",
+      "links": [
+        {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/ines_homologacao_equipes_com_residentes.csv"}
+      ]
+    },
+    {
+      "n": 10, "grupo": "oficiais",
+      "titulo": "IPCA (IBGE)",
+      "prova": "Inflação anual de 2021 a 2025 (10,06%; 5,79%; 4,62%; 4,83%; 4,26%) e 3,95% em jan–set/2026.",
+      "estado": "parcial",
+      "nota": "As taxas vêm dos comunicados do IBGE. O valor corrigido (≈ R$ 6.228) é estimativa: conferir na Calculadora do Cidadão do Banco Central.",
+      "links": [
+        {"rotulo": "IBGE, set/2026", "url": "https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48246-ipca-fica-em-0-82-em-setembro"},
+        {"rotulo": "IBGE, 2025", "url": "https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/45612-ipca-vai-a-0-33-em-dezembro-e-fecha-o-ano-em-4-26"}
+      ]
+    },
+    {
+      "n": 11, "grupo": "contexto",
+      "titulo": "Ministério da Saúde: aumento do incentivo (fev/2026)",
+      "prova": "O aumento é apresentado como expansão das equipes com residentes, não como valorização da bolsa.",
+      "links": [
+        {"rotulo": "Notícia", "url": "https://www.gov.br/saude/pt-br/assuntos/noticias/2026/fevereiro/saude-investe-cerca-de-r-172-milhoes-e-aumenta-repasses-para-residencia-na-atencao-primaria-do-sus"}
+      ]
+    },
+    {
+      "n": 12, "grupo": "contexto",
+      "titulo": "Senado: projetos que reajustam a bolsa federal (jun/2026)",
+      "prova": "A bolsa federal está sem reajuste desde 2022; há projetos em tramitação.",
+      "links": [
+        {"rotulo": "Agência Senado", "url": "https://www12.senado.leg.br/noticias/materias/2026/06/16/projetos-reajustam-bolsa-de-medicos-residentes"}
+      ]
+    },
+    {
+      "n": 13, "grupo": "contexto",
+      "titulo": "Porto Alegre: edital da residência em MFC",
+      "prova": "Complementação de R$ 3.619,57 e vale-alimentação de R$ 550, pagos pelo município, nos editais de 2022 a 2025 (Lei 12.498/2019).",
+      "estado": "primaria",
+      "nota": "Conferido nos editais. O edital para 2027 pode ter mudado o valor: abrir antes de citar.",
+      "links": [
+        {"rotulo": "Edital", "url": "https://concursos-publicacoes.s3.amazonaws.com/1010/publico/HospitaldeProntoSocorro-MedicinadeFamAliaeComunidade_68dd329612782.pdf"}
+      ]
+    },
+    {
+      "n": 14, "grupo": "contexto",
+      "titulo": "Ijuí: Lei 6.745/2019, alterada pela Lei 7.503/2023",
+      "prova": "R$ 3.500 na redação de 2019; R$ 6.000 na versão consolidada depois da Lei 7.503/2023. A Câmara aprovou outra alteração em 2025, cujo texto não localizamos: confira o valor atual.",
+      "estado": "conferir",
+      "nota": "Falta conferir no PDF consolidado.",
+      "links": [
+        {"rotulo": "Lei consolidada", "url": "https://www.ijui.rs.gov.br/public/admin/globalarq/cria/sub-pagina-doc/46663a4525b8208b6c1088a1f60b83cc.pdf"},
+        {"rotulo": "Redação de 2019", "url": "https://www.ijui.rs.gov.br/pagina/22/editais/326/download-sub-pagina/3220/"}
+      ]
+    },
+    {
+      "n": 15, "grupo": "contexto",
+      "titulo": "Remígio: Lei 1.259/2022",
+      "prova": "Bolsa complementar de R$ 5.000 por mês para residentes de MFC.",
+      "estado": "conferir",
+      "nota": "Verificação independente não concluída.",
+      "links": [
+        {"rotulo": "Lei", "url": "https://www.remigio.pb.gov.br/wp-content/uploads/2025/07/LEI-1259-2022-CRIACAO-DA-BOLSA-COMPLEMENTAR-DE-ESTUDO-E-PESQUISA-PARA-RESIDENTES-DE-MEDICINA.pdf"}
+      ]
+    },
+    {
+      "n": 16, "grupo": "contexto",
+      "titulo": "Distrito Federal: Portaria SES-DF 928/2021",
+      "prova": "Bolsa complementar de R$ 7.536 por mês ao residente de MFC que assume equipe de Saúde da Família (edital de 2025).",
+      "estado": "conferir",
+      "nota": "Verificação independente não concluída.",
+      "links": [
+        {"rotulo": "Portaria", "url": "https://www.sinj.df.gov.br/sinj/Norma/89d2bf7b67fc4c02b69f93578d074660/ses_prt_928_2021.html"},
+        {"rotulo": "Edital de 2025", "url": "https://iades.com.br/inscricao/upload/1349/20250318164320937.pdf"}
+      ]
+    },
+    {
+      "n": 17, "grupo": "contexto",
+      "titulo": "Rio de Janeiro: Resolução SMS 5.297/2022",
+      "prova": "Teto da complementação municipal (\"até R$ 8.260,41\") desde mar/2022; não confirmamos quanto é pago de fato.",
+      "estado": "parcial",
+      "nota": "Lida em resumo do PDF oficial.",
+      "links": [
+        {"rotulo": "Resolução", "url": "https://saude.prefeitura.rio/wp-content/uploads/sites/47/2024/01/RESOLUCAO-SMS-n.-5297-de-25022022-2.pdf"}
+      ]
+    },
+    {
+      "n": 18, "grupo": "contexto",
+      "titulo": "Cachoeiro de Itapemirim: Lei 8.203/2025",
+      "prova": "Complementa a bolsa até o total de R$ 10.000, o teto salarial do médico de família do município.",
+      "estado": "parcial",
+      "nota": "Lida em resumo do PDF do Diário Oficial; abrir o PDF para a redação exata.",
+      "links": [
+        {"rotulo": "Lei", "url": "https://diario.cachoeiro.es.gov.br/uploads/dio/24/2025/lei-8203-pl017-ok-complemento-bolsa-programa-de-residencia-medica-1755809579.pdf"}
+      ]
+    },
+    {
+      "n": 19, "grupo": "contexto",
+      "titulo": "Portaria GM/MS 3.510/2019",
+      "prova": "Cria, em 18/12/2019, o incentivo federal aos municípios com equipes de Saúde da Família que recebem residentes. As regras foram refeitas pelas Portarias 4.411/2022 e 10.193/2026.",
+      "links": [
+        {"rotulo": "Texto (CONASS)", "url": "https://www.conass.org.br/conass-informa-n-214-publicada-a-portaria-gm-n-3510-que-altera-a-portaria-de-consolidacao-no-6-gm-ms-de-28-de-setembro-de-2017-para-instituir-incentivo-financeiro-de-custeio-adicion/"}
+      ]
+    },
+    {
+      "n": 20, "grupo": "contexto",
+      "titulo": "Santos: Bolsa Auxílio Permanência (Lei 3.647/2019)",
+      "prova": "R$ 5.227,32 por mês no edital de 2024, além da bolsa federal; era R$ 4.794,52 no seletivo de 2022.",
+      "estado": "parcial",
+      "nota": "Conferido em cópia do edital; em 2026 uma lei nova pode ter substituído a bolsa.",
+      "links": [
+        {"rotulo": "Edital de 2024 (cópia)", "url": "https://med.estrategia.com/portal/wp-content/uploads/2023/09/sms-santos_edital2024-1.pdf"},
+        {"rotulo": "Seletivo de 2022", "url": "https://med.estrategia.com/portal/residencia-medica/sms-santos-2022-tudo-sobre-o-ultimo-seletivo/", "secundaria": true}
+      ]
+    },
+    {
+      "n": 21, "grupo": "normas",
+      "titulo": "Lei 6.932/1981 (residência médica)",
+      "prova": "Art. 5º: os programas de residência médica têm no máximo 60 horas semanais, incluídas até 24 horas de plantão.",
+      "estado": "conferir",
+      "nota": "Citada pelo limite de 60 horas. Abrir o art. 5º no site do Planalto antes de usar em ofício.",
+      "links": [
+        {"rotulo": "Texto (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l6932.htm"}
+      ]
+    }
+  ]
+}

@@ -5,6 +5,8 @@ Extraem e reconferem os dados usados no dossiê. Só precisam de `python3` + `re
 
 | Script | O que faz |
 |---|---|
+| `montar_site.py` | Monta o site a partir de `dados/`: partes comuns das páginas (barra, menu, rodapé, "Nesta página", anterior/próxima), gráficos, tabelas, lista de fontes e glossário, e `assets/fontes.js` para os balões. Antes de gravar, confere fontes, termos, âncoras e links internos. Não usa rede. `--verificar` só confere. |
+| `graficos.py` | Os três gráficos SVG (usado por `montar_site.py`; `--mostrar` imprime os tamanhos). |
 | `empenho.py` | Cliente da tela de empenhos do Portal da Transparência. Faz o handshake com o componente Livewire (`data-csrf` + `wire:snapshot`) e envia filtros por POST em `/livewire/update`. É a peça central para automatizar consultas nesse portal. |
 | `crawl_saude.py` | Baixa **todos** os empenhos da Secretaria de Município da Saúde de um ano para CSV. |
 | `detalhe_empenho.py` | Lê o detalhe de um empenho (natureza da despesa, fonte de recurso, projeto/atividade, descrição do item, valores empenhado/liquidado/pago). |
@@ -14,6 +16,7 @@ Extraem e reconferem os dados usados no dossiê. Só precisam de `python3` + `re
 Exemplos:
 
 ```bash
+python3 montar_site.py              # depois de mudar dados/ ou uma página
 python3 crawl_saude.py 2026
 python3 detalhe_empenho.py 18085/2026
 python3 check_empenho_residentes.py 2026
