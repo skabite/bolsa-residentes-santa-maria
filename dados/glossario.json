@@ -1,0 +1,23 @@
+{
+  "_leia": "Termos do glossário. Alimenta glossario.html e os balões dos termos sublinhados com pontilhado (data-termo). O id é a âncora glossario.html#t-id: não mude um id que já esteja em uso. Depois de editar, rode python3 scripts/montar_site.py.",
+  "termos": [
+    {"id": "incentivo", "termo": "Incentivo federal", "def": "Dinheiro que o Ministério repassa ao Fundo Municipal de Saúde por residente contado (R$ 8.000 desde fev/2026). Não vai para o residente."},
+    {"id": "bolsa", "termo": "Bolsa federal e bolsa municipal", "def": "A federal (R$ 4.106,09) é a bolsa de residência, com valor definido por MEC e Ministério da Saúde. A municipal (R$ 4.500) é o complemento de Santa Maria; é dela que este dossiê trata."},
+    {"id": "vaga", "termo": "Vaga credenciada", "def": "Teto de residentes que o incentivo federal financia no município (hoje, 18); também chamado de \"credenciados\". Não é o mesmo que as vagas dos programas de residência."},
+    {"id": "contado", "termo": "Residente contado", "def": "Quem passou na checagem do mês e gerou o incentivo de R$ 8.000."},
+    {"id": "pago", "termo": "Residente pago", "def": "Quem recebe a bolsa da prefeitura no mês, contado ou não. Nas tabelas é a bolsa do mês ÷ R$ 4.500, por isso pode ter decimal."},
+    {"id": "homologada", "termo": "Equipe homologada", "def": "Equipe que o Ministério reconhece. É condição para o residente ser contado, mas não basta."},
+    {"id": "competencia", "termo": "Competência", "def": "O mês a que um pagamento se refere (o dinheiro pode cair depois)."},
+    {"id": "empenho", "termo": "Empenho", "def": "O registro em que a prefeitura reserva dinheiro para pagar uma despesa."},
+    {"id": "fonte-recurso", "termo": "Fonte de recurso", "def": "De que parte do orçamento a prefeitura declara tirar o dinheiro de um empenho (repasses do SUS ou impostos). Não muda quem paga: a bolsa é sempre paga pela prefeitura."},
+    {"id": "inss", "termo": "INSS patronal", "def": "Os 20% que a prefeitura recolhe ao INSS sobre cada bolsa, além do valor da bolsa."},
+    {"id": "aps", "termo": "APS", "def": "Atenção Primária à Saúde: unidades básicas e equipes de saúde da família."},
+    {"id": "r1-r2", "termo": "R1, R2 e ano adicional", "def": "Primeiro e segundo ano da residência. O ano adicional é um ano opcional depois do R2; também pode gerar o incentivo."},
+    {"id": "esf-eap", "termo": "eSF e eAP", "def": "Equipe de Saúde da Família e equipe de Atenção Primária. A eSF gera o incentivo; a eAP, não. A portaria lista os outros tipos de equipe que geram (eSB, eMulti, eCR, eAPP e as equipes fluviais e ribeirinhas)."},
+    {"id": "ine", "termo": "INE", "def": "Identificador Nacional de Equipe: o código de cada equipe no CNES. O residente precisa estar ligado pelo INE a uma equipe que gera o incentivo."},
+    {"id": "cnes", "termo": "CNES", "def": "Cadastro Nacional de Estabelecimentos de Saúde: unidades e profissionais, com equipe, vínculo e carga horária. É dele que o Ministério tira os dados; quem mantém o cadastro dos residentes é a gestão municipal."},
+    {"id": "cnrm", "termo": "CNRM e COREME", "def": "A Comissão Nacional de Residência Médica e a comissão de cada programa (COREME), que registra as matrículas."},
+    {"id": "siaps", "termo": "SIAPS e e-Gestor", "def": "SIAPS: onde as equipes registram os atendimentos (a \"produção\"). e-Gestor APS: onde a gestão municipal pede e acompanha os incentivos."},
+    {"id": "lai", "termo": "LAI e Fala.BR", "def": "A Lei de Acesso à Informação (Lei 12.527/2011) garante resposta a pedidos de informação feitos a órgãos públicos. O Fala.BR é a plataforma federal onde esses pedidos são feitos."}
+  ]
+}

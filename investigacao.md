@@ -1,7 +1,7 @@
 # Caderno de investigação — onde trava o incentivo federal
 
-Estado em **19/10/2026**. Este arquivo é a memória de trabalho entre sessões: o que já foi
-estabelecido, o que é hipótese, o que foi descartado e o que falta. A página pública (`index.html`)
+Estado em **29/10/2026**. Este arquivo é a memória de trabalho entre sessões: o que já foi
+estabelecido, o que é hipótese, o que foi descartado e o que falta. O site público (as páginas `.html`)
 só recebe o que estiver confirmado. **Este arquivo também é público** (o GitHub Pages publica o
 repositório): sem nomes e sem atributo individual (carga horária, origem, saída, gênero, licença) de quem
 possa ser identificado. Grupo com menos de 3 pessoas por papel ou por equipe aparece só como número.
@@ -77,7 +77,9 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
    total, então a correspondência um a um não está provada. Nas 3 unidades conferidas o cadastro CNES dos R1
    está correto, então o requisito individual que sobra ali é o § 4º, I–II do 172-E (situação regular na CNRM). Contra: exigiria falha simultânea de programas diferentes; pode
    ser também a forma como o MS passou a ler o CNRM com a portaria nova (fev/2026).
-2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas.
+2. **Carga horária < 40h** (art. 172-F § 6º) — real, mas explica no máximo 2 pessoas. Pode ser exigência
+   nova de 2026: pela busca de 29/10, a Portaria 4.411/2022 pedia o cadastro "na composição de equipe
+   homologada" sem fixar horas (a conferir no texto; ver a seção sobre estágio externo abaixo).
 3. **Limite de 2 por eSF** — explica 2 (um em cada equipe com 3). Registros de quem já saiu também
    precisam de baixa.
 4. **Zero de jul/2026 = suspensão do art. 172-H** depois de 3 competências com residentes "irregulares"
@@ -88,6 +90,40 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
 homologados); modalidade eAP como causa principal (só 1 residente em eAP); vínculo errado nos R1;
 carga horária como causa geral (quase todos os registros têm 40h); o caso de "registro desatualizado"
 citado em 13/10 (estava errado; corrigido na página com nota).
+
+## Estágio externo e as 40 horas (pergunta de 29/10/2026)
+
+Pergunta do usuário: o município pode manter no CNES o cadastro de 40h dos R2 durante os estágios externos,
+já que muitos são na própria rede e outros programas fariam isso? Análise em termos gerais; **não registrar
+quem está em estágio nem ligar isso aos dois registros abaixo de 40h** (grupos pequenos, identificáveis).
+
+- **Norma (fato, texto do DOU):** o residente "deverá cumprir a carga horária mínima, cumulativamente, de
+  quarenta horas semanais na composição" das equipes listadas (art. 172-F § 6º); o cadastro no SCNES é da gestão
+  (§ 5º); a conta usa residentes "atuantes" no município (172-E § 2º). O verbo é *cumprir*: o cadastro de 40h tem
+  de corresponder a 40h reais na equipe.
+- **Margem:** a residência médica pode ter até 60h semanais (Lei 6.932/1981, art. 5º; fonte 21, a conferir no
+  Planalto). Estágio externo em parte da semana, mantendo 40h na equipe, cumpre as duas regras. Estágio em tempo
+  integral fora da equipe: manter 40h no CNES não reflete a realidade (risco para a gestão em auditoria; a
+  Portaria SAS/MS 134/2011 trata da fidedignidade do SCNES, a conferir se está vigente).
+- **"Na rede" não basta:** só contam horas na composição de eSF, eSB, eMulti, eSFF/UBSF, eSFR, eCR ou eAPP. CAPS,
+  policlínica, hospital ou UPA não estão na lista.
+- **Folga do teto (estimativa):** com 22 pagos e 18 vagas, até 4 residentes podem ficar abaixo de 40h no mesmo mês
+  sem perda, se os outros 18 estiverem regulares (172-E § 2º). Escalonar os estágios protege o repasse. Hoje a
+  folga não ajuda: a contagem está em 12 por outros motivos (hipótese 1).
+- **A perguntar ao Ministério:** (a) se "cumulativamente" permite somar horas em mais de uma equipe elegível (ex.:
+  eSF + eMulti); (b) como tratar o residente em estágio externo; (c) se a exigência de 40h já existia antes de 2026.
+- **"Outros programas fazem isso":** não achamos orientação pública do Ministério. A busca de 29/10 mostrou
+  programas que fixam um mínimo de horas na unidade (João Pessoa, Portaria 18/2016 da RMFC: 32h; regulamento
+  da ESP/SC: 45h em serviço na atenção básica, de 60h) — vistos só em resumo de busca, a conferir. Perguntar às
+  COREMEs como outros programas organizam a semana durante estágios.
+- **Para conferir (links):** Portaria GM/MS 4.411/2022
+  (https://bvsms.saude.gov.br/bvs/saudelegis/gm/2022/prt4411_22_12_2022.html); nota técnica do Ministério sobre o
+  recurso adicional para residência na APS, 2023
+  (https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/notas-tecnicas/2023/sei_ms-0024042088-nota-tecnica.pdf);
+  PNAB 2017 (Portaria GM/MS 2.436/2017), sobre as "até 8 horas" para residência que existiam na PNAB de 2011;
+  Resolução CNRM nº 1/2015 (requisitos mínimos do PRM em MFC, alterada pela Resolução CNRM nº 35/2018).
+- **Na página:** contagem.html, seção "Estágio externo conta para as 40 horas?" (regras, margem, folga, em aberto),
+  e um item em fazer.html para gestão e COREMEs.
 
 ## Próximos passos
 
@@ -102,9 +138,14 @@ citado em 13/10 (estava errado; corrigido na página com nota).
   tiver aderido (residentes matriculados em abr/2026; Portaria GM/MS 8.403/2025).
 - **LAI**: pedido ao Ministério já protocolado pelo usuário no Fala.BR (antes de 15/10/2026; prazo
   20 + 10 dias). Ao chegar a resposta, comparar com as hipóteses acima.
-- **Dados a atualizar quando houver acesso**: empenho de set/out/2026 (`scripts/check_empenho_residentes.py`);
-  planilha do MS com ago/set/2026; fichas CNES das outras 12 unidades com residentes (lista de CNES em
-  `dados/cnes_medicos_residentes_por_unidade.csv`) para fechar o 26 × 22.
+- **Dados a atualizar quando houver acesso** (o usuário topou baixar o que a sessão não alcança; passo a passo
+  com links em `verificacao.md`, seção "Atualizar os dados"): planilha do MS com ago/set/2026 (o mais importante:
+  mostra se o repasse voltou depois do zero de julho); créditos de ago–out/2026 em "Recursos recebidos"; empenho
+  de set/out/2026 (`scripts/check_empenho_residentes.py`); fichas CNES das outras 12 unidades com residentes
+  (lista de CNES em `dados/cnes_medicos_residentes_por_unidade.csv`) para fechar o 26 × 22. Depois de mudar os
+  CSVs: `dados/situacao_dos_dados.csv` (período e data da coleta) e `python3 scripts/montar_site.py`.
+- **Pista a conferir**: a busca de 29/10 citou a Portaria GM/MS 10.345, de 13/03/2026, que credencia municípios
+  para custeio da APS, inclusive equipes integradas a residência. Ver se Santa Maria está nela e com quantas vagas.
 
 ## Privacidade e histórico
 
@@ -136,3 +177,10 @@ citado em 13/10 (estava errado; corrigido na página com nota).
   glossário ampliado, gráficos navegáveis por arrasto e botões, página legível sem JavaScript,
   `scripts/graficos.py` com rótulos tirados dos dados e erro se faltar marcador. Próximo passo
   sugerido: ofício à Secretaria e às COREMEs antes de divulgar mais.
+- **29/10/2026** — a página única virou um site de 9 páginas (Início, Reajuste, Contagem, Números, O que
+  fazer, Linha do tempo, Fontes, Glossário, Sobre), com CSS e JS em `assets/`. Trechos com fonte abrem um
+  balão (mouse, teclado e toque) com a referência e os links; termos técnicos, a definição. Fontes e termos
+  saem de `dados/fontes.json` e `dados/glossario.json`; fonte 21 nova (Lei 6.932/1981, a conferir). Tabela
+  "Até quando vão os dados" (`dados/situacao_dos_dados.csv`). `scripts/montar_site.py` monta as partes comuns,
+  gráficos e tabelas e confere fontes, termos e links. Análise do estágio externo e das 40h (seção acima). Rede
+  da sessão bloqueou todos os sites do governo: dados não atualizados; lista do que baixar passada ao usuário.

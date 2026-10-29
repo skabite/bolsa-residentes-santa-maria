@@ -2,7 +2,7 @@
 
 ![dados](https://img.shields.io/badge/dados-empenhos%20p%C3%BAblicos-2a78d6)
 ![fonte](https://img.shields.io/badge/fonte-Portal%20da%20Transpar%C3%AAncia%20%2B%20MS-1baf7a)
-![atualizado](https://img.shields.io/badge/atualizado-19%2F10%2F2026-898781)
+![atualizado](https://img.shields.io/badge/atualizado-29%2F10%2F2026-898781)
 
 **A bolsa dos residentes de MFC de Santa Maria está em R$ 4.500 desde 2021. A lei municipal prevê correção
 anual, que nunca foi aplicada. O incentivo federal que poderia pagar a correção existe, mas o Ministério da
@@ -12,7 +12,18 @@ Este repositório reúne os documentos públicos e a análise que sustentam essa
 prefeitura, as planilhas oficiais de pagamento do Ministério da Saúde e o texto das normas aplicáveis.
 Cada número tem link para a fonte primária.
 
-👉 **[Abrir o dossiê completo (página navegável)](https://skabite.github.io/bolsa-residentes-santa-maria/)**
+👉 **[Abrir o dossiê (site navegável)](https://skabite.github.io/bolsa-residentes-santa-maria/)**
+
+O site tem uma página por pergunta: [Início](https://skabite.github.io/bolsa-residentes-santa-maria/) ·
+[Dá para pedir reajuste?](https://skabite.github.io/bolsa-residentes-santa-maria/reajuste.html) ·
+[Onde trava a contagem](https://skabite.github.io/bolsa-residentes-santa-maria/contagem.html) ·
+[Os números](https://skabite.github.io/bolsa-residentes-santa-maria/numeros.html) ·
+[O que fazer](https://skabite.github.io/bolsa-residentes-santa-maria/fazer.html) ·
+[Linha do tempo](https://skabite.github.io/bolsa-residentes-santa-maria/linha-do-tempo.html) ·
+[Fontes](https://skabite.github.io/bolsa-residentes-santa-maria/fontes.html) ·
+[Glossário](https://skabite.github.io/bolsa-residentes-santa-maria/glossario.html) ·
+[Sobre](https://skabite.github.io/bolsa-residentes-santa-maria/sobre.html). Os trechos com fonte ficam sublinhados:
+passe o mouse ou toque para ver a referência num balão e abrir o documento original.
 
 ---
 
@@ -69,6 +80,10 @@ foram conferidas. A causa da contagem baixa e do zero
 de julho está em aberto (pedido de informação ao Ministério protocolado). Detalhe por unidade em
 [`dados/cnes_medicos_residentes_por_unidade.csv`](dados/cnes_medicos_residentes_por_unidade.csv) (sem nomes).
 
+Residente em estágio externo só continua na conta se cumprir 40 h reais na equipe; como a residência pode ter até
+60 h semanais, um estágio em parte da semana cabe. Com 22 pagos e 18 vagas, até 4 podem ficar fora da conta no
+mesmo mês sem perda, se os outros 18 estiverem em ordem (estimativa; detalhes na página Contagem).
+
 ---
 
 ## Como conferir cada número
@@ -90,7 +105,9 @@ Guia completo, com o estado de cada verificação: [`verificacao.md`](verificaca
 ## Conteúdo do repositório
 
 ```
-index.html                                  dossiê navegável (mesmo conteúdo da página publicada)
+index.html, reajuste.html, contagem.html,   páginas do site (as mesmas publicadas no GitHub Pages); as partes
+numeros.html, fazer.html, fontes.html ...   comuns, gráficos e tabelas são montados por scripts/montar_site.py
+assets/                                     estilo (dossie.css), comportamento (dossie.js) e fontes.js, gerado
 relatorio.md                                relatório completo, com tabelas e ressalvas metodológicas
 investigacao.md                             caderno de investigação: onde trava a contagem, hipóteses e próximos passos
 verificacao.md                              como conferir cada afirmação em fonte pública, e o que ainda falta conferir
@@ -107,8 +124,11 @@ dados/
   cnes_medicos_residentes_por_unidade.csv   médicos residentes no CNES por unidade (sem nomes)
   ines_homologacao_equipes_com_residentes.csv  homologação dos INEs com residentes
   portaria_10193_2026_arts_172E_172IA.md    texto dos arts. 172-E a 172-I-A, transcrito do DOU de 02/02/2026
+  fontes.json                               as fontes do site: o que cada uma prova, links e estado de conferência
+  glossario.json                            os termos do glossário (balões e página Glossário)
+  situacao_dos_dados.csv                    até quando vai cada base e o que falta incluir
   grafico-*.svg                             gráficos usados neste README
-scripts/                                    o que extrai e reconfere os dados (ver scripts/README abaixo)
+scripts/                                    o que extrai e reconfere os dados e monta o site (ver scripts/README.md)
 ```
 
 **Sem dados pessoais.** De abr/2021 a abr/2023 os pagamentos eram feitos em empenhos individuais, um por
@@ -129,7 +149,13 @@ python3 scripts/detalhe_empenho.py 25980/2025
 
 # saiu empenho novo de bolsa de residentes?
 python3 scripts/check_empenho_residentes.py 2026
+
+# depois de mudar um CSV, dados/fontes.json ou uma página: refaz gráficos e tabelas e confere fontes e links
+python3 scripts/montar_site.py
 ```
+
+O passo a passo para baixar o que falta (planilha do Ministério, empenhos novos, CNES), com os links, está em
+[`verificacao.md`](verificacao.md#atualizar-os-dados).
 
 Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios em PDF do município,
 `pdftotext`). Nenhum requer login, chave de API ou captcha.

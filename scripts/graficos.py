@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-"""Gera os graficos SVG do dossie a partir dos CSVs em dados/ e os injeta no index.html.
+"""Gera os graficos SVG do dossie a partir dos CSVs em dados/.
 
-Uso:  python3 scripts/graficos.py            (atualiza index.html no lugar)
+Uso:  python3 scripts/montar_site.py          (monta todas as paginas, graficos incluidos)
       python3 scripts/graficos.py --mostrar  (so imprime os nomes e tamanhos)
 
-Cada grafico fica entre os marcadores <!--g:nome--> e <!--/g:nome--> no index.html; os dados da
-tabela de empenhos ficam entre <!--d:dados--> e <!--/d:dados-->.
+Quem injeta os graficos nas paginas e scripts/montar_site.py: cada grafico fica entre os marcadores
+<!--g:nome--> e <!--/g:nome-->, e os dados da tabela de empenhos entre <!--d:dados--> e <!--/d:dados-->.
 Os SVGs usam viewBox de 360 de largura (pensados para o celular) e classes CSS da pagina
 (.g-grid, .g-axis, .g-tick, .g-s1, .g-s2, .g-ref, .g-bar, .g-hit, .g-lab), entao as cores
 seguem o tema claro/escuro. Sem dependencias alem da biblioteca padrao.
 """
 import csv
 import os
-import re
 import sys
 from decimal import ROUND_HALF_UP, Decimal
 
@@ -238,28 +237,13 @@ def dados_js():
     return f'<script id="dados" type="application/json">{corpo}</script>'
 
 
-BLOCOS = {"d:dados": dados_js}
-
-
 def main():
     if "--mostrar" in sys.argv:
         for nome, f in GRAFICOS.items():
             print(nome, len(f()))
         return
-    caminho = os.path.join(RAIZ, "index.html")
-    html = open(caminho, encoding="utf-8").read()
-    alvos = {f"g:{nome}": f for nome, f in GRAFICOS.items()}
-    alvos.update(BLOCOS)
-    for chave, f in alvos.items():
-        padrao = re.compile(r"(<!--%s-->).*?(<!--/%s-->)" % (chave, chave), re.S)
-        if not padrao.search(html):
-            sys.exit(f"erro: marcador <!--{chave}--> nao encontrado; index.html nao foi alterado")
-        conteudo = f()
-        html = padrao.sub(lambda mo: mo.group(1) + conteudo + mo.group(2), html)
-    with open(caminho + ".tmp", "w", encoding="utf-8") as fh:
-        fh.write(html)
-    os.replace(caminho + ".tmp", caminho)
-    print("graficos atualizados em index.html")
+    import montar_site  # as paginas sao montadas num lugar so
+    montar_site.main()
 
 
 if __name__ == "__main__":
