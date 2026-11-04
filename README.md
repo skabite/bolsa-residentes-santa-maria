@@ -2,11 +2,11 @@
 
 ![dados](https://img.shields.io/badge/dados-empenhos%20p%C3%BAblicos-2a78d6)
 ![fonte](https://img.shields.io/badge/fonte-Portal%20da%20Transpar%C3%AAncia%20%2B%20MS-1baf7a)
-![atualizado](https://img.shields.io/badge/atualizado-29%2F10%2F2026-898781)
+![atualizado](https://img.shields.io/badge/atualizado-03%2F11%2F2026-898781)
 
 **A bolsa dos residentes de MFC de Santa Maria está em R$ 4.500 desde 2021. A lei municipal prevê correção
 anual, que nunca foi aplicada. O incentivo federal que poderia pagar a correção existe, mas o Ministério da
-Saúde está contando só parte dos residentes: 12 de cerca de 23 em mar–jun/2026, e nenhum em julho.**
+Saúde está contando só parte dos residentes: 12 de cerca de 23 em mar–jun/2026, e nenhum em julho e agosto.**
 
 Este repositório reúne os documentos públicos e a análise que sustentam essa afirmação: os empenhos da
 prefeitura, as planilhas oficiais de pagamento do Ministério da Saúde e o texto das normas aplicáveis.
@@ -35,11 +35,12 @@ passe o mouse ou toque para ver a referência num balão e abrir o documento ori
 | Bolsa paga pela prefeitura | **R$ 4.500** por residente/mês — inalterada desde o primeiro pagamento, em abril de 2021 |
 | Custo mensal do programa (ago/2026) | **R$ 118.800** = R$ 99.000 de bolsas (22 × R$ 4.500) + R$ 19.800 de INSS patronal (20%). Em set–out/2026: **R$ 113.400** = R$ 94.500 (21 × R$ 4.500) + R$ 18.900 |
 | Incentivo federal por residente de medicina **contado pelo Ministério** (2026) | **R$ 8.000** — era R$ 4.500 até jan/2026 (Portaria GM/MS 10.193/2026) |
-| Residentes contados pelo Ministério | **12** de cerca de 23 pagos (mar–jun/2026) e **0** em jul/2026 — com 18 vagas credenciadas |
-| Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.434** (nov/2024–jul/2026) — abaixo da bolsa |
-| Total repassado pela União ao município | **R$ 1.406.500** (nov/2024 a jul/2026) |
-| Total pago em bolsas pela prefeitura no mesmo período | **R$ 1.843.050** |
-| Competência **jul/2026** | incentivo federal transferido: **R$ 0,00** — a bolsa de julho (R$ 99.000) foi paga normalmente |
+| Residentes contados pelo Ministério | **12** de cerca de 23 pagos (mar–jun/2026) e **0** em jul e ago/2026 — com 18 vagas credenciadas |
+| Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.259** (nov/2024–ago/2026; R$ 3.434 até jul/2026) — abaixo da bolsa |
+| Total repassado pela União ao município | **R$ 1.406.500** (nov/2024 a ago/2026) |
+| Total pago em bolsas pela prefeitura no mesmo período | **R$ 1.942.050** |
+| Competências **jul e ago/2026** | incentivo federal transferido: **R$ 0,00** em cada uma; sem crédito em set e out/2026. As bolsas de julho e agosto (R$ 99.000 cada) foram pagas normalmente |
+| Créditos do FNS em 2026 (ação 69166) | **R$ 749.500** em 8 parcelas, a última em 14/08/2026; não há parcelas 09 e 10 nessa ação (a 69182, de eSF/eAP, recebeu as duas) |
 
 ### Dá para pedir reajuste?
 
@@ -73,14 +74,22 @@ responsabilidade da gestão municipal (art. 172-F, §5º); a situação na CNRM 
 do Ministério. Texto dos artigos em
 [`dados/portaria_10193_2026_arts_172E_172IA.md`](dados/portaria_10193_2026_arts_172E_172IA.md).
 
-No CNES de jun/2026 havia **26** médicos residentes registrados (25 em equipes eSF, 1 em eAP), para 23 pagos
-pela prefeitura. Os 17 INEs com residentes estão homologados. A contagem do Ministério caiu de 17 para 12 em
-mar/2026, o mês em que a turma nova entrou, e não voltou a subir. Na consulta de out/2026 a três unidades, o
-cadastro dos novos residentes estava completo; havia duas equipes com 3 residentes de medicina (acima do limite),
-dois registros abaixo de 40 h e pelo menos um registro ativo de quem já saiu; as outras 12 unidades ainda não
-foram conferidas. A causa da contagem baixa e do zero
-de julho está em aberto (pedido de informação ao Ministério protocolado). Detalhe por unidade em
-[`dados/cnes_medicos_residentes_por_unidade.csv`](dados/cnes_medicos_residentes_por_unidade.csv) (sem nomes).
+No CNES de nov/2026 havia **23** médicos residentes em 15 unidades (eram 26 em junho; São José caiu de 5 para 3
+e São João de 1 para 0), para 21–22 pagos pela prefeitura. Todos os 23 estão em alguma equipe; **4** cadastros
+estão abaixo de 40 h e **uma** equipe (São Francisco, INE 0001662821) tem 3 residentes de medicina (acima do
+limite) — em São José, a equipe que tinha 3 passou a 2. A contagem de 03/11/2026 é agregada e cobre as 15
+unidades. A causa da contagem baixa e dos zeros de julho e agosto está em aberto (pedido de informação ao
+Ministério protocolado). Detalhe por unidade e por equipe em
+[`cnes_residentes_por_unidade_nov_2026.csv`](dados/cnes_residentes_por_unidade_nov_2026.csv) e
+[`cnes_residentes_por_equipe_nov_2026.csv`](dados/cnes_residentes_por_equipe_nov_2026.csv) (sem nomes).
+
+Estimativa: aplicando as regras de 40 h e de até 2 residentes por eSF ao cadastro de nov/2026, cerca de 18 dos
+23 se encaixariam — o mesmo número das vagas. Premissa: é o cadastro de hoje, não o das competências jul/ago;
+sozinho, não explica o zero desses meses.
+
+Risco para a bolsa: o art. 3º, §2º da Lei 6.516/2020 vincula a bolsa à pré-existência do repasse federal. Com o
+incentivo de residência zerado desde jul/2026 e sem crédito em set e out/2026, isso é um risco concreto para a
+continuidade do pagamento.
 
 Residente em estágio externo só continua na conta se cumprir 40 h reais na equipe; como a residência pode ter até
 60 h semanais, um estágio em parte da semana cabe. Com 22 pagos em ago/2026 e 18 vagas, até 4 podiam ficar fora da conta no
@@ -98,6 +107,7 @@ Guia completo, com o estado de cada verificação: [`verificacao.md`](verificaca
 | Valores, datas e quantos residentes foram pagos | [Portal da Transparência de Santa Maria → Despesa → Empenho](https://www.santamaria.rs.gov.br/transparencia/despesa/empenho) — filtre o ano e a unidade *Secretaria de Município da Saúde*, busque por `FOLHA PGTO COLETIVA` |
 | Cada empenho citado | a coluna `link_detalhe` em [`dados/bolsa_empenhos_coletivos_2023_2026.csv`](dados/bolsa_empenhos_coletivos_2023_2026.csv) abre a página oficial do empenho |
 | Valores que a União transferiu | [Painel público de pagamentos da APS](https://relatorioaps.saude.gov.br/gerenciaaps/pagamento) → aba **Residência** do arquivo Excel (dados em [`dados/incentivo_federal_residencia.csv`](dados/incentivo_federal_residencia.csv)) |
+| Créditos do incentivo de residência | [Consulta detalhada do FNS](https://consultafns.saude.gov.br/#/detalhada) → 2026 → Fundo a Fundo → bloco Manutenção → ação 69166. O relatório "Recursos recebidos" da prefeitura só traz o total da APS, sem separar a residência |
 | Regras do incentivo federal | [Portaria GM/MS 10.193/2026](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt10193_02_02_2026.html) (alterou os arts. 172-E a 172-I da Portaria de Consolidação GM/MS nº 6/2017) |
 | Regra da bolsa municipal | Lei municipal nº 6.516, de 29/12/2020 |
 | Cadastro de cada residente (equipe/INE) | [CNES](https://cnes.datasus.gov.br) — o incentivo federal só existe em equipes eSF, eSB, eMulti, eSFF/UBSF, eSFR, eCR e eAPP (**eAP não está na lista**) |
@@ -124,8 +134,11 @@ dados/
   incentivo_federal_residencia.csv          o que o MS transferiu, por competência (aba “Residência”)
   incentivo_federal_recebido_2026.csv       data e valor de cada crédito na conta do município (Lei 9.452/97)
   incentivo_federal_media_por_residente.csv média federal por residente pago pela prefeitura, por competência
-  cnes_medicos_residentes_por_unidade.csv   médicos residentes no CNES por unidade (sem nomes)
+  cnes_residentes_por_unidade_nov_2026.csv  médicos residentes no CNES por unidade em nov/2026 (sem nomes)
+  cnes_residentes_por_equipe_nov_2026.csv   médicos residentes no CNES por equipe em nov/2026 (sem nomes)
+  cnes_medicos_residentes_por_unidade.csv   contagem histórica por unidade (fev e jun/2026), com os INEs
   ines_homologacao_equipes_com_residentes.csv  homologação dos INEs com residentes
+  brutos/2026-11-03/                        respostas brutas do relatorioaps, do FNS e do CNES usadas em 03/11/2026
   portaria_10193_2026_arts_172E_172IA.md    texto dos arts. 172-E a 172-I-A, transcrito do DOU de 02/02/2026
   fontes.json                               as fontes do site: o que cada uma prova, links e estado de conferência
   glossario.json                            os termos do glossário (balões e página Glossário)
@@ -173,7 +186,7 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
   transferido ao fundo municipal, e hoje **não cobre** a folha: em média entrou R$ 4.189 por residente pago
   em mar–jun/2026, contra R$ 5.400 de custo (bolsa + 20% de INSS patronal). O que este repositório documenta
   é a diferença entre o valor federal por residente contado (R$ 8.000) e a bolsa paga (R$ 4.500), a contagem
-  baixa do Ministério (12 de cerca de 23) e o reajuste anual previsto na lei municipal que nunca foi aplicado.
+  baixa do Ministério (12 de cerca de 23, e 0 em julho e agosto) e o reajuste anual previsto na lei municipal que nunca foi aplicado.
   Com os 18 credenciados contados, o próprio incentivo pagaria a folha e sobrariam ≈ R$ 25 mil/mês.
 - **O ponto em aberto mais relevante** é a contagem (ver "Onde trava a contagem" acima e
   [`investigacao.md`](investigacao.md)). Foram descartadas, com documentos, as hipóteses de cadastro ausente,

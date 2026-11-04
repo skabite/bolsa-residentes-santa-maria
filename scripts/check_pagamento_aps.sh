@@ -3,23 +3,25 @@
 #
 # O painel https://relatorioaps.saude.gov.br/gerenciaaps/pagamento usa a API publica
 #   https://relatorioaps-prd.saude.gov.br/financiamento/pagamento
-# que em 13/10/2026 estava retornando erro 500 para qualquer filtro.
+# Em 03/11/2026 os parametros antigos nuCompInicio/nuCompFim retornavam erro 500. A API
+# passou a usar a PARCELA (AAAAMM), nao a competencia: parcela = competencia + 2 meses.
+# Ex.: competencia ago/2026 (202608) -> parcela 202610.
 #
-# Uso:  ./check_pagamento_aps.sh [AAAAMM]        (padrao: 202608)
+# Uso:  ./check_pagamento_aps.sh [PARCELA AAAAMM]   (padrao: 202610)
 # Saida: HTTP <codigo> | bytes: N  [| registros: N]
 
 set -u
-COMP="${1:-202608}"
+PARCELA="${1:-202610}"
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"
 API="https://relatorioaps-prd.saude.gov.br/financiamento/pagamento"
-OUT="/tmp/raps_check_${COMP}.json"
+OUT="/tmp/raps_check_${PARCELA}.json"
 
 code=$(curl -sS -G -L -A "$UA" --max-time 90 -H "Accept: application/json" -o "$OUT" -w "%{http_code}" \
   --data-urlencode "unidadeGeografica=MUNICIPIO" \
   --data-urlencode "coUf=43" \
   --data-urlencode "coMunicipio=431690" \
-  --data-urlencode "nuCompInicio=${COMP}" \
-  --data-urlencode "nuCompFim=${COMP}" \
+  --data-urlencode "nuParcelaInicio=${PARCELA}" \
+  --data-urlencode "nuParcelaFim=${PARCELA}" \
   --data-urlencode "tipoRelatorio=COMPLETO" \
   "$API")
 

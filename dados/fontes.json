@@ -54,11 +54,12 @@
     {
       "n": 5, "grupo": "oficiais",
       "titulo": "Planilha de pagamentos da APS (Ministério da Saúde), aba \"Residência\"",
-      "prova": "Vagas credenciadas, residentes contados e valor transferido por mês, nov/2024 a jul/2026.",
+      "prova": "Vagas credenciadas, residentes contados e valor transferido por mês, nov/2024 a ago/2026.",
       "estado": "primaria",
-      "nota": "Planilha baixada em 13/10/2026. Os meses de ago/2026 em diante ainda não foram baixados.",
+      "nota": "Planilha baixada em 13/10/2026 (nov/2024 a jul/2026); API consultada em 03/11/2026 com os parâmetros novos (nuParcelaInicio/nuParcelaFim, parcela AAAAMM = competência + 2 meses). Set/2026 ainda não publicado.",
       "links": [
         {"rotulo": "Painel do Ministério", "url": "https://relatorioaps.saude.gov.br/gerenciaaps/pagamento"},
+        {"rotulo": "API (parcelas 2026)", "url": "https://relatorioaps-prd.saude.gov.br/financiamento/pagamento?unidadeGeografica=MUNICIPIO&coUf=43&coMunicipio=431690&nuParcelaInicio=202601&nuParcelaFim=202610&tipoRelatorio=COMPLETO"},
         {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/incentivo_federal_residencia.csv"}
       ]
     },
@@ -78,7 +79,7 @@
       "titulo": "Recursos recebidos (Lei 9.452/97)",
       "prova": "Data e valor de cada crédito federal na conta do município: o incentivo cai entre os dias 13 e 17, cerca de dois meses depois.",
       "estado": "primaria",
-      "nota": "Conferido no portal da prefeitura. Falta a conferência independente na consulta do Fundo Nacional de Saúde.",
+      "nota": "Conferido no portal da prefeitura para os créditos de 2026. O relatório mensal só traz o total da Atenção Primária, sem separar a residência; não serve para conferir o incentivo. A conferência é feita no FNS (fonte 22).",
       "links": [
         {"rotulo": "Portal", "url": "https://www.santamaria.rs.gov.br/transparencia/contas-publicas/rr"},
         {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/incentivo_federal_recebido_2026.csv"}
@@ -87,18 +88,22 @@
     {
       "n": 8, "grupo": "oficiais",
       "titulo": "CNES (DATASUS)",
-      "prova": "Registro de cada residente: unidade, equipe, vínculo e carga horária. Contagem por unidade nas competências de fev e jun/2026; fichas de 3 unidades (São José, São Francisco e Victor Hoffmann) consultadas em 15/10/2026. Para conferir, busque a unidade em Consultas > Estabelecimentos e abra as abas de profissionais e de equipes.",
+      "prova": "Registro de cada residente: unidade, equipe, vínculo e carga horária. Contagem por unidade em fev e jun/2026 e nas 15 unidades em nov/2026: 23 residentes, 4 cadastros abaixo de 40 h e uma equipe com 3. Para conferir, use os serviços públicos de estabelecimentos-profissionais e estabelecimentos-equipes ou busque a unidade em Consultas > Estabelecimentos e abra as abas de profissionais e de equipes.",
       "estado": "primaria",
-      "nota": "As fichas das outras 12 unidades com residentes ainda não foram conferidas.",
+      "nota": "Consulta pública via serviços do site em 03/11/2026, em contagem agregada e sem nomes. As fichas de 3 unidades tinham sido conferidas em 15/10/2026; as 15 estão cobertas pela contagem de nov/2026.",
       "links": [
         {"rotulo": "CNES", "url": "https://cnes.datasus.gov.br"},
-        {"rotulo": "Por unidade (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/cnes_medicos_residentes_por_unidade.csv"}
+        {"rotulo": "Serviço: profissionais", "url": "https://cnes.datasus.gov.br/services/estabelecimentos-profissionais/4316902242664"},
+        {"rotulo": "Serviço: equipes", "url": "https://cnes.datasus.gov.br/services/estabelecimentos-equipes/4316902242664"},
+        {"rotulo": "Por unidade (nov/2026, CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/cnes_residentes_por_unidade_nov_2026.csv"},
+        {"rotulo": "Por equipe (nov/2026, CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/cnes_residentes_por_equipe_nov_2026.csv"}
       ]
     },
     {
       "n": 9, "grupo": "oficiais",
       "titulo": "Equipes homologadas",
-      "prova": "As 17 equipes com residentes constam como homologadas no arquivo público do Ministério.",
+      "prova": "As 17 equipes com residentes em jun/2026 constam como homologadas; as 16 equipes com residentes em nov/2026 estão entre elas.",
+      "nota": "São João (INE 0000433144) segue homologado, mas está sem residente em nov/2026.",
       "links": [
         {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/ines_homologacao_equipes_com_residentes.csv"}
       ]
@@ -219,6 +224,17 @@
       "nota": "Conferido no Planalto em 29/10/2026. Art. 5º: máximo de 60 (sessenta) horas semanais, nelas incluídas um máximo de 24 (vinte e quatro) horas de plantão.",
       "links": [
         {"rotulo": "Texto (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/l6932.htm"}
+      ]
+    },
+    {
+      "n": 22, "grupo": "oficiais",
+      "titulo": "Fundo Nacional de Saúde: consulta detalhada (Fundo a Fundo)",
+      "prova": "Créditos da ação 69166 (Demais programas, serviços e equipes da APS) em 2026: 8 parcelas, R$ 749.500, última em 14/08/2026. Não há parcelas 09 e 10 nessa ação; a ação 69182 (eSF/eAP) recebeu a 09 em 10/09/2026 e a 10 em 14/10/2026.",
+      "estado": "primaria",
+      "nota": "Consultado em 03/11/2026: CNPJ 12.964.512/0001-57, bloco Manutenção, ano 2026, ação 69166. O total bate com a soma das parcelas 2026 do Ministério, inclusive as duas zeradas (jul e ago/2026).",
+      "links": [
+        {"rotulo": "Consulta detalhada", "url": "https://consultafns.saude.gov.br/#/detalhada"},
+        {"rotulo": "Dados (CSV)", "url": "https://github.com/skabite/bolsa-residentes-santa-maria/blob/main/dados/incentivo_federal_recebido_2026.csv"}
       ]
     }
   ]

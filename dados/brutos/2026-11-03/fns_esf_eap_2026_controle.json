@@ -1,0 +1,450 @@
+{
+ "resultado": {
+  "dados": [
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "01",
+     "ano": "2026",
+     "processo": "25000003812202685",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.003812/2026-85"
+    },
+    "valorLiquido": 859494,
+    "valorDescontoTotal": 0,
+    "valorTotal": 859494,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "1 em 2026",
+    "numeroDocumentoSiafi": "000950",
+    "dataCriacaoSiafi": "13/01/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "01",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "01",
+     "ano": "2026",
+     "processo": "25000008677202664",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.008677/2026-64"
+    },
+    "valorLiquido": 232125,
+    "valorDescontoTotal": 0,
+    "valorTotal": 232125,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "Única em 2025",
+    "numeroDocumentoSiafi": "003455",
+    "dataCriacaoSiafi": "03/02/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "02",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "02",
+     "ano": "2026",
+     "processo": "25000018094202641",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.018094/2026-41"
+    },
+    "valorLiquido": 859494,
+    "valorDescontoTotal": 0,
+    "valorTotal": 859494,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "02/12 em 2026",
+    "numeroDocumentoSiafi": "005155",
+    "dataCriacaoSiafi": "10/02/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "02",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "03",
+     "ano": "2026",
+     "processo": "25000036167202687",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.036167/2026-87"
+    },
+    "valorLiquido": 859494,
+    "valorDescontoTotal": 0,
+    "valorTotal": 859494,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "03/12 em 2026",
+    "numeroDocumentoSiafi": "010786",
+    "dataCriacaoSiafi": "12/03/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "03",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "04",
+     "ano": "2026",
+     "processo": "25000053585202639",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.053585/2026-39"
+    },
+    "valorLiquido": 849552,
+    "valorDescontoTotal": 0,
+    "valorTotal": 849552,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "04/12 em 2026",
+    "numeroDocumentoSiafi": "016598",
+    "dataCriacaoSiafi": "14/04/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "04",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "05",
+     "ano": "2026",
+     "processo": "25000070078202660",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.070078/2026-60"
+    },
+    "valorLiquido": 904668,
+    "valorDescontoTotal": 0,
+    "valorTotal": 904668,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "05/12 em 2026",
+    "numeroDocumentoSiafi": "029900",
+    "dataCriacaoSiafi": "13/05/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "05",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "06",
+     "ano": "2026",
+     "processo": "25000088353202600",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.088353/2026-00"
+    },
+    "valorLiquido": 951126,
+    "valorDescontoTotal": 0,
+    "valorTotal": 951126,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "06/12 em 2026",
+    "numeroDocumentoSiafi": "047465",
+    "dataCriacaoSiafi": "15/06/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "06",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "07",
+     "ano": "2026",
+     "processo": "25000104735202680",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.104735/2026-80"
+    },
+    "valorLiquido": 955126,
+    "valorDescontoTotal": 0,
+    "valorTotal": 955126,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "07/12 em 2026",
+    "numeroDocumentoSiafi": "064818",
+    "dataCriacaoSiafi": "14/07/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "07",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "08",
+     "ano": "2026",
+     "processo": "25000123060202678",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.123060/2026-78"
+    },
+    "valorLiquido": 941068,
+    "valorDescontoTotal": 0,
+    "valorTotal": 941068,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "08/12 em 2026",
+    "numeroDocumentoSiafi": "067335",
+    "dataCriacaoSiafi": "17/08/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "08",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "09",
+     "ano": "2026",
+     "processo": "25000138661202685",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.138661/2026-85"
+    },
+    "valorLiquido": 931126,
+    "valorDescontoTotal": 0,
+    "valorTotal": 931126,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "09/12 em 2026",
+    "numeroDocumentoSiafi": "070688",
+    "dataCriacaoSiafi": "10/09/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "09",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "10",
+     "ano": "2026",
+     "processo": "25000155249202620",
+     "programaFundo": {
+      "id": 69182,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - EQUIPES DE SAÚDE DA FAMÍLIA/ESF E EQUIPES DE ATENÇÃO PRIMÁRIA/EAP"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.155249/2026-20"
+    },
+    "valorLiquido": 952126,
+    "valorDescontoTotal": 0,
+    "valorTotal": 952126,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "competencia": "10/12 em 2026",
+    "numeroDocumentoSiafi": "074089",
+    "dataCriacaoSiafi": "14/10/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "10",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 9295399,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 9295399
+   }
+  ],
+  "pagina": 0,
+  "itensPorPagina": 100,
+  "total": 11,
+  "totalPaginas": 1
+ }
+}
