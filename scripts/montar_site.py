@@ -30,7 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import graficos  # noqa: E402
 
 RAIZ, DADOS = graficos.RAIZ, graficos.DADOS
-ATUALIZADO = "29/10/2026"
+ATUALIZADO = "03/11/2026"
 REPO = "https://github.com/skabite/bolsa-residentes-santa-maria"
 ESTADO = {"primaria": "Conferida na fonte primária", "parcial": "Conferida em parte", "conferir": "A conferir"}
 esc = html.escape
@@ -42,7 +42,7 @@ PAGINAS = [
     ("contagem.html", "Contagem", "Onde trava a contagem", "Os requisitos do Ministério, um a um, e o estágio externo.", True),
     ("numeros.html", "Números", "Os números", "Gráficos, tabelas, cada empenho e até quando vão os dados.", True),
     ("fazer.html", "O que fazer", "O que fazer", "Para residentes, gestão municipal e COREMEs, com os canais.", True),
-    ("linha-do-tempo.html", "Linha do tempo", "Linha do tempo", "Do incentivo de 2019 ao zero de julho de 2026.", False),
+    ("linha-do-tempo.html", "Linha do tempo", "Linha do tempo", "Do incentivo de 2019 ao zero de julho e agosto de 2026.", False),
     ("fontes.html", "Fontes", "Fontes", "As referências, com o que cada uma prova e onde é citada.", True),
     ("glossario.html", "Glossário", "Glossário", "CNES, CNRM, competência, empenho e outros termos.", False),
     ("sobre.html", "Sobre", "Sobre o dossiê", "Método, correções, privacidade e como reutilizar.", False),
@@ -282,22 +282,31 @@ def sem_acento(s):
 
 
 def cnes(pag, info):
-    linhas = graficos.ler("cnes_medicos_residentes_por_unidade.csv")
+    linhas = graficos.ler("cnes_residentes_por_unidade_nov_2026.csv")
+    equipes = graficos.ler("cnes_residentes_por_equipe_nov_2026.csv")
     homolog = {l["ine"]: l for l in graficos.ler("ines_homologacao_equipes_com_residentes.csv")}
-    col = [c for c in linhas[0] if re.fullmatch(r"medicos_residentes_[a-z]{3}_\d{4}", c)][-1]
-    mes = "/".join(col.split("_")[2:])
+    antigos = {l["cnes_estabelecimento"]: l for l in graficos.ler("cnes_medicos_residentes_por_unidade.csv")}
+    por_cnes = {}
+    for e in equipes:
+        por_cnes.setdefault(e["cnes_estabelecimento"], []).append(e)
     itens = []
     for l in linhas:
-        ines = [i.strip() for i in l["ines"].split(",") if i.strip()]
-        tipos = sorted({homolog[i]["tipo_de_equipe"] for i in ines})
-        equipe = " e ".join(tipos) + (f" ({len(ines)} equipes)" if len(ines) > 1 else "")
-        if tipos == ["eAP"]:
-            equipe += " (não conta)"
-        itens.append((int(l[col]), homolog[ines[0]]["unidade"], equipe, tipos))
+        cnes = l["cnes_estabelecimento"]
+        es = por_cnes.get(cnes, [])
+        ines = [e["ine"] for e in es] or [i.strip() for i in antigos[cnes]["ines"].split(",") if i.strip()]
+        tipos = sorted({homolog[i]["tipo_de_equipe"] for i in ines if i in homolog})
+        nome = homolog[ines[0]]["unidade"] if ines and ines[0] in homolog else l["unidade"]
+        if es:
+            equipe = " e ".join(tipos) + (f" ({len(es)} equipes)" if len(es) > 1 else "")
+            if tipos == ["eAP"]:
+                equipe += " (não conta)"
+        else:
+            equipe = "sem residentes"
+        itens.append((int(l["medicos_residentes_nov_2026"]), nome, equipe, tipos))
     itens.sort(key=lambda t: (-t[0], "eAP" in t[3], sem_acento(t[1])))
     corpo = "".join(f'<tr><td>{esc(nome)}</td><td class="n">{n}</td><td>{esc(eq)}</td></tr>' for n, nome, eq, _ in itens)
     total, esf = sum(t[0] for t in itens), sum(t[0] for t in itens if t[3] == ["eSF"])
-    return (f'<div class="tabela"><table><thead><tr><th>Unidade</th><th class="n">Residentes ({mes})</th><th>Equipe</th>'
+    return (f'<div class="tabela"><table><thead><tr><th>Unidade</th><th class="n">Residentes (nov/2026)</th><th>Equipe</th>'
             f'</tr></thead><tbody>{corpo}</tbody><tfoot><tr><td>Total</td><td class="n">{total}</td><td>{esf} em eSF</td>'
             '</tr></tfoot></table></div>')
 

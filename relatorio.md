@@ -20,6 +20,16 @@ Levantamento feito em 13/10/2026 a partir dos dois documentos da pasta e de base
 > com a marca *Correção (19/10/2026)*: a "diferença que fica no Fundo" (seções 3 e 6.2), a ideia de que a
 > trilha C é paga com a trilha B (seção 2), o papel da eAP (5.2 e 5.4), o credenciamento (6.3), o reajuste
 > (6.1), o alcance da lei sobre o ano adicional (6.7) e o início da folha coletiva (mai/2023, seção 5).
+>
+> **Atualização (03/11/2026) — nota curta, sem reescrever o relatório:**
+> - Competência **ago/2026**: 18 credenciados, **0 pagos**, R$ 0; jul/2026 já era 0. É zero registrado, não dado
+>   ausente; set/2026 ainda não foi publicado.
+> - **FNS:** 8 créditos da ação 69166 em 2026, total R$ 749.500, o último em 14/08/2026; não há parcelas 09 e 10
+>   nessa ação (a 69182, de eSF/eAP, recebeu as duas). O total bate com a soma das parcelas do Ministério.
+> - **Empenhos out/2026:** R$ 49.500 + R$ 45.000, pagos integralmente (21 residentes).
+> - **CNES nov/2026:** 23 residentes em 15 unidades (26 em junho); 4 abaixo de 40 h; uma equipe com 3.
+> - Incluindo ago/2026, o total pago em bolsas sobe para R$ 1.942.050 e a média federal por residente pago
+>   cai para R$ 3.259 (nov/2024–ago/2026; R$ 3.434 até jul/2026).
 
 ---
 
