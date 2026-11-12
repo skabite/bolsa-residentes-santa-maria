@@ -2,11 +2,17 @@
 
 ![dados](https://img.shields.io/badge/dados-empenhos%20p%C3%BAblicos-2a78d6)
 ![fonte](https://img.shields.io/badge/fonte-Portal%20da%20Transpar%C3%AAncia%20%2B%20MS-1baf7a)
-![atualizado](https://img.shields.io/badge/atualizado-03%2F11%2F2026-898781)
+![atualizado](https://img.shields.io/badge/atualizado-12%2F11%2F2026-898781)
 
 **A bolsa dos residentes de MFC de Santa Maria está em R$ 4.500 desde 2021. A lei municipal prevê correção
 anual, que nunca foi aplicada. O incentivo federal que poderia pagar a correção existe, mas o Ministério da
-Saúde está contando só parte dos residentes: 12 de cerca de 23 em mar–jun/2026, e nenhum em julho e agosto.**
+Saúde está contando só parte dos residentes: 12 de cerca de 23 em mar–jun/2026, e nenhum de julho a setembro.**
+
+**Novo em 12/11/2026.** O zero tem uma explicação provável, já corrigida no cadastro: até setembro, todos os médicos
+residentes de Santa Maria estavam no CNES com o código de ocupação (CBO) 2231F9, "Médico residente". Desde a competência
+jul/2026, o Ministério não contou esse código em nenhum dos 12 municípios comparados, e contou os outros (225142, 225130,
+225170). Hoje os 23 estão no 225130. Se a leitura estiver certa, o repasse volta na parcela de dezembro de 2026 ou na de
+janeiro de 2027. É leitura de dados oficiais, ainda sem confirmação do Ministério.
 
 Este repositório reúne os documentos públicos e a análise que sustentam essa afirmação: os empenhos da
 prefeitura, as planilhas oficiais de pagamento do Ministério da Saúde e o texto das normas aplicáveis.
@@ -35,12 +41,14 @@ passe o mouse ou toque para ver a referência num balão e abrir o documento ori
 | Bolsa paga pela prefeitura | **R$ 4.500** por residente/mês — inalterada desde o primeiro pagamento, em abril de 2021 |
 | Custo mensal do programa (ago/2026) | **R$ 118.800** = R$ 99.000 de bolsas (22 × R$ 4.500) + R$ 19.800 de INSS patronal (20%). Em set–out/2026: **R$ 113.400** = R$ 94.500 (21 × R$ 4.500) + R$ 18.900 |
 | Incentivo federal por residente de medicina **contado pelo Ministério** (2026) | **R$ 8.000** — era R$ 4.500 até jan/2026 (Portaria GM/MS 10.193/2026) |
-| Residentes contados pelo Ministério | **12** de cerca de 23 pagos (mar–jun/2026) e **0** em jul e ago/2026 — com 18 vagas credenciadas |
-| Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.259** (nov/2024–ago/2026; R$ 3.434 até jul/2026) — abaixo da bolsa |
-| Total repassado pela União ao município | **R$ 1.406.500** (nov/2024 a ago/2026) |
-| Total pago em bolsas pela prefeitura no mesmo período | **R$ 1.942.050** |
-| Competências **jul e ago/2026** | incentivo federal transferido: **R$ 0,00** em cada uma; sem crédito em set e out/2026. As bolsas de julho e agosto (R$ 99.000 cada) foram pagas normalmente |
-| Créditos do FNS em 2026 (ação 69166) | **R$ 749.500** em 8 parcelas, a última em 14/08/2026; não há parcelas 09 e 10 nessa ação (a 69182, de eSF/eAP, recebeu as duas) |
+| Residentes contados pelo Ministério | **12** de cerca de 23 pagos (mar–jun/2026) e **0** em jul, ago e set/2026 — com 18 vagas credenciadas |
+| Código de ocupação (CBO) dos médicos residentes no CNES | **2231F9** em todos, de nov/2024 a set/2026; **225130** nos 23 do cadastro de 12/11/2026 |
+| Média federal de fato por residente pago | **R$ 4.189** (mar–jun/2026) e **R$ 3.108** (nov/2024–set/2026) — abaixo da bolsa |
+| Total repassado pela União ao município | **R$ 1.406.500** (nov/2024 a set/2026) |
+| Total pago em bolsas pela prefeitura no mesmo período | **R$ 2.036.550** |
+| Competências **jul, ago e set/2026** | incentivo federal transferido: **R$ 0,00** em cada uma; sem crédito desde 14/08/2026. As bolsas (R$ 99.000 em julho e agosto, R$ 94.500 em setembro) foram pagas normalmente |
+| O que deixou de entrar em jul–set/2026 | cerca de **R$ 432.000** (estimativa: 18 contados × R$ 8.000 × 3 meses; pelo cadastro desses meses, 21 a 22 passavam nas regras visíveis) |
+| Créditos do FNS em 2026 (ação 69166) | **R$ 749.500** em 8 parcelas, a última em 14/08/2026; não há parcelas 09, 10 e 11 nessa ação até 12/11/2026 (a 69182, de eSF/eAP, recebeu a 09 e a 10) |
 
 ### Dá para pedir reajuste?
 
@@ -49,7 +57,7 @@ completa a folha com dinheiro próprio. A base é a lei (art. 3º, §1º da Lei 
 aplicada) e uma proposta em que a prefeitura também ganha: regularizar a contagem. Com as 18 vagas credenciadas
 contadas, o próprio incentivo pagaria uma bolsa de até **R$ 5.454** aos 22 residentes, com INSS. Referências
 de correção: reajuste de 23,29% da bolsa federal em 2022 → **R$ 5.548**; IPCA de jan/2021 a set/2026 →
-**≈ R$ 6.228** (estimativas). Detalhes, respostas da gestão e comparação com outros municípios na página.
+**R$ 6.227,96** (38,40%, conferido na série 433 do Banco Central). Detalhes, respostas da gestão e comparação com outros municípios na página.
 
 ### Bolsas empenhadas por mês (empenhos municipais)
 
@@ -74,22 +82,36 @@ responsabilidade da gestão municipal (art. 172-F, §5º); a situação na CNRM 
 do Ministério. Texto dos artigos em
 [`dados/portaria_10193_2026_arts_172E_172IA.md`](dados/portaria_10193_2026_arts_172E_172IA.md).
 
+**O código de ocupação.** O CNES guarda o cadastro de cada mês. De nov/2024 a set/2026, todos os médicos com vínculo de
+residência nas 15 unidades tinham o CBO 2231F9 (Médico residente); com esse mesmo código o Ministério contou 17, depois 12
+e, de julho a setembro, nenhum. Entre junho e julho o cadastro não mudou; o que mudou foi a contagem, e não só aqui: na
+soma de 29 municípios consultados, os contados foram de 321 (jun) para 666 (jul) e 689 (ago–set), de cerca de 816 vagas,
+depois de caírem de 605 (fev) para 321. Onde os residentes estavam em 225142, 225130 ou 225170, a contagem chegou ao teto
+sem mudança no cadastro; onde estavam em 2231F9 (Santa Maria, Porto Alegre, Fortaleza, Ijuí), ficou em zero, e em Canoas
+e Santos foi igual ao número de residentes em outro código. A portaria não cita CBO (o art. 58 da Portaria de Consolidação
+nº 2 deixa a identificação dos residentes para regulamentação da SAPS, que não localizamos). Dados em
+[`cnes_cbo_medicos_residentes_por_competencia.csv`](dados/cnes_cbo_medicos_residentes_por_competencia.csv),
+[`cnes_cbo_comparacao_municipios_2026.csv`](dados/cnes_cbo_comparacao_municipios_2026.csv) e
+[`residencia_outros_municipios_2026.csv`](dados/residencia_outros_municipios_2026.csv); para refazer,
+`python3 scripts/cnes_cbo.py`.
+
 No CNES de nov/2026 havia **23** médicos residentes em 15 unidades (eram 26 em junho; São José caiu de 5 para 3
 e São João de 1 para 0), para 21–22 pagos pela prefeitura. Todos os 23 estão em alguma equipe; **4** cadastros
 estão abaixo de 40 h e **uma** equipe (São Francisco, INE 0001662821) tem 3 residentes de medicina (acima do
-limite) — em São José, a equipe que tinha 3 passou a 2. A contagem de 03/11/2026 é agregada e cobre as 15
-unidades. A causa da contagem baixa e dos zeros de julho e agosto está em aberto (pedido de informação ao
-Ministério protocolado). Detalhe por unidade e por equipe em
+limite) — em São José, a equipe que tinha 3 passou a 2. A contagem (03/11 e 12/11/2026) é agregada e cobre as 15
+unidades. A causa da contagem baixa de mar–jun/2026, que aconteceu também em outros municípios, segue em aberto (pedido de
+informação ao Ministério protocolado). Detalhe por unidade e por equipe em
 [`cnes_residentes_por_unidade_nov_2026.csv`](dados/cnes_residentes_por_unidade_nov_2026.csv) e
 [`cnes_residentes_por_equipe_nov_2026.csv`](dados/cnes_residentes_por_equipe_nov_2026.csv) (sem nomes).
 
-Estimativa: aplicando as regras de 40 h e de até 2 residentes por eSF ao cadastro de nov/2026, cerca de 18 dos
-23 se encaixariam — o mesmo número das vagas. Premissa: é o cadastro de hoje, não o das competências jul/ago;
-sozinho, não explica o zero desses meses.
+Estimativa: aplicando ao cadastro de nov/2026 as regras visíveis no CNES (equipe eSF, 40 h na equipe, até 2 por eSF),
+**17** dos 23 passam: 1 está em eAP, 4 abaixo de 40 h e 1 é excedente na equipe com 3. A mesma conta no cadastro de cada
+mês dá 22 em junho e julho e 21 em setembro de 2026.
+*Correção (12/11/2026): o texto anterior dizia "cerca de 18" e não descontava o residente em eAP.*
 
 Risco para a bolsa: o art. 3º, §2º da Lei 6.516/2020 vincula a bolsa à pré-existência do repasse federal. Com o
-incentivo de residência zerado desde jul/2026 e sem crédito em set e out/2026, isso é um risco concreto para a
-continuidade do pagamento.
+incentivo de residência zerado de jul a set/2026 e sem crédito desde 14/08/2026, isso é um risco para a continuidade do
+pagamento enquanto a contagem não voltar.
 
 Residente em estágio externo só continua na conta se cumprir 40 h reais na equipe; como a residência pode ter até
 60 h semanais, um estágio em parte da semana cabe. Com 22 pagos em ago/2026 e 18 vagas, até 4 podiam ficar fora da conta no
@@ -137,8 +159,11 @@ dados/
   cnes_residentes_por_unidade_nov_2026.csv  médicos residentes no CNES por unidade em nov/2026 (sem nomes)
   cnes_residentes_por_equipe_nov_2026.csv   médicos residentes no CNES por equipe em nov/2026 (sem nomes)
   cnes_medicos_residentes_por_unidade.csv   contagem histórica por unidade (fev e jun/2026), com os INEs
+  cnes_cbo_medicos_residentes_por_competencia.csv  CBO dos médicos residentes no CNES, mês a mês, e a contagem do MS
+  cnes_cbo_comparacao_municipios_2026.csv   CBO no CNES × contagem do MS em Santa Maria e em 12 municípios
+  residencia_outros_municipios_2026.csv     médicos credenciados e contados em 30 municípios (fev a set/2026)
   ines_homologacao_equipes_com_residentes.csv  homologação dos INEs com residentes
-  brutos/2026-11-03/                        respostas brutas do relatorioaps, do FNS e do CNES usadas em 03/11/2026
+  brutos/2026-11-03/, brutos/2026-11-12/    respostas brutas do relatorioaps e do FNS usadas em cada coleta
   portaria_10193_2026_arts_172E_172IA.md    texto dos arts. 172-E a 172-I-A, transcrito do DOU de 02/02/2026
   fontes.json                               as fontes do site: o que cada uma prova, links e estado de conferência
   glossario.json                            os termos do glossário (balões e página Glossário)
@@ -166,6 +191,9 @@ python3 scripts/detalhe_empenho.py 25980/2025
 # saiu empenho novo de bolsa de residentes?
 python3 scripts/check_empenho_residentes.py 2026
 
+# CBO dos médicos residentes no CNES, por competência (contagem agregada, sem nomes)
+python3 scripts/cnes_cbo.py santa-maria 202606 202607 202609 atual
+
 # depois de mudar um CSV, dados/fontes.json ou uma página: refaz gráficos e tabelas e confere fontes e links
 python3 scripts/montar_site.py
 ```
@@ -186,13 +214,13 @@ Os scripts precisam apenas de `python3` com `requests` (e, para os relatórios e
   transferido ao fundo municipal, e hoje **não cobre** a folha: em média entrou R$ 4.189 por residente pago
   em mar–jun/2026, contra R$ 5.400 de custo (bolsa + 20% de INSS patronal). O que este repositório documenta
   é a diferença entre o valor federal por residente contado (R$ 8.000) e a bolsa paga (R$ 4.500), a contagem
-  baixa do Ministério (12 de cerca de 23, e 0 em julho e agosto) e o reajuste anual previsto na lei municipal que nunca foi aplicado.
+  baixa do Ministério (12 de cerca de 23, e 0 de julho a setembro) e o reajuste anual previsto na lei municipal que nunca foi aplicado.
   Com os 18 credenciados contados, o próprio incentivo pagaria a folha e sobrariam ≈ R$ 25 mil/mês.
-- **O ponto em aberto mais relevante** é a contagem (ver "Onde trava a contagem" acima e
-  [`investigacao.md`](investigacao.md)). Foram descartadas, com documentos, as hipóteses de cadastro ausente,
-  de INE ausente e de equipe não homologada. Restam a matrícula na **CNRM** da turma de 2026 (art. 172-E,
-  §4º, I), a validação no e-Gestor e os ajustes de cadastro já identificados. Pedido de informação ao
-  Ministério protocolado no Fala.BR.
+- **O ponto em aberto mais relevante** é a confirmação do Ministério sobre o CBO (ver "Onde trava a contagem" acima e
+  [`investigacao.md`](investigacao.md)): se ele deixou de contar o 2231F9 em jul/2026, em que ato, e se jul–set serão
+  reprocessados. A relação entre CBO e contagem é uma leitura de dados oficiais numa amostra de 12 municípios, não uma
+  regra publicada. Foram descartadas, com documentos, as hipóteses de cadastro ausente, de INE ausente, de equipe não
+  homologada e de mudança no cadastro entre junho e julho. Pedido de informação ao Ministério protocolado no Fala.BR.
 - **Iniciativa pessoal e independente**: não representa nem tem endosso da UFSM, da UFN ou da Prefeitura.
   Sem nomes, CPF, cartão SUS ou dados bancários; residentes só em números agregados. Pedidos de correção ou de
   retirada: abra uma *issue*. Uma resposta da Secretaria de Saúde ou das COREMEs será publicada com o mesmo

@@ -31,6 +31,16 @@ Levantamento feito em 13/10/2026 a partir dos dois documentos da pasta e de base
 > - Incluindo ago/2026, o total pago em bolsas sobe para R$ 1.942.050 e a média federal por residente pago
 >   cai para R$ 3.259 (nov/2024–ago/2026; R$ 3.434 até jul/2026).
 
+>
+> **Atualização (12/11/2026) — nota curta, sem reescrever o relatório:**
+> - Competência **set/2026**: 18 credenciados, **0 pagos**, R$ 0. Três zeros seguidos.
+> - **CBO:** de nov/2024 a set/2026 todos os médicos residentes estavam no CNES com o código 2231F9; no cadastro de
+>   12/11/2026, os 23 estão no 225130. A comparação com 12 municípios indica que o Ministério deixou de contar o 2231F9
+>   em jul/2026 (leitura de dados oficiais, sem confirmação). A queda de mar/2026 também aconteceu em outros municípios,
+>   o que enfraquece as leituras locais das seções 5.4 e 6. Ver [`investigacao.md`](investigacao.md).
+> - Totais até set/2026: R$ 1.406.500 de incentivo, R$ 2.036.550 em bolsas, média federal de R$ 3.108 por residente pago.
+> - IPCA conferido na série do Banco Central: 38,40% de jan/2021 a set/2026 (R$ 6.227,96).
+
 ---
 
 ## 1. O que diz cada documento

@@ -11,6 +11,8 @@ Extraem e reconferem os dados usados no dossiê. Só precisam de `python3` + `re
 | `crawl_saude.py` | Baixa **todos** os empenhos da Secretaria de Município da Saúde de um ano para CSV. |
 | `detalhe_empenho.py` | Lê o detalhe de um empenho (natureza da despesa, fonte de recurso, projeto/atividade, descrição do item, valores empenhado/liquidado/pago). |
 | `check_empenho_residentes.py` | Verifica se saiu empenho novo de bolsa de residentes (imprime `NOVO` quando a data passa da última conhecida). |
+| `cnes_contagem.py` | Conta os médicos residentes por unidade e por equipe no CNES (contagem agregada; nunca imprime nomes nem CNS). |
+| `cnes_cbo.py` | CBO (código de ocupação) dos médicos residentes no CNES por competência, em Santa Maria (`santa-maria`) ou em outro município (`municipio IBGE`), e quantos passam nas regras visíveis (`regras`). Só contagens agregadas. |
 | `check_pagamento_aps.sh` | Testa se o relatório de pagamento da APS do Ministério da Saúde voltou a responder (a API retornava HTTP 500 em 13/10/2026). |
 
 Exemplos:
@@ -20,6 +22,8 @@ python3 montar_site.py              # depois de mudar dados/ ou uma página
 python3 crawl_saude.py 2026
 python3 detalhe_empenho.py 18085/2026
 python3 check_empenho_residentes.py 2026
+python3 cnes_cbo.py santa-maria 202606 202607 202609 atual
+python3 cnes_cbo.py regras 202609 atual
 bash   check_pagamento_aps.sh 202608
 ```
 

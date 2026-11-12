@@ -1,0 +1,33 @@
+municipio,uf,competencia,competencia_aaaamm,medicos_credenciados_ms,medicos_contados_ms,medicos_com_vinculo_residencia_no_cnes,cbo_2231F9_medico_residente,cbo_225142_medico_da_esf,cbo_225130_medico_de_familia,cbo_225170_medico_generalista,outros_cbo_medicos
+Fortaleza,CE,jun/2026,202606,62,29,83,82,0,0,0,1
+Fortaleza,CE,set/2026,202609,62,0,68,67,0,0,0,1
+Canoas,RS,jun/2026,202606,4,1,17,2,15,0,0,0
+Canoas,RS,jul/2026,202607,4,2,14,2,12,0,0,0
+Canoas,RS,set/2026,202609,4,2,5,3,2,0,0,0
+Ijuí,RS,jun/2026,202606,3,0,10,9,0,0,0,1
+Ijuí,RS,jul/2026,202607,3,0,10,9,0,0,0,1
+Ijuí,RS,set/2026,202609,3,0,10,9,0,0,0,1
+Passo Fundo,RS,jun/2026,202606,3,0,9,0,9,0,0,0
+Passo Fundo,RS,jul/2026,202607,3,3,8,0,8,0,0,0
+Passo Fundo,RS,set/2026,202609,3,3,8,0,8,0,0,0
+Pelotas,RS,jun/2026,202606,36,17,75,15,51,0,0,11
+Pelotas,RS,jul/2026,202607,36,35,75,15,51,0,0,10
+Pelotas,RS,set/2026,202609,36,36,75,15,51,0,0,10
+Porto Alegre,RS,jun/2026,202606,35,14,83,83,0,0,0,0
+Porto Alegre,RS,set/2026,202609,35,0,81,81,0,0,0,0
+Rio Grande,RS,jun/2026,202606,12,4,22,0,22,0,0,0
+Rio Grande,RS,jul/2026,202607,12,12,21,0,21,0,0,0
+Rio Grande,RS,set/2026,202609,12,12,21,0,19,0,0,2
+Santa Maria,RS,jun/2026,202606,18,12,26,26,0,0,0,0
+Santa Maria,RS,jul/2026,202607,18,0,26,26,0,0,0,0
+Santa Maria,RS,set/2026,202609,18,0,25,25,0,0,0,0
+Santa Rosa,RS,set/2026,202609,4,4,8,0,8,0,0,0
+São Leopoldo,RS,jun/2026,202606,5,1,11,2,0,8,0,1
+São Leopoldo,RS,jul/2026,202607,5,4,11,2,0,8,0,1
+São Leopoldo,RS,set/2026,202609,5,5,10,2,0,7,0,1
+Florianópolis,SC,jun/2026,202606,52,31,71,0,0,0,71,0
+Florianópolis,SC,set/2026,202609,52,52,70,0,0,0,70,0
+Santos,SP,jun/2026,202606,2,0,20,19,1,0,0,0
+Santos,SP,jul/2026,202607,2,0,20,19,1,0,0,0
+Santos,SP,set/2026,202609,2,1,19,18,1,0,0,0
+Palmas,TO,set/2026,202609,30,30,53,0,53,0,0,0
