@@ -1,0 +1,354 @@
+{
+ "resultado": {
+  "dados": [
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "01",
+     "ano": "2026",
+     "processo": "25000003909202698",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.003909/2026-98"
+    },
+    "valorLiquido": 76500,
+    "valorDescontoTotal": 0,
+    "valorTotal": 76500,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "1 em 2026",
+    "numeroDocumentoSiafi": "000883",
+    "dataCriacaoSiafi": "13/01/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "01",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "02",
+     "ano": "2026",
+     "processo": "25000018101202613",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.018101/2026-13"
+    },
+    "valorLiquido": 76500,
+    "valorDescontoTotal": 0,
+    "valorTotal": 76500,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "02/12 em 2026",
+    "numeroDocumentoSiafi": "005177",
+    "dataCriacaoSiafi": "10/02/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "02",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "03",
+     "ano": "2026",
+     "processo": "25000036169202676",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.036169/2026-76"
+    },
+    "valorLiquido": 76500,
+    "valorDescontoTotal": 0,
+    "valorTotal": 76500,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "03/12 em 2026",
+    "numeroDocumentoSiafi": "010816",
+    "dataCriacaoSiafi": "12/03/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "03",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "04",
+     "ano": "2026",
+     "processo": "25000053572202660",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.053572/2026-60"
+    },
+    "valorLiquido": 136000,
+    "valorDescontoTotal": 0,
+    "valorTotal": 136000,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "04/12 em 2026",
+    "numeroDocumentoSiafi": "016807",
+    "dataCriacaoSiafi": "14/04/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "04",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "05",
+     "ano": "2026",
+     "processo": "25000070073202637",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.070073/2026-37"
+    },
+    "valorLiquido": 96000,
+    "valorDescontoTotal": 0,
+    "valorTotal": 96000,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "05/12 em 2026",
+    "numeroDocumentoSiafi": "029731",
+    "dataCriacaoSiafi": "13/05/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "05",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "06",
+     "ano": "2026",
+     "processo": "25000088354202646",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.088354/2026-46"
+    },
+    "valorLiquido": 96000,
+    "valorDescontoTotal": 0,
+    "valorTotal": 96000,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "06/12 em 2026",
+    "numeroDocumentoSiafi": "047478",
+    "dataCriacaoSiafi": "15/06/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "06",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "07",
+     "ano": "2026",
+     "processo": "25000104698202618",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.104698/2026-18"
+    },
+    "valorLiquido": 96000,
+    "valorDescontoTotal": 0,
+    "valorTotal": 96000,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "07/12 em 2026",
+    "numeroDocumentoSiafi": "064900",
+    "dataCriacaoSiafi": "14/07/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "07",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   },
+   {
+    "id": {
+     "esferaAdministrativa": "MUNICIPAL",
+     "indicadorFundoAFundo": "S",
+     "mes": "08",
+     "ano": "2026",
+     "processo": "25000123847202630",
+     "programaFundo": {
+      "id": 69166,
+      "descricao": "INCENTIVO FINANCEIRO DA APS - DEMAIS PROGRAMAS, SERVIÇOS E EQUIPES DA ATENÇÃO PRIMÁRIA À SAÚDE"
+     },
+     "processoEntidadePrograma": {
+      "projeto": {
+       "numeroSubprojeto": ""
+      }
+     },
+     "processoFormatado": "25000.123847/2026-30"
+    },
+    "valorLiquido": 96000,
+    "valorDescontoTotal": 0,
+    "valorTotal": 96000,
+    "valorAnulacao": 0,
+    "tipoRepasse": "MUNICIPAL",
+    "tipoRepasseEstado": "N",
+    "codigoBanco": "104",
+    "codigoAgencia": "028444",
+    "contaCorrente": "0066240619",
+    "competencia": "08/12 em 2026",
+    "numeroDocumentoSiafi": "067253",
+    "dataCriacaoSiafi": "14/08/2026",
+    "uf": "RS",
+    "codigoBloco": 10,
+    "nomeBloco": "Manutenção das Ações e Serviços Públicos de Saúde",
+    "nomeComponente": "ATENÇÃO PRIMÁRIA",
+    "motivoRejeicao": "",
+    "anoPagamento": "2026",
+    "mesPagamento": "08",
+    "tipoDocumentoPagamento": "OB",
+    "nuPortaria": "3493",
+    "valorLiquidoGeral": 749500,
+    "valorDescontoTotalGeral": 0,
+    "valorTotalGeral": 749500
+   }
+  ],
+  "pagina": 0,
+  "itensPorPagina": 100,
+  "total": 8,
+  "totalPaginas": 1
+ }
+}

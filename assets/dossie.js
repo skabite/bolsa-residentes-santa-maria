@@ -26,9 +26,20 @@
   }
 
   /* ---- tema ---- */
+  /* a cor da barra do navegador acompanha o tema escolhido no menu (sem escolha, valem os media das metas) */
+  var COR_BARRA = { light: "#fbf8f3", dark: "#16141b" };
+  var metasCor = $$('meta[name="theme-color"]');
+  metasCor.forEach(function (m) { m.dataset.media = m.getAttribute("media") || ""; });
   function aplicaTema(t) {
     if (t === "light" || t === "dark") doc.setAttribute("data-theme", t); else doc.removeAttribute("data-theme");
     $$("[data-tema]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.tema === (t || "auto"))); });
+    metasCor.forEach(function (m) {
+      if (COR_BARRA[t]) { m.removeAttribute("media"); m.setAttribute("content", COR_BARRA[t]); }
+      else {
+        if (m.dataset.media) m.setAttribute("media", m.dataset.media);
+        m.setAttribute("content", /dark/.test(m.dataset.media) ? COR_BARRA.dark : COR_BARRA.light);
+      }
+    });
   }
   var temaSalvo = null;
   try { temaSalvo = localStorage.getItem("dossie-tema"); } catch (e) {}
@@ -362,6 +373,49 @@
     if (d && !d.open) { d.open = true; el.scrollIntoView(); }
   }
   addEventListener("hashchange", abreAlvo); abreAlvo();
+
+  /* ---- tabela mais larga que a tela: aviso de que dá para deslizar (e foco pelo teclado para rolar) ---- */
+  function marcaTabela(t) {
+    if (!t.clientWidth) return;   /* fechada num <details> ou ainda fora da tela */
+    var larga = t.scrollWidth > t.clientWidth + 2, dica = t.previousElementSibling;
+    var tem = dica && dica.classList.contains("tabela-dica");
+    if (larga && !tem) {
+      dica = cria("p", "tabela-dica", "Deslize para o lado para ver todas as colunas");
+      dica.setAttribute("aria-hidden", "true");
+      t.parentNode.insertBefore(dica, t);
+      t.tabIndex = 0;
+    } else if (!larga && tem) {
+      dica.remove(); t.removeAttribute("tabindex");
+    }
+  }
+  /* cada tabela é medida quando aparece na tela (as seções longe dela nem são desenhadas antes) */
+  var vigia = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) marcaTabela(e.target); });
+  }, { rootMargin: "200px 0px" }) : null;
+  function marcaTabelas() {
+    $$(".tabela").forEach(function (t) { if (vigia) vigia.observe(t); else marcaTabela(t); });
+  }
+  var tTabelas = 0;
+  addEventListener("resize", function () {
+    clearTimeout(tTabelas);
+    tTabelas = setTimeout(function () { $$(".tabela").forEach(function (t) { if (vigia) { vigia.unobserve(t); vigia.observe(t); } else marcaTabela(t); }); }, 150);
+  });
+  marcaTabelas();
+  /* tabelas montadas depois (empenhos do ano, empenhos do mês) e tabelas dentro de <details> que abriu */
+  if (anos) anos.addEventListener("click", marcaTabelas);
+  $$(".g-mes").forEach(function (h) { h.addEventListener("click", marcaTabelas); });
+  $$("details").forEach(function (d) { d.addEventListener("toggle", function () { if (d.open) $$(".tabela", d).forEach(marcaTabela); }); });
+
+  /* ---- impressão: abre os cartões e acordeões fechados e depois devolve como estavam ---- */
+  var abertosParaImprimir = [];
+  addEventListener("beforeprint", function () {
+    abertosParaImprimir = $$("details:not([open])");
+    abertosParaImprimir.forEach(function (d) { d.open = true; });
+  });
+  addEventListener("afterprint", function () {
+    abertosParaImprimir.forEach(function (d) { d.open = false; });
+    abertosParaImprimir = [];
+  });
 
   /* ---- copiar link ---- */
   var copiar = $("#copiar");

@@ -7,9 +7,17 @@
 <meta name="description" content="O pedido de correção da bolsa municipal dos residentes de MFC de Santa Maria: os argumentos, quanto seria, o que não usar, dúvidas e como outras cidades fazem.">
 <!--b:cabeca-->
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231d5fae'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/></svg>">
+<meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16141b" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Dá para pedir reajuste? — Bolsa MFC Santa Maria">
+<meta property="og:description" content="O pedido de correção da bolsa municipal dos residentes de MFC de Santa Maria: os argumentos, quanto seria, o que não usar, dúvidas e como outras cidades fazem.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='1' y='1' width='30' height='30' rx='8' fill='%23ede7fa' stroke='%234b3a91' stroke-width='2'/><path d='M2 30 30 2v21a7 7 0 0 1-7 7z' fill='%23fde6d7'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' stroke='%234b3a91' stroke-width='3' stroke-linejoin='round'/></svg>">
 <link rel="stylesheet" href="assets/dossie.css">
 <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("dossie-tema"); if (t === "light" || t === "dark") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+<script src="assets/fontes.js" defer></script>
+<script src="assets/dossie.js" defer></script>
 <!--/b:cabeca-->
 </head>
 <body data-pagina="reajuste.html">
@@ -87,7 +95,9 @@
         <tr><td><a class="cita" href="fontes.html#ref-10" data-ref="10">Inflação (IPCA jan/2021–set/2026)</a></td><td class="n">≈ R$ 6.228</td><td class="n">+ R$ 45.612</td></tr>
       </tbody>
     </table></div>
-    <p class="nota">Custo para 22 residentes (ago/2026), já com 20% de INSS patronal. Com 12 contados, qualquer correção sai de recurso
+    <p class="nota">Custo para 22 residentes (ago/2026), já com 20% de INSS patronal. A inflação foi
+    <a class="cita" href="fontes.html#ref-10" data-ref="10">conferida na série do Banco Central: 38,40%, R$ 6.227,96</a>
+    (até out/2026, R$ 6.236,68). Com 12 contados, ou com nenhum, qualquer correção sai de recurso
     próprio. Com 18 contados e os 22 de ago/2026, o incentivo cobre exatamente a bolsa de R$ 5.454; com os 21 de set–out/2026, R$ 5.714. Acima disso é preciso contar mais
     residentes, o que exige ampliar o credenciamento.</p>
     <div class="selos"><span class="selo est">Estimativa</span><a class="ref" href="fontes.html#ref-3" data-ref="3">3</a><a class="ref" href="fontes.html#ref-10" data-ref="10">10</a><a class="ref" href="fontes.html#ref-5" data-ref="5">5</a></div>
@@ -110,22 +120,25 @@
     <details class="acc" id="duvida-lei">
       <summary>A lei não liga a bolsa ao repasse federal?</summary>
       <div class="acc-corpo">
-        <p>Liga, e o repasse existe: está baixo porque o Ministério contou 12. Lida ao pé da letra, essa regra permitiria
-        pagar só os contados; por isso o pedido funciona melhor como proposta conjunta do que como cobrança. Parte dos
+        <p>Liga. O repasse existe, mas veio baixo em mar–jun/2026 (12 contados) e zerado de julho a setembro. Lida ao pé da
+        letra, essa regra permitiria pagar só os contados; por isso o pedido funciona melhor como proposta conjunta do que
+        como cobrança, e de preferência depois que a contagem voltar. Parte dos
         requisitos depende do cadastro no <a class="termo" href="glossario.html#t-cnes" data-termo="cnes">CNES</a>, que é da
         gestão (<a class="cita" href="fontes.html#ref-2" data-ref="2">Portaria 10.193/2026, art. 172-F, §5º</a>); parte, das
         COREMEs (CNRM) e do Ministério (credenciamento). Residentes e COREMEs podem ajudar a conferir os cadastros.</p>
       </div>
     </details>
     <details class="acc" id="duvida-julho">
-      <summary>E julho e agosto, que vieram zerados?</summary>
+      <summary>E julho, agosto e setembro, que vieram zerados?</summary>
       <div class="acc-corpo">
-        <p>A causa ainda não é pública. Se for a suspensão do <a class="cita" href="fontes.html#ref-2" data-ref="2">art.
-        172-H</a>, ela "será mantida até a adequação das irregularidades": regularizar os cadastros destravaria os meses
-        seguintes. Agosto repetiu o zero. Na <a class="cita" href="fontes.html#ref-5" data-ref="5">planilha do Ministério
-        (nov/2024 a ago/2026), nenhum mês não contado foi pago depois</a>: não houve retroativo. Set/2026 ainda não foi
-        publicado.</p>
-        <div class="selos"><span class="selo aberto">Causa em aberto</span><a class="ref" href="fontes.html#ref-2" data-ref="2">2</a><a class="ref" href="fontes.html#ref-5" data-ref="5">5</a></div>
+        <p>A explicação mais provável é o código de ocupação do cadastro: <a class="cita" href="fontes.html#ref-23" data-ref="23 24">até
+        setembro os residentes estavam no CNES como "Médico residente" (2231F9), código que o Ministério deixou de contar
+        em julho nos municípios consultados</a>. A gestão já trocou o código. Se a leitura estiver certa, a contagem volta
+        na parcela de dezembro de 2026 ou na de janeiro de 2027 (veja <a href="contagem.html#cbo">os dados</a>). Na
+        <a class="cita" href="fontes.html#ref-5" data-ref="5">planilha do Ministério (nov/2024 a set/2026), nenhum mês não
+        contado foi pago depois</a>: até aqui, não houve retroativo.</p>
+        <div class="selos"><span class="selo fato">Fato: o cadastro e os zeros</span><a class="ref" href="fontes.html#ref-5" data-ref="5">5</a><a class="ref" href="fontes.html#ref-23" data-ref="23">23</a><a class="ref" href="fontes.html#ref-24" data-ref="24">24</a>
+          <span class="selo aberto">Em aberto: a confirmação do Ministério</span></div>
       </div>
     </details>
     <details class="acc" id="duvida-orcamento">
@@ -193,7 +206,7 @@
   <p><strong>Correções e resposta.</strong> Pedidos de correção ou de retirada podem ser feitos por uma
   <a href="https://github.com/skabite/bolsa-residentes-santa-maria/issues" target="_blank" rel="noopener">issue no GitHub</a>. Uma resposta da Secretaria de Saúde ou das
   COREMEs será publicada aqui com o mesmo destaque.</p>
-  <p>Atualizado em 03/11/2026. O site não usa rastreadores nem envia dados a nenhum servidor. Textos sob
+  <p>Atualizado em 12/11/2026. O site não usa rastreadores nem envia dados a nenhum servidor. Textos sob
   <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY 4.0</a>; código sob
   licença MIT. <a href="sobre.html">Sobre o dossiê</a>.</p>
 </footer>
@@ -204,10 +217,10 @@
     <ul class="menu-lista">
       <li><a href="index.html"><span><b>Início</b><small>A situação em 2 minutos, com os quatro pontos principais.</small></span></a></li>
       <li><a href="reajuste.html" aria-current="page"><span><b>Dá para pedir reajuste?</b><small>O pedido, quanto seria e como outras cidades fazem.</small></span></a></li>
-      <li><a href="contagem.html"><span><b>Onde trava a contagem</b><small>Os requisitos do Ministério, um a um, e o estágio externo.</small></span></a></li>
+      <li><a href="contagem.html"><span><b>Onde trava a contagem</b><small>O código de ocupação (CBO), os requisitos do Ministério e o estágio externo.</small></span></a></li>
       <li><a href="numeros.html"><span><b>Os números</b><small>Gráficos, tabelas, cada empenho e até quando vão os dados.</small></span></a></li>
       <li><a href="fazer.html"><span><b>O que fazer</b><small>Para residentes, gestão municipal e COREMEs, com os canais.</small></span></a></li>
-      <li><a href="linha-do-tempo.html"><span><b>Linha do tempo</b><small>Do incentivo de 2019 ao zero de julho e agosto de 2026.</small></span></a></li>
+      <li><a href="linha-do-tempo.html"><span><b>Linha do tempo</b><small>Do incentivo de 2019 aos três meses zerados e à troca do CBO, em 2026.</small></span></a></li>
       <li><a href="fontes.html"><span><b>Fontes</b><small>As referências, com o que cada uma prova e onde é citada.</small></span></a></li>
       <li><a href="glossario.html"><span><b>Glossário</b><small>CNES, CNRM, competência, empenho e outros termos.</small></span></a></li>
       <li><a href="sobre.html"><span><b>Sobre o dossiê</b><small>Método, correções, privacidade e como reutilizar.</small></span></a></li>
@@ -221,8 +234,6 @@
 </dialog>
 <div class="balao" id="balao" hidden></div>
 <div class="tip" id="tip" aria-hidden="true"></div>
-<script src="assets/fontes.js"></script>
-<script src="assets/dossie.js"></script>
 <!--/b:rodape-->
 </body>
 </html>

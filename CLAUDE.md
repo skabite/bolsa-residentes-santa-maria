@@ -32,6 +32,10 @@ trabalho, leia [`investigacao.md`](investigacao.md)**: estado atual, hipóteses,
 - O gráfico "por residente" (`numeros.html`) vem da conta em
   `dados/incentivo_federal_media_por_residente.csv` (incentivo da competência ÷ bolsas pagas/4.500;
   retroativo de abr/2026 devolvido a março).
+- Numa máquina com acesso aos sites do governo, a coleta é direta: API do painel (`relatorioaps-prd`, por parcela),
+  FNS (`consultafns.saude.gov.br/recursos/consulta-detalhada/detalhe-pagamento`) e serviços do CNES, que aceitam
+  `?competencia=AAAAMM` (histórico por mês). `scripts/cnes_cbo.py` lê o CBO dos médicos residentes em contagem agregada.
+  As respostas do CNES trazem nomes e CNS: nunca gravar a resposta bruta, só contagens.
 - O usuário se dispôs a baixar o que a sessão não alcança: peça com o link exato (ou o caminho no site). A
   lista do que falta, com links, está em `verificacao.md`, seção "Atualizar os dados".
 

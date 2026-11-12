@@ -7,9 +7,17 @@
 <meta name="description" content="Como o dossiê da bolsa dos residentes de MFC de Santa Maria foi feito: selos, método, o que está em aberto, correções, privacidade e como reutilizar.">
 <!--b:cabeca-->
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231d5fae'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/></svg>">
+<meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16141b" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Sobre o dossiê — Bolsa MFC Santa Maria">
+<meta property="og:description" content="Como o dossiê da bolsa dos residentes de MFC de Santa Maria foi feito: selos, método, o que está em aberto, correções, privacidade e como reutilizar.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='1' y='1' width='30' height='30' rx='8' fill='%23ede7fa' stroke='%234b3a91' stroke-width='2'/><path d='M2 30 30 2v21a7 7 0 0 1-7 7z' fill='%23fde6d7'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' stroke='%234b3a91' stroke-width='3' stroke-linejoin='round'/></svg>">
 <link rel="stylesheet" href="assets/dossie.css">
 <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("dossie-tema"); if (t === "light" || t === "dark") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+<script src="assets/fontes.js" defer></script>
+<script src="assets/dossie.js" defer></script>
 <!--/b:cabeca-->
 </head>
 <body data-pagina="sobre.html">
@@ -49,8 +57,11 @@
   <section id="metodo" data-toc="Método">
     <h2>Método e ressalvas</h2>
     <p>Os dados são de execução orçamentária (empenhado e pago) publicados pela prefeitura e da planilha de pagamentos da
-    APS do Ministério. Não substituem os demonstrativos contábeis oficiais. A inflação foi calculada com as taxas anuais
-    do IBGE; o valor exato está na Calculadora do Cidadão do Banco Central.</p>
+    APS do Ministério. Não substituem os demonstrativos contábeis oficiais. A inflação foi conferida acumulando as variações
+    mensais do IPCA na série 433 do Banco Central, a mesma da Calculadora do Cidadão.</p>
+    <p>O código de ocupação (CBO) dos médicos residentes vem dos serviços públicos do CNES, consultados mês a mês, sempre em
+    contagem agregada. A comparação com outros municípios usa uma amostra escolhida (capitais e municípios gaúchos com
+    residência), não o país inteiro: ela mostra um padrão, e não substitui a resposta do Ministério.</p>
     <p>"Residentes pagos" é a bolsa do mês dividida por R$ 4.500. "Contados" é o número da planilha do Ministério.
     No <a href="dados/incentivo_federal_residencia.csv">CSV da planilha</a>, os contados estão na coluna medicos_pagos e as
     vagas, em medicos_credenciados. Premissa: os R$ 43.500 a mais empenhados em abril/2026 (empenho 8876/2026) foram
@@ -64,7 +75,10 @@
     <h2>Em aberto</h2>
     <p class="lead">O que ainda não tem resposta pública, e a quem perguntar.</p>
     <ul>
-      <li>Por que o Ministério conta 12 residentes, e zero em julho e agosto, se há 18 vagas credenciadas? (pedido de informação ao Ministério)</li>
+      <li>O Ministério deixou mesmo de contar o médico cadastrado com o CBO 2231F9 a partir de julho de 2026? Em que ato isso está? (Ministério)</li>
+      <li>Julho, agosto e setembro de 2026 serão reprocessados? (Ministério, a pedido da gestão)</li>
+      <li>A troca do CBO entrou no CNES de outubro ou só no de novembro? (a parcela de dezembro responde)</li>
+      <li>Por que a contagem caiu de março a junho em tantos municípios ao mesmo tempo? (pedido de informação ao Ministério)</li>
       <li>A turma de 2026 está regular na CNRM? (COREMEs)</li>
       <li>Qual critério a prefeitura considera aplicável para a correção do art. 3º, §1º? (requerimento à prefeitura)</li>
       <li>Por que o CNES tem mais registros do que residentes pagos? (CNES atualizado e lista dos programas)</li>
@@ -77,6 +91,19 @@
     <h2>Correções e mudanças</h2>
     <p class="lead">O que mudou no dossiê e por quê, da mais recente para a mais antiga.</p>
     <ul>
+      <li><b>12/11/2026.</b> Nova coleta: set/2026 também veio zerado (18 vagas, 0 contados, R$ 0). O histórico do CNES
+      mostra todos os médicos residentes no CBO 2231F9 até setembro e no 225130 no cadastro atual; a comparação com outros
+      municípios indica que o Ministério deixou de contar o 2231F9 em julho (leitura dos dados, ainda sem confirmação
+      oficial). Fontes novas: 23 e 24.</li>
+      <li><b>12/11/2026.</b> A página Contagem dizia que a queda de março coincidia com a turma nova e apontava a matrícula
+      na CNRM como principal ponto a conferir em Santa Maria. A queda aconteceu também em outros municípios; o texto foi
+      refeito.</li>
+      <li><b>12/11/2026.</b> A estimativa de quantos residentes passam nas regras visíveis no CNES era "cerca de 18 de 23" e
+      não descontava o residente em eAP: são 17. O texto dizia também que o cadastro de hoje não mostra o dos meses
+      zerados; o CNES guarda o cadastro de cada mês, e ele foi conferido.</li>
+      <li><b>12/11/2026.</b> Fontes conferidas no documento oficial: a inflação (série do Banco Central: 38,40%,
+      R$ 6.227,96) e as normas de Ijuí, Remígio, Distrito Federal, Rio de Janeiro e Cachoeiro de Itapemirim. Visual novo,
+      em tons pastéis, com tema claro e escuro.</li>
       <li><b>03/11/2026.</b> Nova coleta: ago/2026 também veio zerado no Ministério (18 credenciados, 0 pagos, R$ 0); o FNS
       não registra crédito da ação 69166 em set e out/2026; os empenhos de outubro foram pagos; e o CNES de nov/2026 tem 23
       residentes, com as 15 unidades conferidas em contagem agregada.</li>
@@ -134,7 +161,7 @@
   <p><strong>Correções e resposta.</strong> Pedidos de correção ou de retirada podem ser feitos por uma
   <a href="https://github.com/skabite/bolsa-residentes-santa-maria/issues" target="_blank" rel="noopener">issue no GitHub</a>. Uma resposta da Secretaria de Saúde ou das
   COREMEs será publicada aqui com o mesmo destaque.</p>
-  <p>Atualizado em 03/11/2026. O site não usa rastreadores nem envia dados a nenhum servidor. Textos sob
+  <p>Atualizado em 12/11/2026. O site não usa rastreadores nem envia dados a nenhum servidor. Textos sob
   <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY 4.0</a>; código sob
   licença MIT. <a href="sobre.html">Sobre o dossiê</a>.</p>
 </footer>
@@ -145,10 +172,10 @@
     <ul class="menu-lista">
       <li><a href="index.html"><span><b>Início</b><small>A situação em 2 minutos, com os quatro pontos principais.</small></span></a></li>
       <li><a href="reajuste.html"><span><b>Dá para pedir reajuste?</b><small>O pedido, quanto seria e como outras cidades fazem.</small></span></a></li>
-      <li><a href="contagem.html"><span><b>Onde trava a contagem</b><small>Os requisitos do Ministério, um a um, e o estágio externo.</small></span></a></li>
+      <li><a href="contagem.html"><span><b>Onde trava a contagem</b><small>O código de ocupação (CBO), os requisitos do Ministério e o estágio externo.</small></span></a></li>
       <li><a href="numeros.html"><span><b>Os números</b><small>Gráficos, tabelas, cada empenho e até quando vão os dados.</small></span></a></li>
       <li><a href="fazer.html"><span><b>O que fazer</b><small>Para residentes, gestão municipal e COREMEs, com os canais.</small></span></a></li>
-      <li><a href="linha-do-tempo.html"><span><b>Linha do tempo</b><small>Do incentivo de 2019 ao zero de julho e agosto de 2026.</small></span></a></li>
+      <li><a href="linha-do-tempo.html"><span><b>Linha do tempo</b><small>Do incentivo de 2019 aos três meses zerados e à troca do CBO, em 2026.</small></span></a></li>
       <li><a href="fontes.html"><span><b>Fontes</b><small>As referências, com o que cada uma prova e onde é citada.</small></span></a></li>
       <li><a href="glossario.html"><span><b>Glossário</b><small>CNES, CNRM, competência, empenho e outros termos.</small></span></a></li>
       <li><a href="sobre.html" aria-current="page"><span><b>Sobre o dossiê</b><small>Método, correções, privacidade e como reutilizar.</small></span></a></li>
@@ -162,8 +189,6 @@
 </dialog>
 <div class="balao" id="balao" hidden></div>
 <div class="tip" id="tip" aria-hidden="true"></div>
-<script src="assets/fontes.js"></script>
-<script src="assets/dossie.js"></script>
 <!--/b:rodape-->
 </body>
 </html>

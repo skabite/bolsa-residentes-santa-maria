@@ -1,6 +1,6 @@
 # Caderno de investigação — onde trava o incentivo federal
 
-Estado em **03/11/2026**. Este arquivo é a memória de trabalho entre sessões: o que já foi
+Estado em **12/11/2026**. Este arquivo é a memória de trabalho entre sessões: o que já foi
 estabelecido, o que é hipótese, o que foi descartado e o que falta. O site público (as páginas `.html`)
 só recebe o que estiver confirmado. **Este arquivo também é público** (o GitHub Pages publica o
 repositório): sem nomes e sem atributo individual (carga horária, origem, saída, gênero, licença) de quem
@@ -14,6 +14,47 @@ da Saúde contou **12** residentes em mar–jun/2026 e **0** em jul e ago/2026 (
 da APS, aba "Residência"). Onde trava? O objetivo do usuário é entender o mecanismo para **ensinar a
 gestão municipal**, sem tom acusatório: cada residente não contado são R$ 8.000/mês que a própria
 prefeitura deixa de receber, e ela paga a bolsa de qualquer jeito.
+
+## Achado de 12/11/2026: o código de ocupação (CBO)
+
+Resumo: **o zero de jul–set/2026 coincide com uma mudança na forma de o Ministério ler o cadastro, não com uma mudança
+no cadastro de Santa Maria.** Tudo abaixo vem de fonte oficial (API do painel de pagamentos e serviços do CNES, que
+aceitam `?competencia=AAAAMM`); a ligação entre as duas coisas é leitura nossa, ainda sem confirmação do Ministério.
+
+- **Set/2026 publicado (fato):** parcela 202611, 18 credenciados, 0 contados, R$ 0. Terceiro zero seguido.
+- **CBO de Santa Maria, mês a mês (fato):** de nov/2024 a set/2026, **todos** os médicos com vínculo de residência nas 15
+  unidades estavam com o CBO **2231F9** (Médico residente): 16–17 (nov/2024–fev/2025), 20 (mar/2025–fev/2026), 26
+  (mar–ago/2026), 25 (set/2026). No cadastro consultado em 12/11/2026, os 23 estão no **225130** (Médico de família e
+  comunidade). As fichas de 15/10 ainda tinham 2231F9 e a contagem de 03/11 já usava o filtro 225: a troca foi feita
+  entre meados de outubro e o início de novembro. As competências 202610 e 202611 ainda não têm histórico no serviço,
+  então não se sabe em qual delas a troca entrou. `dados/cnes_cbo_medicos_residentes_por_competencia.csv`.
+- **Junho × julho (fato):** o cadastro era igual nos dois meses (26 registros, todos em equipe, 25 em eSF, 23 com 40 h
+  na equipe, 1 em eAP). A contagem foi de 12 para 0. Não houve mudança local que explique.
+- **Outros municípios (fato):** na soma de 29 municípios consultados na API, os médicos contados foram 605 (fev), 416
+  (mar), 361 (abr), 339 (mai), 321 (jun), **666 (jul)**, 689 (ago), 689 (set), de ~816 vagas. A queda de março e o salto
+  de julho foram gerais. `dados/residencia_outros_municipios_2026.csv`.
+- **CBO × contagem em 12 municípios (fato):** onde os residentes estão em 225142 (Pelotas, Rio Grande, Passo Fundo,
+  Palmas, Santa Rosa), 225130 (São Leopoldo) ou 225170 (Florianópolis), a contagem chegou ao teto em jul–set sem mudança
+  no cadastro. Onde estão em 2231F9, ficou em zero (Porto Alegre, 81 residentes; Fortaleza, 67; Ijuí, 9) ou igual ao
+  número de residentes em outro código (Canoas, 2; Santos, 1). Em Porto Alegre os enfermeiros residentes seguiram
+  contados. Nenhum município da amostra teve médico em 2231F9 contado depois de junho.
+  `dados/cnes_cbo_comparacao_municipios_2026.csv`.
+- **A norma (fato):** a Portaria 10.193/2026 não cita CBO. Exige o vínculo "05 – Residência / 01 – Residente", equipe
+  por INE e 40 h; o art. 58 da PRC nº 2 (na redação dela) manda a SAPS regulamentar "os meios para identificação dos
+  residentes" no SCNES. Não localizamos esse ato (busca em 12/11/2026). O art. 50, §2º, pede o preceptor registrado na
+  equipe ou na unidade do residente: a conferir pela gestão.
+- **Regras visíveis no cadastro de cada mês (estimativa):** eSF + 40 h na equipe + até 2 por eSF → passavam 18
+  (fev/2026), 22 (jun e jul/2026), 21 (set/2026) e **17** no cadastro atual (23 − 1 em eAP − 4 abaixo de 40 h − 1
+  excedente). Corrige a estimativa anterior de "cerca de 18", que não descontava a eAP.
+- **Dinheiro (estimativa):** com o teto de 18 contado em jul, ago e set, teriam entrado 3 × R$ 144.000 = **R$ 432.000**.
+  Com o cadastro atual, 17 × R$ 8.000 = R$ 136.000/mês (folha de set–out: R$ 113.400 com INSS).
+- **Quando volta (estimativa):** parcela = competência + 2 meses. Troca no CNES de out/2026 → parcela 12/2026, crédito em
+  meados de dezembro. Troca só em nov/2026 → out/2026 também zerado e volta na parcela 01/2027.
+- **Informação recebida (não oficial, 12/11/2026):** o usuário ouviu que "um problema era o CBO, e não a carga
+  horária". Bate com os dados acima; não é documento.
+- **Limites:** amostra escolhida (capitais e municípios gaúchos), não o país; correlação, não regra publicada; em
+  municípios grandes a varredura do CNES pega as unidades de atenção primária achadas pelo nome. O CBO pode ser o
+  critério direto ou acompanhar outro (por exemplo, a forma de compor a equipe mínima).
 
 ## O que a norma exige (texto verificado no DOU)
 
@@ -94,7 +135,14 @@ uma saída (III). A suspensão "será mantida até a adequação das irregularid
 
 ## Hipóteses, em ordem
 
-1. **Matrícula da turma de 2026 não reconhecida (CNRM)** — principal. Os 12 contados batem em número com
+**Revisão de 12/11/2026.** A ordem abaixo é a de 03/11. Com o achado do CBO: a hipótese nova (0) passa a ser a
+principal para os zeros; a 1 perde força para Santa Maria, porque a queda de março foi geral na amostra; a 4 segue
+possível, mas o zero começou no mês em que a contagem mudou em outros municípios; a 5 foi respondida (o cadastro de
+jul–set foi lido no histórico do CNES e era regular nas regras visíveis).
+
+0. **CBO 2231F9 deixou de ser contado a partir da competência jul/2026** — principal para os zeros. Ver a seção
+   "Achado de 12/11/2026". Falta: confirmação escrita do Ministério e o ato da SAPS.
+1. **Matrícula da turma de 2026 não reconhecida (CNRM)** — era a principal. Os 12 contados batem em número com
    quem tinha matrícula antes de mar/2026; os 11 que começaram em mar/2026 não aparecem. A planilha só traz o
    total, então a correspondência um a um não está provada. A contagem de nov/2026 mostra todos os 23 em alguma
    equipe, mas é o cadastro de hoje: não diz como estava em jul/ago. O requisito individual que sobra é o § 4º,
@@ -160,6 +208,11 @@ quem está em estágio nem ligar isso aos 4 registros abaixo de 40h** (grupos pe
 
 ## Próximos passos
 
+- **Mais importante agora**: (a) olhar a **parcela 12/2026** (competência out/2026) quando o Ministério publicar, por
+  volta de 10/12: diz se a troca do CBO entrou em outubro; (b) quando o serviço do CNES tiver o histórico de 202610,
+  rodar `python3 scripts/cnes_cbo.py santa-maria 202610`; (c) pedir ao Ministério, por escrito, qual CBO é aceito, desde
+  quando e em que ato, e o reprocessamento de jul–set/2026; (d) gestão: os 4 cadastros abaixo de 40 h e a equipe com 3
+  seguram a contagem em 17 de 18.
 - **Gestor (e-Gestor APS)**: quais residentes foram validados em cada competência e o motivo dos não
   validados; motivo dos zeros de jul e ago/2026; se o credenciamento (18) precisa ser ampliado/atualizado.
   Correções que não dependem de nada: dar baixa dos registros de quem já saiu; resolver a equipe com 3
@@ -171,8 +224,8 @@ quem está em estágio nem ligar isso aos 4 registros abaixo de 40h** (grupos pe
   tiver aderido (residentes matriculados em abr/2026; Portaria GM/MS 8.403/2025).
 - **LAI**: pedido ao Ministério já protocolado pelo usuário no Fala.BR (antes de 15/10/2026; prazo
   20 + 10 dias). Ao chegar a resposta, comparar com as hipóteses acima.
-- **Dados a atualizar**: competência **set/2026** do Ministério (a mais importante: diz se o zero continua);
-  empenhos de **nov/2026** (saem por volta do dia 25); resposta do Ministério sobre estágio externo e 40h. A
+- **Dados a atualizar**: competência **out/2026** do Ministério (parcela 12/2026); empenhos de **nov/2026** (saem por
+  volta do dia 25; não existiam em 12/11); resposta do Ministério sobre estágio externo e 40h. A
   contagem do CNES de nov/2026 já foi feita nas 15 unidades, mas é agregada: para conciliar os 23 registros com
   os 21–22 pagos, a gestão precisa conferir ficha a ficha (sem nomes no repositório). Depois de mudar os CSVs:
   `dados/situacao_dos_dados.csv` (período e data da coleta) e `python3 scripts/montar_site.py`.
@@ -234,3 +287,12 @@ quem está em estágio nem ligar isso aos 4 registros abaixo de 40h** (grupos pe
   agregada: 23 residentes (26 em junho), São José 5→3, São João 1→0, 4 abaixo de 40h, uma equipe com 3. A lei
   6.516/2020, art. 3º, §2º, passa a ser risco concreto para a bolsa. Site e CSVs atualizados; fonte 22 nova
   (FNS).
+- **12/11/2026** — coleta feita de uma máquina com acesso aos sites do governo. Set/2026 publicado e zerado; FNS sem
+  crédito da ação 69166 desde 14/08 (parcela 11 ainda não emitida em nenhuma ação); sem empenho de novembro; CNES igual ao
+  de 03/11. Descoberto que os serviços do CNES aceitam `?competencia=AAAAMM`: histórico do CBO de Santa Maria (2231F9 até
+  set/2026; 225130 hoje) e de 12 municípios, cruzado com a contagem de 29 municípios na API. Leitura: o Ministério deixou
+  de contar o 2231F9 em jul/2026 (em aberto). Estimativa corrigida para 17 de 23 nas regras visíveis. Fontes conferidas
+  no documento oficial: IPCA (série 433 do BC: 38,40%, R$ 6.227,96), Ijuí, Remígio, DF, Rio e Cachoeiro; DOU da Portaria
+  Interministerial 9/2021 localizado (ed. 195, seção 1, p. 42). Fontes novas 23 e 24; script `scripts/cnes_cbo.py`.
+  Site redesenhado em tons pastéis (CSS refeito, tema claro e escuro, tabelas que cabem no celular, `defer` nos
+  scripts, metadados de compartilhamento).

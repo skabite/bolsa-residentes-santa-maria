@@ -30,7 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import graficos  # noqa: E402
 
 RAIZ, DADOS = graficos.RAIZ, graficos.DADOS
-ATUALIZADO = "03/11/2026"
+ATUALIZADO = "12/11/2026"
 REPO = "https://github.com/skabite/bolsa-residentes-santa-maria"
 ESTADO = {"primaria": "Conferida na fonte primária", "parcial": "Conferida em parte", "conferir": "A conferir"}
 esc = html.escape
@@ -39,10 +39,10 @@ esc = html.escape
 PAGINAS = [
     ("index.html", "Início", "Início", "A situação em 2 minutos, com os quatro pontos principais.", True),
     ("reajuste.html", "Reajuste", "Dá para pedir reajuste?", "O pedido, quanto seria e como outras cidades fazem.", True),
-    ("contagem.html", "Contagem", "Onde trava a contagem", "Os requisitos do Ministério, um a um, e o estágio externo.", True),
+    ("contagem.html", "Contagem", "Onde trava a contagem", "O código de ocupação (CBO), os requisitos do Ministério e o estágio externo.", True),
     ("numeros.html", "Números", "Os números", "Gráficos, tabelas, cada empenho e até quando vão os dados.", True),
     ("fazer.html", "O que fazer", "O que fazer", "Para residentes, gestão municipal e COREMEs, com os canais.", True),
-    ("linha-do-tempo.html", "Linha do tempo", "Linha do tempo", "Do incentivo de 2019 ao zero de julho e agosto de 2026.", False),
+    ("linha-do-tempo.html", "Linha do tempo", "Linha do tempo", "Do incentivo de 2019 aos três meses zerados e à troca do CBO, em 2026.", False),
     ("fontes.html", "Fontes", "Fontes", "As referências, com o que cada uma prova e onde é citada.", True),
     ("glossario.html", "Glossário", "Glossário", "CNES, CNRM, competência, empenho e outros termos.", False),
     ("sobre.html", "Sobre", "Sobre o dossiê", "Método, correções, privacidade e como reutilizar.", False),
@@ -50,8 +50,11 @@ PAGINAS = [
 NOME = {p[0]: p[1] for p in PAGINAS}
 
 FAVICON = ("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>"
-           "<rect width='32' height='32' rx='8' fill='%231d5fae'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' "
-           "stroke='white' stroke-width='3' stroke-linejoin='round'/></svg>")
+           "<rect x='1' y='1' width='30' height='30' rx='8' fill='%23ede7fa' stroke='%234b3a91' stroke-width='2'/>"
+           "<path d='M2 30 30 2v21a7 7 0 0 1-7 7z' fill='%23fde6d7'/><path d='M8 23V9h4l4 7 4-7h4v14' fill='none' "
+           "stroke='%234b3a91' stroke-width='3' stroke-linejoin='round'/></svg>")
+# cor da barra do navegador: a do fundo da página (--page) em cada tema; dossie.js troca quando o leitor escolhe o tema
+COR_BARRA = {"light": "#fbf8f3", "dark": "#16141b"}
 
 
 # ---------------------------------------------------------------- registros
@@ -153,11 +156,27 @@ def atual(arq, pag):
 
 
 def cabeca(pag, info):
+    # o título e a descrição escritos à mão no <head> viram também os metadados de compartilhamento (Open Graph)
+    with open(os.path.join(RAIZ, pag), encoding="utf-8") as fh:
+        fonte = fh.read()
+    titulo = re.search(r"<title>(.*?)</title>", fonte, re.S)
+    descr = re.search(r'<meta name="description" content="([^"]*)"', fonte)
+    og = '<meta property="og:type" content="website">\n<meta property="og:locale" content="pt_BR">\n'
+    if titulo:
+        og += f'<meta property="og:title" content="{" ".join(titulo.group(1).split())}">\n'
+    if descr:
+        og += f'<meta property="og:description" content="{descr.group(1)}">\n'
+    # o script do tema fica síncrono (evita o piscar do tema errado); os outros dois só rodam depois da leitura da página
     return ('\n<meta name="color-scheme" content="light dark">\n'
+            f'<meta name="theme-color" content="{COR_BARRA["light"]}" media="(prefers-color-scheme: light)">\n'
+            f'<meta name="theme-color" content="{COR_BARRA["dark"]}" media="(prefers-color-scheme: dark)">\n'
+            + og +
             f'<link rel="icon" href="{FAVICON}">\n'
             '<link rel="stylesheet" href="assets/dossie.css">\n'
             '<script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("dossie-tema"); '
-            'if (t === "light" || t === "dark") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>\n')
+            'if (t === "light" || t === "dark") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>\n'
+            '<script src="assets/fontes.js" defer></script>\n'
+            '<script src="assets/dossie.js" defer></script>\n')
 
 
 def topo(pag, info):
@@ -208,8 +227,6 @@ def rodape(pag, info):
 </dialog>
 <div class="balao" id="balao" hidden></div>
 <div class="tip" id="tip" aria-hidden="true"></div>
-<script src="assets/fontes.js"></script>
-<script src="assets/dossie.js"></script>
 '''
 
 
@@ -267,6 +284,9 @@ def federal(pag, info):
         inc, pagos = float(l["incentivo_federal"]), float(l["residentes_pagos_prefeitura"])
         tot_inc, tot_pag = tot_inc + inc, tot_pag + pagos
         classe = ' class="destaque"' if contados == 0 else ""
+        # mês zerado: a etiqueta marca a linha também para quem não distingue a cor de fundo
+        if contados == 0:
+            contados = '<span class="pill zero">0</span>'
         corpo.append(f'<tr{classe}><td>{comp.lower()}</td><td class="n">{vagas[comp]}</td><td class="n">{contados}</td>'
                      f'<td class="n">{graficos.num(pagos)}</td><td class="n">{graficos.brl(inc)}</td>'
                      f'<td class="n">{graficos.brl(float(l["media_federal_por_residente_pago"]))}</td></tr>')
@@ -275,6 +295,70 @@ def federal(pag, info):
             f'<tbody>{"".join(corpo)}</tbody><tfoot><tr><td>Total</td><td></td><td></td><td></td>'
             f'<td class="n">{graficos.brl(tot_inc)}</td><td class="n">{graficos.brl(tot_inc / tot_pag)}</td></tr></tfoot>'
             '</table></div>')
+
+
+CBO_NOME = {"cbo_2231F9_medico_residente": "2231F9", "cbo_225142_medico_da_esf": "225142",
+            "cbo_225130_medico_de_familia": "225130", "cbo_225170_medico_generalista": "225170",
+            "outros_cbo_medicos": "outros"}
+
+
+def cbo_texto(l):
+    """'2231F9 (26)' ou '225142 (51) · 2231F9 (15) · outros (10)', do maior para o menor."""
+    partes = sorted(((int(l[c] or 0), n) for c, n in CBO_NOME.items() if c in l and int(l[c] or 0) > 0),
+                    key=lambda t: (t[1] == "outros", -t[0]))
+    return " · ".join(f"{n} ({q})" for q, n in partes)
+
+
+def cbo_sm(pag, info):
+    """CBO dos médicos residentes de Santa Maria no CNES, por competência, ao lado da contagem do Ministério.
+    Meses seguidos com o mesmo quadro viram uma linha só. Três colunas, para caber no celular."""
+    grupos = []
+    for l in graficos.ler("cnes_cbo_medicos_residentes_por_competencia.csv"):
+        chave = (l["medicos_residentes_no_cnes"], cbo_texto(l), l["vagas_credenciadas_ms"], l["contados_ms"])
+        if grupos and grupos[-1][0] == chave and l["contados_ms"] != "":
+            grupos[-1][2] = l["competencia"]
+        else:
+            grupos.append([chave, l["competencia"], l["competencia"]])
+    corpo = []
+    for (n, cbo, vagas, contados), ini, fim in grupos:
+        if contados == "":
+            periodo, cel, classe = "hoje (12/11/2026)", '<span class="pill parcial">a publicar</span>', ' class="eu"'
+        else:
+            # "out/2025–fev/2026"; dentro do mesmo ano, "mar–jun/2026"
+            periodo = ini if ini == fim else (f"{ini[:3]}–{fim}" if ini[-4:] == fim[-4:] else f"{ini}–{fim}")
+            c = int(contados)
+            cel = f'<span class="pill zero">0 de {vagas}</span>' if c == 0 else f"{c} de {vagas}"
+            classe = ""
+        corpo.append(f'<tr{classe}><td>{esc(periodo)}</td><td>{esc(cbo)}</td><td class="n">{cel}</td></tr>')
+    return ('<div class="tabela cmp"><table><thead><tr><th>Competência</th><th>CBO no CNES (médicos residentes)</th>'
+            '<th class="n">Contados, de vagas</th></tr></thead>'
+            f'<tbody>{"".join(corpo)}</tbody></table></div>')
+
+
+def cbo_cmp(pag, info):
+    """Comparação entre municípios na competência set/2026: CBO no CNES e contagem do Ministério (jun e set)."""
+    linhas = graficos.ler("cnes_cbo_comparacao_municipios_2026.csv")
+    # a contagem de junho vem da planilha de todos os municípios consultados (o CNES de junho não foi lido em todos)
+    jun = {sem_acento(l["municipio"]): l["medicos_contados"]
+           for l in graficos.ler("residencia_outros_municipios_2026.csv") if l["competencia"] == "jun/2026"}
+    itens = []
+    for l in linhas:
+        if l["competencia"] != "set/2026" or l["medicos_contados_ms"] == "":
+            continue
+        vagas, c = int(l["medicos_credenciados_ms"]), int(l["medicos_contados_ms"])
+        so_residente = int(l["cbo_2231F9_medico_residente"] or 0) == int(l["medicos_com_vinculo_residencia_no_cnes"])
+        itens.append((l["municipio"] != "Santa Maria", not so_residente, -vagas, l, vagas, c))
+    corpo = []
+    for _, _, _, l, vagas, c in sorted(itens, key=lambda t: t[:3]):
+        pill = "zero" if c == 0 else ("ok" if c >= vagas else "parcial")
+        antes = jun.get(sem_acento(l["municipio"]), "")
+        classe = ' class="eu"' if l["municipio"] == "Santa Maria" else ""
+        seta = f'{antes} <span aria-hidden="true">→</span><span class="vh"> em junho; em setembro, </span> ' if antes != "" else ""
+        corpo.append(f'<tr{classe}><td>{esc(l["municipio"])} ({l["uf"]})</td><td>{esc(cbo_texto(l))}</td>'
+                     f'<td class="n">{seta}<span class="pill {pill}">{c} de {vagas}</span></td></tr>')
+    return ('<div class="tabela cmp"><table><thead><tr><th>Município</th><th>CBO no CNES (set/2026)</th>'
+            '<th class="n">Contados: jun → set/2026</th></tr></thead>'
+            f'<tbody>{"".join(corpo)}</tbody></table></div>')
 
 
 def sem_acento(s):
@@ -375,7 +459,7 @@ def fontes_js():
 BLOCOS = {
     "b:cabeca": cabeca, "b:topo": topo, "b:rodape": rodape, "b:pager": pager, "b:toc": toc, "b:data": data,
     "b:cartoes": cartoes, "b:situacao-curta": situacao_curta,
-    "t:situacao": situacao, "t:federal": federal, "t:cnes": cnes,
+    "t:situacao": situacao, "t:federal": federal, "t:cnes": cnes, "t:cbo-sm": cbo_sm, "t:cbo-cmp": cbo_cmp,
     "b:lista-termos": lista_termos,
     "d:dados": lambda pag, info: graficos.dados_js(),
     "g:pagos-contados": lambda pag, info: graficos.pagos_contados(),
